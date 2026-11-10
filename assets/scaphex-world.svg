@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Scaphex dark fantasy landscape with a moonlit fortress, ruined arches, violet crystals and a cloaked warrior">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#080713"/><stop offset=".42" stop-color="#211333"/><stop offset=".72" stop-color="#11101d"/><stop offset="1" stop-color="#07070d"/></linearGradient>
+ <radialGradient id="moon"><stop stop-color="#f2d8ff"/><stop offset=".42" stop-color="#c77aff"/><stop offset=".78" stop-color="#7934b6"/><stop offset="1" stop-color="#3b175c" stop-opacity="0"/></radialGradient>
+ <linearGradient id="stone" x2=".8" y2="1"><stop stop-color="#77707f"/><stop offset=".28" stop-color="#383341"/><stop offset=".72" stop-color="#17151f"/><stop offset="1" stop-color="#08080e"/></linearGradient>
+ <linearGradient id="crystal" x2="1" y2="1"><stop stop-color="#f4d8ff"/><stop offset=".25" stop-color="#d78cff"/><stop offset=".6" stop-color="#922eff"/><stop offset="1" stop-color="#34105f"/></linearGradient>
+ <linearGradient id="cape" x2="1" y2="1"><stop stop-color="#4e1d75"/><stop offset=".38" stop-color="#170d25"/><stop offset=".72" stop-color="#09080f"/><stop offset="1" stop-color="#36104e"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter><filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+ <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+ <pattern id="brick" width="70" height="38" patternUnits="userSpaceOnUse"><path d="M0 0H70M0 19H70M35 0V19M0 19V38M70 19V38" stroke="#a7a0ad" stroke-opacity=".18" stroke-width="2"/></pattern>
+</defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+<!-- distant storm and violet moon -->
+<g opacity=".75" fill="none" stroke="#8760a9" stroke-width="30" filter="url(#soft)"><path d="M0 180Q260 20 520 160T1050 130T1600 100T1920 180"/><path d="M0 330Q260 190 550 300T1100 260T1600 270T1920 300"/></g>
+<circle cx="1515" cy="245" r="235" fill="#a64dff" opacity=".38" filter="url(#glow)"/><circle cx="1515" cy="245" r="180" fill="url(#moon)"/>
+<g fill="#e6caff" opacity=".24"><circle cx="1460" cy="175" r="22"/><circle cx="1555" cy="270" r="35"/><circle cx="1480" cy="315" r="16"/><circle cx="1590" cy="160" r="13"/></g>
+<!-- lightning -->
+<path d="M280 0L330 105 295 142 365 230 335 270 440 390" fill="none" stroke="#bd72ff" stroke-width="9" opacity=".75" filter="url(#soft)"/><path d="M280 0L330 105 295 142 365 230 335 270 440 390" fill="none" stroke="#dcb2ff" stroke-width="3" opacity=".85"/>
+<path d="M1010 0L980 115 1035 155 1005 235 1080 320" fill="none" stroke="#a64bff" stroke-width="7" opacity=".45" filter="url(#soft)"/>
+<!-- distant pines and ridges -->
+<path d="M0 560L110 430 180 515 275 390 355 515 465 425 560 560 680 450 790 565 930 430 1050 560 1190 415 1290 535 1400 420 1510 555 1660 405 1780 540 1920 430V850H0Z" fill="#10101a"/>
+<g fill="#080a10" opacity=".95"><path d="M60 620l38-180 38 180zM105 650l46-220 45 220zM395 620l43-195 43 195zM515 650l40-190 42 190zM1120 630l45-205 45 205zM1260 645l55-250 55 250zM1665 640l44-210 43 210zM1790 660l45-240 45 240z"/></g>
+<!-- castle hill -->
+<path d="M970 705Q1160 490 1290 470Q1440 395 1600 500Q1760 570 1920 720V890H900Z" fill="#171522"/>
+<g transform="translate(1190 235)">
+ <path d="M0 485V220L45 160 85 220V485M110 485V120L160 55 210 120V485M250 485V190L300 125 350 190V485M380 485V250L420 190 465 250V485" fill="#0a0911" stroke="#4a4054" stroke-width="10"/>
+ <path d="M0 235H465M55 310H420M100 390H380" stroke="#756b7e" stroke-width="8" opacity=".5"/>
+ <path d="M25 230L45 160 85 220M110 130L160 55 210 120M250 200L300 125 350 190M380 260L420 190 465 250" fill="#292333" stroke="#9b8aa5" stroke-width="5"/>
+ <g fill="#b84dff" filter="url(#soft)"><rect x="65" y="270" width="15" height="70"/><rect x="178" y="180" width="18" height="90"/><rect x="315" y="260" width="16" height="75"/></g>
+ <g fill="#d9a6ff"><rect x="69" y="274" width="7" height="58"/><rect x="184" y="185" width="7" height="76"/><rect x="320" y="265" width="7" height="61"/></g>
+ <path d="M-35 485H500L560 540H-95Z" fill="#100e18"/>
+ <path d="M-15 495H485" stroke="#786b82" stroke-width="8" opacity=".5"/>
+</g>
+<!-- ruined arches left -->
+<g transform="translate(-40 255)">
+ <path d="M0 620V130L45 60 95 130V620M300 620V210L345 145 395 210V620M545 620V300L580 255 620 300V620" fill="url(#stone)" stroke="#817987" stroke-width="10"/>
+ <path d="M0 620V130L45 60 95 130V620M300 620V210L345 145 395 210V620M545 620V300L580 255 620 300V620" fill="url(#brick)" opacity=".9"/>
+ <path d="M95 620V335Q95 185 195 185Q300 185 300 335V620" fill="none" stroke="#4b4654" stroke-width="36"/>
+ <path d="M395 620V390Q395 270 470 270Q545 270 545 390V620" fill="none" stroke="#514a5b" stroke-width="27"/>
+ <path d="M45 60L95 130 145 100M345 145L395 210 445 170" stroke="#a49aa9" stroke-width="8" fill="none"/>
+ <path d="M0 160H95M300 235H395" stroke="#b0a6b6" stroke-width="6" opacity=".4"/>
+</g>
+<!-- terrain and distant river -->
+<path d="M0 790Q280 700 520 780T960 790T1400 750T1920 780V1080H0Z" fill="#0b0a11"/>
+<path d="M550 835Q850 780 1050 830Q1220 870 1400 820Q1230 945 1030 930Q800 900 550 835Z" fill="#4b2472" opacity=".7" filter="url(#soft)"/>
+<path d="M580 840Q850 810 1050 845Q1230 875 1380 835Q1220 910 1040 900Q800 880 580 840Z" fill="#b67aff" opacity=".38"/>
+<g stroke="#d8a9ff" stroke-width="4" opacity=".45"><path d="M720 852l230 8M880 880l250 4M1050 850l220 10M930 905l170 4"/></g>
+<!-- foreground rocks -->
+<path d="M0 825L120 750 210 780 300 710 420 800 510 780 620 900 580 1080H0Z" fill="url(#stone)"/>
+<path d="M1920 800L1810 730 1730 770 1640 700 1530 800 1450 790 1360 900 1400 1080H1920Z" fill="url(#stone)"/>
+<g fill="none" stroke="#928898" stroke-width="7" opacity=".32"><path d="M0 900l160-90 100 28 80-65M1920 880l-150-90-105 25-100-80M150 1000l170-80 110 40M1780 1000l-180-90-90 35"/></g>
+<!-- crystal clusters -->
+<g transform="translate(75 720)">
+ <ellipse cx="150" cy="275" rx="190" ry="45" fill="#9c3dff" opacity=".3" filter="url(#glow)"/>
+ <path d="M0 280L52 90 112 280 132 25 195 280 245 120 280 280Z" fill="url(#crystal)" stroke="#e4b9ff" stroke-width="5"/>
+ <path d="M52 90L80 235 112 280M132 25L160 205 195 280M245 120L225 230 195 280" fill="none" stroke="#fff0ff" stroke-width="6" opacity=".8"/>
+ <path d="M130 25L132 280M52 90L112 280" stroke="#a83eff" stroke-width="9" opacity=".65"/>
+</g>
+<g transform="translate(1600 790) scale(.78)">
+ <ellipse cx="150" cy="260" rx="190" ry="42" fill="#9c3dff" opacity=".28" filter="url(#glow)"/>
+ <path d="M0 270L55 100 105 270 145 0 205 270 250 110 300 270Z" fill="url(#crystal)" stroke="#e4b9ff" stroke-width="5"/>
+ <path d="M55 100L80 220 105 270M145 0L165 210 205 270M250 110L225 235 205 270" fill="none" stroke="#fff0ff" stroke-width="6" opacity=".8"/>
+</g>
+<!-- warrior silhouette right -->
+<g transform="translate(1460 255)">
+ <ellipse cx="240" cy="715" rx="270" ry="50" fill="#000" opacity=".75" filter="url(#shadow)"/>
+ <path d="M185 120Q145 60 205 18Q280 -28 332 42Q355 100 308 145L280 190H200Z" fill="#0a0910" stroke="#5a4b66" stroke-width="10"/>
+ <path d="M170 135Q90 175 72 300L20 545Q95 625 190 680L340 700Q430 620 450 520L400 300Q370 170 310 140Z" fill="url(#cape)" stroke="#5d3c75" stroke-width="12"/>
+ <path d="M190 160Q250 210 310 155L375 280 310 370 185 350 120 270Z" fill="#1a1522" stroke="#9a8aa4" stroke-width="12"/>
+ <path d="M120 230L65 290 95 430 175 475 210 360Z" fill="url(#stone)" stroke="#91879a" stroke-width="9"/>
+ <path d="M335 225L410 270 445 415 370 465 310 360Z" fill="url(#stone)" stroke="#91879a" stroke-width="9"/>
+ <path d="M160 390Q240 455 335 390L365 620Q265 720 150 620Z" fill="#0c0a13" stroke="#51405e" stroke-width="10"/>
+ <path d="M240 430L270 460 245 520 220 485Z" fill="#d59aff" opacity=".85" filter="url(#soft)"/>
+ <path d="M240 430L270 460 245 520 220 485Z" fill="#b75cff" stroke="#e6c4ff" stroke-width="4"/>
+ <path d="M200 20Q245 -15 300 20L332 65 305 115 240 95 185 115 160 70Z" fill="#09080f" stroke="#887994" stroke-width="7"/>
+ <path d="M350 150L455 10" stroke="#b4a8bd" stroke-width="16"/><path d="M455 10L480 -35" stroke="#d3c6dc" stroke-width="12"/>
+ <path d="M160 170L80 210 20 370 90 390 165 285M325 170L390 190 445 320 390 345 320 270" fill="none" stroke="#8c7b98" stroke-width="10"/>
+</g>
+<!-- atmospheric foreground mist -->
+<g fill="none" stroke="#a56bd1" opacity=".2" stroke-width="22" filter="url(#soft)"><path d="M0 740Q330 680 580 750T1080 730T1550 740T1920 700"/><path d="M0 970Q360 900 700 950T1300 930T1920 940"/></g>
+<rect width="1920" height="1080" fill="url(#sky)" opacity=".12"/>
+</svg>
