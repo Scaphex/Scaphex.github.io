@@ -12,18 +12,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Scaphex - RuneScape 3 AFK Money Making & Boss Guides</title>
+<title>Scaphex | Old School RuneScape Guides, Builds & Progress</title>
 
-<meta name="description" content="AFK RuneScape 3 guides, boss strategies, and money making methods from Scaphex.">
-      <meta property="og:title" content="Scaphex - RuneScape 3 AFK Guides">
-<meta property="og:description" content="AFK RuneScape 3 guides, boss strategies and money making methods.">
+<meta name="description" content="Old School RuneScape guides, PvM, account builds, progression and money-making methods from Scaphex.">
+      <meta property="og:title" content="Scaphex | Old School RuneScape Guides & Progress">
+<meta property="og:description" content="Old School RuneScape guides, PvM, builds and progression from Scaphex.">
 <meta property="og:image" content="https://scaphex.com/preview.png">
 <meta property="og:url" content="https://scaphex.com">
 <meta property="og:type" content="website">
       <meta name="robots" content="index, follow">
       <link rel="canonical" href="https://scaphex.com">
       <meta name="author" content="Scaphex">
-      <meta name="theme-color" content="#ff6a00">
+      <meta name="theme-color" content="#0b0811">
       <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Scaphex - RuneScape 3 AFK Guides">
 <meta name="twitter:description" content="AFK RuneScape 3 guides, boss strategies and money making methods.">
@@ -247,195 +247,141 @@
                 display: none;
             }
         }
-    </style>
+    
+/* SCAPHEX FANTASY ART DIRECTION */
+:root{--sc-purple:#c45cff;--sc-purple-bright:#e2a0ff;--sc-purple-deep:#5d168f;--sc-ink:#08070d;--sc-panel:rgba(12,9,18,.88);--sc-silver:#d9d3e2}
+html{scroll-padding-top:90px;background:var(--sc-ink)}
+body{background:var(--sc-ink)!important;color:#f5efff}
+.text-rs-gold,.text-rs-gold-dark{color:var(--sc-purple-bright)!important}
+.bg-rs-gold{background:var(--sc-purple)!important}
+.border-rs-gold,.border-rs-gold\/20,.border-rs-gold\/30{border-color:rgba(196,92,255,.38)!important}
+.gradient-text{background:linear-gradient(115deg,#fff 0%,#dca1ff 35%,#9b39e8 70%,#f5dfff 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.text-glow{text-shadow:0 0 18px rgba(190,75,255,.55)}
+.hero-gradient{background:linear-gradient(135deg,rgba(5,4,10,.88),rgba(18,8,29,.55),rgba(5,4,10,.9))}
+#navbar.scaphex-nav{height:auto;background:linear-gradient(180deg,rgba(7,6,12,.97),rgba(8,6,14,.88));backdrop-filter:blur(16px);border-bottom:1px solid rgba(205,130,255,.38);box-shadow:0 8px 35px rgba(0,0,0,.5)}
+.scaphex-nav-inner{max-width:1540px;margin:auto;min-height:76px;padding:0 30px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand-mark{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.brand-s{font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:54px;line-height:1;color:#dca0ff;text-shadow:0 0 10px #a32df0,0 0 26px #7c20bd}
+.brand-word{font-family:Georgia,serif;font-size:27px;letter-spacing:.28em;color:#f7efff;text-shadow:0 2px 12px #000}
+.desktop-nav{display:flex;align-items:center;gap:clamp(18px,3vw,48px);height:76px}
+.desktop-nav a{position:relative;color:#e5deeb;text-decoration:none;font-size:16px;padding:28px 0 24px;transition:.2s}
+.desktop-nav a:hover,.desktop-nav a.active{color:#fff;text-shadow:0 0 12px #c45cff}
+.desktop-nav a.active:after,.desktop-nav a:hover:after{content:"";position:absolute;left:0;right:0;bottom:13px;height:3px;background:#cf73ff;box-shadow:0 0 14px #c45cff}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.social-icon{color:#eee5f7;display:grid;place-items:center;width:22px;height:28px;transition:.2s}
+.social-icon svg{width:19px;height:19px}
+.social-icon:hover{color:#d98aff;filter:drop-shadow(0 0 7px #b34bff)}
+.subscribe-button{display:flex;align-items:center;gap:9px;padding:12px 18px;border:1px solid #ce78ff;border-radius:10px;color:#fff;text-decoration:none;background:rgba(27,10,39,.75);box-shadow:0 0 16px rgba(177,62,255,.3),inset 0 0 12px rgba(181,91,255,.12);font-weight:700}
+.subscribe-button svg{width:17px;height:17px;color:#e3b6ff}
+.mobile-menu-toggle,.mobile-menu{display:none}
+.scaphex-hero{position:relative;isolation:isolate;min-height:900px;padding:135px 28px 42px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#08070d}
+.hero-art{position:absolute;inset:0;z-index:-3;background-image:url('/assets/scaphex-world.svg');background-size:cover;background-position:center 43%;transform:scale(1.015)}
+.hero-vignette{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(4,3,9,.1) 0%,rgba(4,3,9,.18) 50%,rgba(4,3,9,.84) 100%),radial-gradient(ellipse at 50% 42%,rgba(17,5,27,.08),rgba(4,3,9,.4) 72%)}
+.hero-content{width:min(100%,850px);margin:auto;text-align:center;position:relative;z-index:1;padding-bottom:105px}
+.hero-emblem{width:188px;height:188px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(202,112,255,.8);background:radial-gradient(circle at 50% 42%,rgba(100,30,142,.75),rgba(10,7,17,.93) 70%);box-shadow:0 0 20px rgba(177,63,255,.5),inset 0 0 34px rgba(177,63,255,.28)}
+.hero-emblem span{font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:150px;line-height:.9;color:#f5eaff;text-shadow:0 0 16px #c35bff,0 7px 0 #321344}
+.hero-content h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(58px,8vw,112px);font-weight:500;letter-spacing:.17em;line-height:1;margin:8px 0 20px;color:#f5efff;text-shadow:0 5px 22px #000,0 0 25px rgba(193,91,255,.35)}
+.hero-pillars{display:flex;justify-content:center;align-items:center;gap:20px;color:#f3eafa;font-size:14px;letter-spacing:.28em;font-weight:600}
+.hero-pillars i{width:2px;height:22px;background:#be58f5;box-shadow:0 0 10px #be58f5}
+.hero-tagline{font-family:Georgia,serif;font-style:italic;font-size:clamp(20px,2.2vw,29px);color:#eee1f6;margin:25px 0 30px;text-shadow:0 3px 12px #000}
+.hero-ctas{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.hero-button{min-width:255px;display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:17px 26px;border-radius:11px;text-decoration:none;color:#fff;font-size:17px;font-weight:700;letter-spacing:.02em;border:1px solid #d58bff;box-shadow:0 0 20px rgba(174,58,255,.4),inset 0 0 14px rgba(198,100,255,.15);transition:transform .2s,box-shadow .2s}
+.hero-button:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(190,75,255,.7)}
+.hero-button svg{width:22px;height:22px}
+.hero-button.primary{background:linear-gradient(110deg,rgba(111,30,158,.96),rgba(52,12,79,.94))}
+.hero-button.secondary{background:rgba(8,6,14,.88)}
+.hero-feature-grid{width:min(100%,1480px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative;z-index:2}
+.hero-feature{min-height:126px;padding:18px 20px;display:flex;align-items:center;gap:18px;text-decoration:none;color:#fff;background:linear-gradient(135deg,rgba(12,9,18,.94),rgba(22,13,31,.94));border:1px solid rgba(187,133,211,.48);border-radius:9px;box-shadow:0 12px 28px rgba(0,0,0,.6),inset 0 0 20px rgba(170,83,220,.08);transition:.25s;position:relative}
+.hero-feature:before{content:"";position:absolute;left:12px;right:12px;bottom:-3px;height:3px;background:linear-gradient(90deg,transparent,#c45cff,transparent);filter:blur(4px)}
+.hero-feature:hover{transform:translateY(-6px);border-color:#d48aff;box-shadow:0 12px 35px rgba(132,36,190,.35)}
+.feature-icon{color:#cb72ff;flex:0 0 54px;display:grid;place-items:center}
+.feature-icon svg{width:48px;height:48px;stroke-width:1.6;filter:drop-shadow(0 0 7px rgba(192,91,255,.65))}
+.feature-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.feature-copy strong{font-family:Georgia,serif;font-size:21px;color:#fff}
+.feature-copy small{font-size:13px;line-height:1.45;color:#c9c0d0}
+.feature-arrow{width:18px;height:18px;margin-left:auto;flex:0 0 auto;color:#d6a0f6}
+#videos,#about,#stats{background-color:#0b0811!important}
+#videos{background-image:linear-gradient(180deg,#0a0810,#100a18 50%,#08070d)}
+#about{background-image:linear-gradient(135deg,rgba(13,8,20,.98),rgba(22,11,32,.96))}
+#stats{background-image:linear-gradient(180deg,#08070d,#130a1c)}
+.stat-card{background:linear-gradient(145deg,rgba(25,15,35,.95),rgba(8,7,13,.98))!important;border-color:rgba(188,104,244,.28)!important}
+.card-hover:hover{box-shadow:0 20px 40px -5px rgba(177,74,255,.24),0 10px 20px -5px rgba(177,74,255,.18)}
+.rs-button{background:linear-gradient(135deg,#c65cff,#6816a0)!important;color:#fff!important}
+@media(max-width:1100px){.nav-actions{gap:10px}.desktop-nav{gap:20px}.hero-feature-grid{gap:12px}.hero-feature{padding:15px 12px;gap:11px}.feature-icon{flex-basis:42px}.feature-icon svg{width:40px;height:40px}.feature-copy strong{font-size:18px}.feature-copy small{font-size:12px}}
+@media(max-width:760px){
+ .scaphex-nav-inner{min-height:70px;padding:0 18px}.brand-s{font-size:48px}.brand-word{font-size:20px;letter-spacing:.2em}
+ .desktop-nav,.nav-actions{display:none}.mobile-menu-toggle{display:grid;place-items:center;width:48px;height:46px;border:1px solid rgba(208,145,241,.65);border-radius:10px;background:rgba(20,11,29,.85);color:#f5eaff}.mobile-menu-toggle svg{width:21px;height:21px}
+ .mobile-menu{position:absolute;top:100%;left:0;right:0;padding:12px 20px 20px;background:rgba(8,6,13,.98);border-top:1px solid rgba(195,92,255,.3);box-shadow:0 18px 30px #000;display:flex;flex-direction:column;gap:0}
+ .mobile-menu.hidden{display:none}.mobile-menu a{padding:14px 4px;color:#eee2f8;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08)}
+ .scaphex-hero{min-height:940px;padding:112px 18px 28px;justify-content:flex-start}
+ .hero-art{background-position:56% center}
+ .hero-vignette{background:linear-gradient(180deg,rgba(5,4,10,.22),rgba(5,4,10,.34) 48%,rgba(5,4,10,.95) 100%),linear-gradient(90deg,rgba(5,4,10,.42),transparent 50%,rgba(5,4,10,.35))}
+ .hero-content{padding:65px 0 38px}
+ .hero-emblem{width:142px;height:142px;margin-bottom:12px}.hero-emblem span{font-size:112px}
+ .hero-content h1{font-size:clamp(47px,13vw,72px);letter-spacing:.12em;margin:12px 0 18px}
+ .hero-pillars{gap:9px;font-size:10px;letter-spacing:.19em}.hero-pillars i{height:17px}
+ .hero-tagline{font-size:20px;margin:22px 0 28px}
+ .hero-ctas{flex-direction:column;gap:13px}.hero-button{width:min(100%,420px);min-width:0;padding:16px 18px;font-size:16px}
+ .hero-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:auto}
+ .hero-feature{min-height:104px;padding:12px 10px;gap:9px}.feature-icon{flex-basis:32px}.feature-icon svg{width:31px;height:31px}
+ .feature-copy strong{font-size:16px}.feature-copy small{font-size:10px;line-height:1.35}.feature-arrow{width:14px}
+}
+@media(max-width:390px){.hero-feature{padding:10px 8px;gap:7px}.feature-icon{flex-basis:27px}.feature-icon svg{width:26px;height:26px}.feature-copy strong{font-size:14px}.feature-copy small{font-size:9px}.hero-pillars{gap:7px;font-size:9px}}
+
+</style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-rs-dark/80 backdrop-blur-md border-b border-rs-gold/20" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <div class="relative">
-                        <img src="https://i.imgur.com/ZYvzj90.png" alt="Scaphex Logo" class="w-10 h-10 object-contain group-hover:rotate-12 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]">
-                    </div>
-                    <span class="font-cinzel text-2xl font-bold gradient-text tracking-wider">SCAPHEX</span>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link relative py-2 text-gray-300 hover:text-rs-gold transition-colors duration-300 group">
-                        Home
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rs-gold transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#videos" class="nav-link relative py-2 text-gray-300 hover:text-rs-gold transition-colors duration-300 group">
-                        Videos
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rs-gold transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#about" class="nav-link relative py-2 text-gray-300 hover:text-rs-gold transition-colors duration-300 group">
-                        About
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rs-gold transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="#stats" class="nav-link relative py-2 text-gray-300 hover:text-rs-gold transition-colors duration-300 group">
-                        Stats
-                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-rs-gold transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    
-                    <!-- Socials Dropdown -->
-                    <div class="relative group">
-                        <button class="nav-link relative py-2 text-gray-300 hover:text-rs-gold transition-colors duration-300 flex items-center space-x-1 focus:outline-none">
-                            <span>Socials</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>
-                        </button>
-                        
-                        <!-- Dropdown Menu -->
-                        <div class="absolute top-full left-0 mt-2 w-48 bg-rs-surface border border-rs-gold/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 overflow-hidden z-50">
-                            <div class="py-2">
-                                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-red-600/20 transition-all duration-200">
-                                    <i data-lucide="youtube" class="w-5 h-5 text-red-500"></i>
-                                    <span class="font-medium">YouTube</span>
-                                </a>
-                                <a href="https://x.com/Scaphex_" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-blue-500/20 transition-all duration-200">
-                                    <i data-lucide="twitter" class="w-5 h-5 text-blue-400"></i>
-                                    <span class="font-medium">Twitter / X</span>
-                                </a>
-                                <a href="YOUR_DISCORD_INVITE_URL_HERE" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-indigo-600/20 transition-all duration-200">
-                                    <i data-lucide="message-circle" class="w-5 h-5 text-indigo-400"></i>
-                                    <span class="font-medium">Discord</span>
-                                </a>
-                                <a href="https://www.twitch.tv/scaphexx" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-purple-600/20 transition-all duration-200">
-                                    <i data-lucide="twitch" class="w-5 h-5 text-purple-400"></i>
-                                    <span class="font-medium">Twitch</span>
-                                </a>
-                                <a href="https://www.tiktok.com/@john_kossak" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-pink-600/20 transition-all duration-200">
-                                    <svg class="w-5 h-5 text-pink-400" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-                                    <span class="font-medium">TikTok</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full flex items-center space-x-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/30">
-                        <i data-lucide="youtube" class="w-5 h-5"></i>
-                        <span class="font-semibold">Subscribe</span>
-                    </a>
-                </div>
+    <nav class="scaphex-nav fixed w-full z-50" id="navbar">
+  <div class="scaphex-nav-inner">
+    <a class="brand-mark" href="#home" aria-label="Scaphex home"><span class="brand-s">S</span><span class="brand-word">SCAPHEX</span></a>
+    <div class="desktop-nav">
+      <a class="active" href="#home">Home</a>
+      <a href="#videos">Guides</a>
+      <a href="#videos">Videos</a>
+      <a href="#stats">Resources</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="nav-actions">
+      <a class="social-icon" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+      <a class="social-icon" href="https://www.twitch.tv/scaphexx" target="_blank" rel="noopener noreferrer" aria-label="Twitch"><i data-lucide="twitch"></i></a>
+      <a class="social-icon" href="https://www.tiktok.com/@john_kossak" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i data-lucide="music-2"></i></a>
+      <a class="social-icon" href="https://www.instagram.com/scaphex_rs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      <a class="social-icon" href="https://x.com/Scaphex_" target="_blank" rel="noopener noreferrer" aria-label="X"><i data-lucide="twitter"></i></a>
+      <a class="subscribe-button" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer"><i data-lucide="bell"></i><span>Subscribe</span></a>
+    </div>
+    <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+  </div>
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <a href="#home">Home</a><a href="#videos">Guides & Videos</a><a href="#stats">Resources</a><a href="#about">About</a>
+    <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer">Subscribe on YouTube</a>
+  </div>
+</nav>
 
-                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-rs-gold transition-colors p-2">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
+<!-- Scaphex fantasy hero -->
+<section id="home" class="scaphex-hero">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-emblem"><span>S</span></div>
+    <h1>SCAPHEX</h1>
+    <div class="hero-pillars"><span>OSRS</span><i></i><span>GUIDES</span><i></i><span>BUILDS</span><i></i><span>PROGRESS</span></div>
+    <p class="hero-tagline">RuneScape content with a darker edge.</p>
+    <div class="hero-ctas">
+      <a class="hero-button primary" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer"><i data-lucide="play"></i>Watch on YouTube</a>
+      <a class="hero-button secondary" href="#videos"><i data-lucide="book-open"></i>Browse Guides</a>
+    </div>
+  </div>
+  <div class="hero-feature-grid">
+    <a class="hero-feature" href="#videos"><span class="feature-icon"><i data-lucide="swords"></i></span><span class="feature-copy"><strong>Guides</strong><small>AFK methods, training, and money makers.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+    <a class="hero-feature" href="#stats"><span class="feature-icon"><i data-lucide="chart-no-axes-column-increasing"></i></span><span class="feature-copy"><strong>Progress</strong><small>Account builds, goals, and long-term grinds.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+    <a class="hero-feature" href="#stats"><span class="feature-icon"><i data-lucide="book-open"></i></span><span class="feature-copy"><strong>Resources</strong><small>Tools, calculators, and helpful links.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+    <a class="hero-feature" href="#about"><span class="feature-icon"><i data-lucide="user-round"></i></span><span class="feature-copy"><strong>About Scaphex</strong><small>The creator, the grind, and the mission.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+  </div>
+</section>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-rs-surface border-t border-rs-gold/20 absolute w-full shadow-2xl">
-            <div class="px-4 py-6 space-y-4">
-                <a href="#home" class="block py-3 text-gray-300 hover:text-rs-gold hover:pl-2 transition-all duration-300 border-b border-gray-800">Home</a>
-                <a href="#videos" class="block py-3 text-gray-300 hover:text-rs-gold hover:pl-2 transition-all duration-300 border-b border-gray-800">Videos</a>
-                <a href="#about" class="block py-3 text-gray-300 hover:text-rs-gold hover:pl-2 transition-all duration-300 border-b border-gray-800">About</a>
-                <a href="#stats" class="block py-3 text-gray-300 hover:text-rs-gold hover:pl-2 transition-all duration-300 border-b border-gray-800">Stats</a>
-                
-                <!-- Mobile Socials Section -->
-                <div class="pt-2">
-                    <p class="text-rs-gold text-sm font-semibold uppercase tracking-wider mb-3 px-1">Socials</p>
-                    <div class="grid grid-cols-2 gap-3">
-                        <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 py-2 px-3 rounded-lg bg-red-600/20 text-red-400 hover:bg-red-600 hover:text-white transition-all duration-300">
-                            <i data-lucide="youtube" class="w-5 h-5"></i>
-                            <span class="text-sm font-medium">YouTube</span>
-                        </a>
-                        <a href="https://x.com/Scaphex_" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 py-2 px-3 rounded-lg bg-blue-500/20 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
-                            <span class="text-sm font-medium">Twitter</span>
-                        </a>
-                        <a href="YOUR_DISCORD_INVITE_URL_HERE" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 py-2 px-3 rounded-lg bg-indigo-600/20 text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all duration-300">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            <span class="text-sm font-medium">Discord</span>
-                        </a>
-                        <a href="https://www.twitch.tv/scaphexx" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 py-2 px-3 rounded-lg bg-purple-600/20 text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300">
-                            <i data-lucide="twitch" class="w-5 h-5"></i>
-                            <span class="text-sm font-medium">Twitch</span>
-                        </a>
-                        <a href="https://www.tiktok.com/@john_kossak" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 py-2 px-3 rounded-lg bg-pink-600/20 text-pink-400 hover:bg-pink-600 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-                            <span class="text-sm font-medium">TikTok</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 bg-red-600 text-white py-3 rounded-lg mt-4 hover:bg-red-700 transition-colors">
-                    <i data-lucide="youtube" class="w-5 h-5"></i>
-                    <span>Subscribe</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[url('https://i.imgur.com/UlsHJo4.png')] bg-cover bg-center opacity-40"></div>
-            <div class="absolute inset-0 hero-gradient"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-rs-dark"></div>
-        </div>
-
-        <div class="absolute inset-0 z-0 opacity-30" id="particles"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="animate-float mb-8">
-                <img src="https://i.imgur.com/ZYvzj90.png" alt="Scaphex Logo" class="w-48 h-48 md:w-56 md:h-56 object-contain drop-shadow-2xl filter hover:scale-105 transition-transform duration-500 cursor-pointer animate-pulse-slow mx-auto">
-            </div>
-            
-            <h1 class="font-cinzel text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-glow">
-                Welcome to <span class="gradient-text italic">Scaphex</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Epic RuneScape adventures, money-making guides, PvM content, and progression series. <span class="text-rs-gold font-semibold">Join the journey!</span>
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 shadow-lg shadow-red-600/30 group">
-                    <i data-lucide="youtube" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
-                    <span>Watch on YouTube</span>
-                </a>
-                <a href="#videos" class="w-full sm:w-auto bg-transparent border-2 border-rs-gold text-rs-gold hover:bg-rs-gold hover:text-rs-dark px-8 py-4 rounded-full font-semibold flex items-center justify-center space-x-3 transition-all duration-300 group">
-                    <i data-lucide="play-circle" class="w-6 h-6 group-hover:scale-110 transition-transform"></i>
-                    <span>Latest Videos</span>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div class="stat-card rounded-2xl p-6 border border-rs-gold/20 hover:border-rs-gold/40 transition-colors duration-300 hover:scale-105 transform">
-                    <div class="flex items-center justify-center space-x-3 mb-2">
-                        <i data-lucide="users" class="w-6 h-6 text-rs-gold"></i>
-                        <span class="text-3xl font-bold text-white" id="subscriber-count">--</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Subscribers</p>
-                </div>
-                <div class="stat-card rounded-2xl p-6 border border-rs-gold/20 hover:border-rs-gold/40 transition-colors duration-300 hover:scale-105 transform">
-                    <div class="flex items-center justify-center space-x-3 mb-2">
-                        <i data-lucide="video" class="w-6 h-6 text-rs-gold"></i>
-                        <span class="text-3xl font-bold text-white" id="video-count">--</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Videos</p>
-                </div>
-                <div class="stat-card rounded-2xl p-6 border border-rs-gold/20 hover:border-rs-gold/40 transition-colors duration-300 hover:scale-105 transform">
-                    <div class="flex items-center justify-center space-x-3 mb-2">
-                        <i data-lucide="eye" class="w-6 h-6 text-rs-gold"></i>
-                        <span class="text-3xl font-bold text-white" id="view-count">--</span>
-                    </div>
-                    <p class="text-gray-400 text-sm uppercase tracking-wider">Total Views</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onclick="document.getElementById('videos').scrollIntoView({behavior: 'smooth'})">
-            <div class="w-10 h-10 rounded-full border-2 border-rs-gold flex items-center justify-center hover:bg-rs-gold/10 transition-colors">
-                <i data-lucide="chevron-down" class="w-5 h-5 text-rs-gold"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Videos Section -->
+<!-- Featured Videos Section -->
     <section id="videos" class="py-24 bg-rs-dark relative">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-rs-gold/50 to-transparent"></div>
         
