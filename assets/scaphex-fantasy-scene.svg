@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 950" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#080711"/><stop offset=".45" stop-color="#1c1029"/><stop offset="1" stop-color="#08070d"/></linearGradient>
+ <radialGradient id="moon"><stop stop-color="#f2d9ff"/><stop offset=".42" stop-color="#b85af0"/><stop offset="1" stop-color="#64218d"/></radialGradient>
+ <linearGradient id="stone" x2="0" y2="1"><stop stop-color="#393244"/><stop offset="1" stop-color="#09080f"/></linearGradient>
+ <linearGradient id="crystal" x2="1"><stop stop-color="#4b147d"/><stop offset=".45" stop-color="#e4a4ff"/><stop offset="1" stop-color="#5a1a9c"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<rect width="1800" height="950" fill="url(#sky)"/>
+<circle cx="1450" cy="205" r="175" fill="#a94be0" opacity=".45" filter="url(#glow)"/><circle cx="1450" cy="205" r="130" fill="url(#moon)"/>
+<path d="M0 270 Q190 120 360 245T690 220T1020 235T1350 180T1800 260V600H0Z" fill="#171321" opacity=".9"/>
+<path d="M0 320 Q230 180 420 300T780 265T1110 300T1450 245T1800 320" fill="none" stroke="#4e3c61" stroke-width="70" opacity=".23" filter="url(#soft)"/>
+<!-- distant gothic castle -->
+<g fill="#09080f" stroke="#44324f" stroke-width="5">
+<path d="M1120 565V390h65V310h40v-65h30v65h42v-95h34v95h45v-65h30v65h45v250Z"/>
+<path d="M1100 390l85-75 85 75M1250 310l70-90 70 90M1370 340l65-80 65 80"/>
+<path d="M1170 440h40v85h-40zM1270 400h38v90h-38zM1380 435h40v85h-40z" fill="#a53de0" opacity=".8" stroke="none"/>
+</g>
+<g fill="#c35aff" opacity=".8" filter="url(#glow)"><ellipse cx="1300" cy="450" rx="190" ry="55"/></g>
+<!-- left ruins and banner -->
+<g fill="url(#stone)" stroke="#4c4059" stroke-width="7">
+<path d="M0 650V245h75v-85h65v85h62v-60h58v60h48v405Z"/>
+<path d="M250 650V390h55v-75h48v75h58v260Z"/>
+<path d="M20 270h55v110H20zM125 255h48v120h-48zM290 410h40v90h-40z" fill="#08070d"/>
+</g>
+<path d="M165 275h175l-18 265-70 55-70-55Z" fill="#3e145e" stroke="#a64ce0" stroke-width="5"/><text x="252" y="445" fill="#d99bff" font-family="serif" font-size="125" text-anchor="middle">S</text>
+<!-- jagged horizon and pine forest -->
+<path d="M0 650L140 560 250 625 390 520 520 620 690 545 820 625 990 520 1120 615 1290 510 1430 610 1600 500 1800 625V950H0Z" fill="#100d18"/>
+<g fill="#08070d"><path d="M800 650l-65 140h38l-65 130h185l-65-130h38zM960 630l-55 130h34l-54 115h150l-54-115h34zM1070 650l-45 110h30l-45 105h130l-45-105h30zM520 670l-60 135h34l-55 110h160l-55-110h34z"/></g>
+<!-- foreground rocks -->
+<path d="M0 770L150 690 280 780 410 715 570 830 740 770 880 950H0ZM1800 760L1650 670 1510 780 1390 710 1250 840 1100 760 980 950H1800Z" fill="#08070d" stroke="#33263e" stroke-width="8"/>
+<!-- purple crystal clusters -->
+<g stroke="#b95aff" stroke-width="5" fill="url(#crystal)">
+<path d="M55 820l60-185 55 185-55 85zM130 860l52-130 40 130-42 55zM250 875l42-105 42 105-42 55zM1540 870l55-175 50 175-50 70zM1650 850l48-120 40 120-40 65z"/>
+</g>
+<g fill="#b95aff" opacity=".7" filter="url(#glow)"><ellipse cx="180" cy="850" rx="210" ry="50"/><ellipse cx="1630" cy="855" rx="190" ry="45"/></g>
+<!-- hooded warrior silhouette -->
+<g transform="translate(1480 360)" fill="#08070e" stroke="#51405f" stroke-width="8">
+<path d="M70 95Q35 15 110 0Q205 0 212 100L245 170 295 500 30 500 60 190Z"/>
+<path d="M80 100Q-15 150-5 280L-80 500H75L135 245Z"/>
+<path d="M190 115Q300 160 325 300L390 500H250L190 240Z"/>
+<path d="M45 160l-70 80 75 28 75-80M205 155l95 60-55 60-80-75" fill="#21152d"/>
+<path d="M105 45q65-40 100 18l-15 70-70 20-35-55z" fill="#08070e"/>
+<path d="M235 145l90-190 24 9-63 220" fill="#17101e" stroke="#8e5db2" stroke-width="10"/>
+</g>
+<path d="M1590 520l90 100-20 180-95-95Z" fill="#41145f" opacity=".9"/><text x="1630" y="680" fill="#d078ff" font-family="serif" font-size="105" text-anchor="middle">S</text>
+<!-- atmospheric mist -->
+<path d="M0 690Q350 610 650 710T1200 700T1800 675" fill="none" stroke="#a35bc7" stroke-width="36" opacity=".12" filter="url(#soft)"/>
+</svg>
