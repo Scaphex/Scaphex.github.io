@@ -328,6 +328,12 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 @media(max-width:390px){.hero-feature{padding:10px 8px;gap:7px}.feature-icon{flex-basis:27px}.feature-icon svg{width:26px;height:26px}.feature-copy strong{font-size:14px}.feature-copy small{font-size:9px}.hero-pillars{gap:7px;font-size:9px}}
 
+
+/* Scaphex emblem logo replacement */
+.brand-emblem{width:58px;height:58px;object-fit:contain;display:block;filter:drop-shadow(0 0 12px rgba(180,75,255,.65))}
+.hero-emblem{width:210px;height:210px;margin:0 auto 12px;border:0;background:none;box-shadow:none;border-radius:0;display:block}
+.hero-emblem img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 0 18px rgba(175,55,255,.45))}
+@media(max-width:760px){.brand-emblem{width:52px;height:52px}.hero-emblem{width:168px;height:168px}}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -335,7 +341,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
     <!-- Navigation -->
     <nav class="scaphex-nav fixed w-full z-50" id="navbar">
   <div class="scaphex-nav-inner">
-    <a class="brand-mark" href="#home" aria-label="Scaphex home"><span class="brand-s">S</span><span class="brand-word">SCAPHEX</span></a>
+    <a class="brand-mark" href="#home" aria-label="Scaphex home"><img class="brand-emblem" src="/assets/scaphex-emblem.svg" alt="Scaphex emblem"><span class="brand-word">SCAPHEX</span></a>
     <div class="desktop-nav">
       <a class="active" href="#home">Home</a>
       <a href="#videos">Guides</a>
@@ -364,7 +370,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-emblem"><span>S</span></div>
+    <div class="hero-emblem"><img src="/assets/scaphex-emblem.svg" alt="Scaphex purple and silver emblem"></div>
     <h1>SCAPHEX</h1>
     <div class="hero-pillars"><span>OSRS</span><i></i><span>GUIDES</span><i></i><span>BUILDS</span><i></i><span>PROGRESS</span></div>
     <p class="hero-tagline">RuneScape content with a darker edge.</p>
@@ -625,7 +631,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <img src="https://i.imgur.com/ZYvzj90.png" alt="Scaphex Logo" class="w-6 h-6 object-contain">
+                        <img src="/assets/scaphex-emblem.svg" alt="Scaphex emblem" class="w-6 h-6 object-contain">
                         <span class="font-cinzel text-xl font-bold gradient-text">SCAPHEX</span>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
