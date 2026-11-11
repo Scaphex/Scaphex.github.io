@@ -329,11 +329,31 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 @media(max-width:390px){.hero-feature{padding:10px 8px;gap:7px}.feature-icon{flex-basis:27px}.feature-icon svg{width:26px;height:26px}.feature-copy strong{font-size:14px}.feature-copy small{font-size:9px}.hero-pillars{gap:7px;font-size:9px}}
 
 
-/* Scaphex emblem logo replacement */
-.brand-emblem{width:58px;height:58px;object-fit:contain;display:block;filter:drop-shadow(0 0 12px rgba(180,75,255,.65))}
-.hero-emblem{width:210px;height:210px;margin:0 auto 12px;border:0;background:none;box-shadow:none;border-radius:0;display:block}
-.hero-emblem img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 0 18px rgba(175,55,255,.45))}
-@media(max-width:760px){.brand-emblem{width:52px;height:52px}.hero-emblem{width:168px;height:168px}}
+/* Scaphex emblem: circular image treatment, preserving the supplied artwork */
+.brand-emblem{
+    width:58px;height:58px;aspect-ratio:1;object-fit:cover;object-position:center;
+    display:block;border-radius:50%;overflow:hidden;
+    border:1px solid rgba(204,126,255,.72);
+    background:#090510;
+    box-shadow:0 0 14px rgba(180,75,255,.58),0 0 28px rgba(126,35,205,.24);
+}
+.hero-emblem{
+    width:210px;height:210px;aspect-ratio:1;margin:0 auto 12px;
+    border:2px solid rgba(204,126,255,.82);border-radius:50%;
+    overflow:hidden;display:block;position:relative;
+    background:#090510;
+    box-shadow:0 0 24px rgba(175,55,255,.52),0 0 58px rgba(126,35,205,.2),
+       inset 0 0 24px rgba(175,55,255,.18);
+}
+.hero-emblem img{
+    width:100%;height:100%;object-fit:cover;object-position:center;
+    display:block;border-radius:50%;
+    filter:drop-shadow(0 0 12px rgba(175,55,255,.38));
+}
+@media(max-width:760px){
+    .brand-emblem{width:52px;height:52px}
+    .hero-emblem{width:168px;height:168px}
+}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
