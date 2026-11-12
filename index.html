@@ -732,22 +732,27 @@ body{background:var(--sc-ink)!important;color:#f5efff}
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            const isExpanded = !mobileMenu.classList.contains('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(isExpanded));
+            mobileMenuBtn.setAttribute('aria-label', isExpanded ? 'Close menu' : 'Open menu');
             const icon = mobileMenuBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.setAttribute('data-lucide', 'menu');
-            } else {
-                icon.setAttribute('data-lucide', 'x');
+            if (icon) {
+                icon.setAttribute('data-lucide', isExpanded ? 'x' : 'menu');
+                lucide.createIcons();
             }
-            lucide.createIcons();
         });
 
         // Close mobile menu when link clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
                 const icon = mobileMenuBtn.querySelector('i');
-                icon.setAttribute('data-lucide', 'menu');
-                lucide.createIcons();
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
             });
         });
 
@@ -1008,6 +1013,11 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 skeleton.style.display = 'none';
             }
             
+            if (!videoGrid) {
+                console.warn('Video grid element was not found.');
+                return;
+            }
+
             if (!videos || videos.length === 0) {
                 videoGrid.innerHTML = '<div class="col-span-full text-center text-gray-400 py-12">No videos found</div>';
                 return;
@@ -1061,6 +1071,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
+            if (!nav) return;
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-lg', 'bg-rs-dark/95');
                 nav.classList.remove('bg-rs-dark/80');
