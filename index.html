@@ -271,7 +271,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .subscribe-button svg{width:17px;height:17px;color:#e3b6ff}
 .mobile-menu-toggle,.mobile-menu{display:none}
 .scaphex-hero{position:relative;isolation:isolate;min-height:900px;padding:135px 28px 42px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#08070d}
-.hero-art{position:absolute;inset:0;z-index:-3;background-image:url('/assets/scaphex-intro-frame.webp');background-size:cover;background-position:center 43%;transform:scale(1.015)}
+.hero-art{position:absolute;inset:0;z-index:-3;background-image:url('/assets/scaphex-hero-desktop.svg');background-size:cover;background-position:center 43%;transform:scale(1.015)}
 .hero-vignette{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(4,3,9,.1) 0%,rgba(4,3,9,.18) 50%,rgba(4,3,9,.84) 100%),radial-gradient(ellipse at 50% 42%,rgba(17,5,27,.08),rgba(4,3,9,.4) 72%)}
 .hero-content{width:min(100%,850px);margin:auto;text-align:center;position:relative;z-index:1;padding-bottom:105px}
 .hero-emblem{width:188px;height:188px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(202,112,255,.8);background:radial-gradient(circle at 50% 42%,rgba(100,30,142,.75),rgba(10,7,17,.93) 70%);box-shadow:0 0 20px rgba(177,63,255,.5),inset 0 0 34px rgba(177,63,255,.28)}
@@ -380,6 +380,14 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-feature-grid{display:none}
 .hero-art{background-position:center 43%;}
 @media(max-width:760px){.scaphex-hero{min-height:calc(100svh - 70px);padding:96px 18px 36px}.hero-content{padding:34px 0 18px}.hero-emblem{width:148px;height:148px}.hero-content h1{font-size:clamp(48px,13vw,76px)}.hero-pillars{gap:8px;letter-spacing:.11em}.hero-tagline{margin:20px 0 26px}.hero-button{min-width:0;width:min(100%,390px)}}
+
+/* Responsive hero artwork: dedicated framing for mobile, desktop and TV */
+@media(max-width:760px){
+ .hero-art{background-image:url('/assets/scaphex-hero-mobile.svg');background-size:cover;background-position:center center;transform:none}
+}
+@media(min-width:2200px){
+ .hero-art{background-image:url('/assets/scaphex-hero-tv.svg');background-size:cover;background-position:center center;transform:none}
+}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
