@@ -758,7 +758,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 
         // YouTube API Configuration
         // IMPORTANT: Replace with your actual YouTube Data API v3 key
-        const API_KEY = 'AIzaSyCB8VqX9nPHXYGCjNb-jc-rPBtt4e0MjqQ';
+        const API_KEY = ''; // Keep API credentials out of public client-side code.
         const CHANNEL_HANDLE = 'scaphex';
         
         // Check if API key is configured (must be real YouTube API key format)
@@ -768,70 +768,6 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                              API_KEY.startsWith('AIza') && 
                              API_KEY.length > 30;
         
-        // Mock data fallback
-        const mockStats = {
-            subscriberCount: 15420,
-            videoCount: 156,
-            viewCount: 2500000
-        };
-
-        const mockVideos = [
-            {
-                id: '1',
-                title: 'Road to Max Cape: Week 1 Progress',
-                thumbnail: 'https://static.photos/gaming/640x360/101',
-                views: '12,450',
-                date: '2 days ago',
-                duration: '15:30',
-                videoId: 'dQw4w9WgXcQ'
-            },
-            {
-                id: '2',
-                title: 'Ultimate Money Making Guide 2024',
-                thumbnail: 'https://static.photos/gold/640x360/202',
-                views: '25,230',
-                date: '5 days ago',
-                duration: '22:45',
-                videoId: 'dQw4w9WgXcQ'
-            },
-            {
-                id: '3',
-                title: 'First Time at Corporeal Beast',
-                thumbnail: 'https://static.photos/red/640x360/303',
-                views: '18,100',
-                date: '1 week ago',
-                duration: '18:20',
-                videoId: 'dQw4w9WgXcQ'
-            },
-            {
-                id: '4',
-                title: 'Efficient Quest Order for New Accounts',
-                thumbnail: 'https://static.photos/blue/640x360/404',
-                views: '31,500',
-                date: '2 weeks ago',
-                duration: '28:15',
-                videoId: 'dQw4w9WgXcQ'
-            },
-            {
-                id: '5',
-                title: 'Ironman Progress: Getting My First Whip',
-                thumbnail: 'https://static.photos/green/640x360/505',
-                views: '22,800',
-                date: '2 weeks ago',
-                duration: '20:00',
-                videoId: 'dQw4w9WgXcQ'
-            },
-            {
-                id: '6',
-                title: 'PvP Wilderness Adventures #15',
-                thumbnail: 'https://static.photos/dark/640x360/606',
-                views: '15,600',
-                date: '3 weeks ago',
-                duration: '16:45',
-                videoId: 'dQw4w9WgXcQ'
-            }
-        ];
-
         // Number formatting
         function formatNumber(num) {
             if (num >= 1000000) {
@@ -896,7 +832,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                         if (uploadsPlaylist) {
                             await fetchVideos(uploadsPlaylist);
                         } else {
-                            renderVideos(mockVideos);
+                            renderVideos([]);
                         }
                         return;
                     } else {
@@ -918,13 +854,8 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 if (vidEl) vidEl.textContent = '--';
                 if (viewEl) viewEl.textContent = '--';
                 
-                // Load mock data with slight delay for effect
-                setTimeout(() => {
-                    animateValue('subscriber-count', 0, mockStats.subscriberCount, 2000, '+');
-                    animateValue('video-count', 0, mockStats.videoCount, 2000);
-                    animateValue('view-count', 0, mockStats.viewCount, 2000, '+');
-                    renderVideos(mockVideos);
-                }, 600);
+                // Never display invented channel metrics or placeholder videos.
+                renderVideos([]);
             }
         }
 
@@ -964,11 +895,11 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                     
                     renderVideos(videos);
                 } else {
-                    throw new Error('No videos found');
+                    throw new Error('The YouTube feed is temporarily unavailable. Please check back soon.');
                 }
             } catch (error) {
                 console.error('Error fetching videos:', error);
-                renderVideos(mockVideos);
+                renderVideos([]);
             }
         }
 
