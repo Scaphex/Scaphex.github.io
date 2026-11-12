@@ -367,6 +367,19 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .footer-socials .social-icon svg{display:block!important;width:20px!important;height:20px!important;min-width:20px;min-height:20px;opacity:1!important;visibility:visible!important;color:currentColor}
 @media(max-width:760px){.scaphex-cta-button{max-width:100%}}
 
+
+/* Homepage hero: align the live, functional layout with the approved cinematic concept */
+.scaphex-hero{min-height:calc(100vh - 76px);padding-top:112px;padding-bottom:54px;justify-content:center}
+.hero-content{width:min(100%,1050px);padding-bottom:36px}
+.hero-emblem{width:190px;height:190px;margin-bottom:8px}
+.hero-content h1{font-size:clamp(64px,9vw,122px);letter-spacing:.15em;margin:6px 0 18px}
+.hero-pillars{gap:clamp(8px,1.4vw,20px);font-size:clamp(9px,1vw,13px);letter-spacing:.17em;flex-wrap:wrap}
+.hero-pillars i{width:5px;height:5px;transform:rotate(45deg);border:0}
+.hero-tagline{font-style:normal;font-size:clamp(19px,2vw,26px);margin:22px 0 30px}
+.hero-button{border-radius:10px;min-width:270px}
+.hero-feature-grid{display:none}
+.hero-art{background-position:center 43%;}
+@media(max-width:760px){.scaphex-hero{min-height:calc(100svh - 70px);padding:96px 18px 36px}.hero-content{padding:34px 0 18px}.hero-emblem{width:148px;height:148px}.hero-content h1{font-size:clamp(48px,13vw,76px)}.hero-pillars{gap:8px;letter-spacing:.11em}.hero-tagline{margin:20px 0 26px}.hero-button{min-width:0;width:min(100%,390px)}}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -405,10 +418,10 @@ body{background:var(--sc-ink)!important;color:#f5efff}
   <div class="hero-content">
     <div class="hero-emblem"><img src="/assets/scaphex-emblem.jpg" alt="Scaphex purple and silver emblem"></div>
     <h1>SCAPHEX</h1>
-    <div class="hero-pillars"><span>OSRS</span><i></i><span>GUIDES</span><i></i><span>BUILDS</span><i></i><span>PROGRESS</span></div>
-    <p class="hero-tagline">RuneScape content with a darker edge.</p>
+    <div class="hero-pillars"><span>RUNESCAPE CONTENT</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>SKILLING</span><i></i><span>PROGRESSION</span></div>
+    <p class="hero-tagline">Enter the world of Scaphex.</p>
     <div class="hero-ctas">
-      <a class="hero-button primary" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer"><i data-lucide="play"></i>Watch on YouTube</a>
+      <a class="hero-button primary" href="#videos"><i data-lucide="play"></i>Watch Latest Videos</a>
       <a class="hero-button secondary" href="#videos"><i data-lucide="book-open"></i>Browse Guides</a>
     </div>
   </div>
