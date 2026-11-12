@@ -42,8 +42,6 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cinzel+Decorative:wght@700;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -273,7 +271,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .subscribe-button svg{width:17px;height:17px;color:#e3b6ff}
 .mobile-menu-toggle,.mobile-menu{display:none}
 .scaphex-hero{position:relative;isolation:isolate;min-height:900px;padding:135px 28px 42px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#08070d}
-.hero-art{position:absolute;inset:0;z-index:-3;background-image:url('/assets/scaphex-hero-desktop.svg');background-size:cover;background-position:center 43%;transform:scale(1.015)}
+.hero-art{position:absolute;inset:0;z-index:-3;background-image:url('/assets/scaphex-world.svg');background-size:cover;background-position:center 43%;transform:scale(1.015)}
 .hero-vignette{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(4,3,9,.1) 0%,rgba(4,3,9,.18) 50%,rgba(4,3,9,.84) 100%),radial-gradient(ellipse at 50% 42%,rgba(17,5,27,.08),rgba(4,3,9,.4) 72%)}
 .hero-content{width:min(100%,850px);margin:auto;text-align:center;position:relative;z-index:1;padding-bottom:105px}
 .hero-emblem{width:188px;height:188px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(202,112,255,.8);background:radial-gradient(circle at 50% 42%,rgba(100,30,142,.75),rgba(10,7,17,.93) 70%);box-shadow:0 0 20px rgba(177,63,255,.5),inset 0 0 34px rgba(177,63,255,.28)}
@@ -336,7 +334,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
     box-shadow:0 0 14px rgba(180,75,255,.58),0 0 28px rgba(126,35,205,.24);
 }
 .hero-emblem{
-    width:176px;height:176px;aspect-ratio:1;margin:0 auto 12px;
+    width:210px;height:210px;aspect-ratio:1;margin:0 auto 12px;
     border:2px solid rgba(204,126,255,.82);border-radius:50%;
     overflow:hidden;display:block;position:relative;
     background:#090510;
@@ -351,67 +349,6 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 @media(max-width:760px){
     .brand-emblem{width:52px;height:52px}
     .hero-emblem{width:168px;height:168px}
-}
-
-/* Community CTA and footer social icon display */
-.scaphex-cta{isolation:isolate;background:linear-gradient(180deg,#09070f 0%,#10091a 52%,#08070d 100%)}
-.scaphex-cta:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;background-image:radial-gradient(rgba(202,119,255,.35) 1px,transparent 1px);background-size:34px 34px}
-.scaphex-cta-glow{position:absolute;z-index:-1;width:min(90vw,760px);height:360px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(130,42,190,.22),rgba(71,24,105,.09) 48%,transparent 72%);pointer-events:none}
-.scaphex-cta-icon{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;color:#e8c6ff;background:radial-gradient(circle at 50% 40%,rgba(142,57,195,.38),rgba(28,12,39,.82));border:1px solid rgba(204,126,255,.7);box-shadow:0 0 25px rgba(176,76,235,.28),inset 0 0 18px rgba(176,76,235,.2)}
-.scaphex-cta-icon svg{width:38px;height:38px;display:block}
-.scaphex-cta-button{width:100%;max-width:320px;min-height:64px;padding:16px 26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:13px;text-decoration:none;color:#fff;font-size:18px;font-weight:700;border:1px solid rgba(210,151,245,.55);transition:transform .2s,box-shadow .2s,background .2s}
-.scaphex-cta-button:hover{transform:translateY(-3px);box-shadow:0 0 26px rgba(177,74,255,.32)}
-.scaphex-cta-button svg{width:23px;height:23px;display:block;flex:0 0 auto}
-.scaphex-cta-button.primary{background:linear-gradient(110deg,#b94cf0,#68159b);box-shadow:0 0 22px rgba(160,63,220,.22)}
-.scaphex-cta-button.secondary{background:rgba(255,255,255,.055);border-color:rgba(210,190,225,.3)}
-.scaphex-cta-note{margin-top:30px;color:#a99db5;font-size:14px}
-.footer-socials .social-icon{width:42px;height:42px;min-width:42px;display:grid;place-items:center;border:1px solid rgba(194,142,222,.2);background:rgba(36,27,48,.9);border-radius:50%;color:#f2e9fb;flex:0 0 42px}
-.footer-socials .social-icon svg{display:block!important;width:20px!important;height:20px!important;min-width:20px;min-height:20px;opacity:1!important;visibility:visible!important;color:currentColor}
-@media(max-width:760px){.scaphex-cta-button{max-width:100%}}
-
-
-/* Homepage hero: align the live, functional layout with the approved cinematic concept */
-.scaphex-hero{min-height:calc(100vh - 76px);padding-top:112px;padding-bottom:54px;justify-content:center}
-.hero-content{width:min(100%,1050px);padding-bottom:36px}
-.hero-emblem{width:190px;height:190px;margin-bottom:8px}
-.hero-content h1{font-size:clamp(64px,9vw,122px);letter-spacing:.15em;margin:6px 0 18px}
-.hero-pillars{gap:clamp(8px,1.4vw,20px);font-size:clamp(9px,1vw,13px);letter-spacing:.17em;flex-wrap:wrap}
-.hero-pillars i{width:5px;height:5px;transform:rotate(45deg);border:0}
-.hero-tagline{font-style:normal;font-size:clamp(19px,2vw,26px);margin:22px 0 30px}
-.hero-button{border-radius:10px;min-width:270px}
-.hero-feature-grid{display:none}
-.hero-art{background-position:center 43%;}
-@media(max-width:760px){.scaphex-hero{min-height:calc(100svh - 70px);padding:96px 18px 36px}.hero-content{padding:34px 0 18px}.hero-emblem{width:120px;height:120px;position:relative;top:-54px;margin-bottom:-42px}.hero-content h1{font-size:clamp(48px,13vw,76px)}.hero-pillars{gap:8px;letter-spacing:.11em}.hero-tagline{margin:20px 0 26px}.hero-button{min-width:0;width:min(100%,390px)}}
-
-/* SCAPHEX hero wordmark: the emblem becomes the S, paired with a metallic fantasy serif wordmark */
-.hero-emblem{display:none}
-.hero-content h1.hero-wordmark{
-  display:flex;align-items:center;justify-content:center;gap:clamp(0px,.12vw,3px);
-  width:100%;margin:18px 0 24px;padding:0;
-  font-family:'Cinzel Decorative','Cinzel',Georgia,serif;font-size:clamp(54px,8.2vw,116px);
-  font-weight:700;line-height:1;letter-spacing:.105em;white-space:nowrap;
-  color:#e8e4ed;
-  background:linear-gradient(180deg,#fff 0%,#c9c3d1 20%,#f5f0fa 38%,#888194 54%,#e4deeb 72%,#a7a0b2 100%);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  filter:drop-shadow(0 4px 2px rgba(0,0,0,.95)) drop-shadow(0 0 13px rgba(177,75,255,.28));
-  text-shadow:none;
-}
-.hero-wordmark-s{
-  display:block;flex:0 0 auto;width:1.22em;height:1.12em;object-fit:contain;
-  margin-right:-.045em;filter:drop-shadow(0 0 9px rgba(168,45,255,.55));
-}
-.hero-wordmark span{display:block;padding-right:.08em}
-@media(max-width:760px){
- .hero-content h1.hero-wordmark{font-size:clamp(39px,11vw,70px);letter-spacing:.075em;margin:14px 0 22px}
- .hero-wordmark-s{width:1.2em;height:1.1em}
-}
-
-/* Responsive hero artwork: mobile uses the source image directly for reliable iOS rendering */
-@media(max-width:760px){
- .hero-art{background-image:linear-gradient(180deg,rgba(5,3,10,.12) 0%,rgba(5,3,10,.28) 36%,#08070d 78%),url('/assets/scaphex-intro-frame.webp');background-size:100% auto;background-repeat:no-repeat;background-position:center 18%;background-color:#08070d;transform:none}
-}
-@media(min-width:2200px){
- .hero-art{background-image:url('/assets/scaphex-hero-tv.svg');background-size:cover;background-position:center center;transform:none}
 }
 </style>
 </head>
@@ -449,11 +386,12 @@ body{background:var(--sc-ink)!important;color:#f5efff}
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
   <div class="hero-content">
-    <h1 class="hero-wordmark" aria-label="Scaphex"><img class="hero-wordmark-s" src="/assets/scaphex-emblem.jpg" alt=""><span>CAPHEX</span></h1>
-    <div class="hero-pillars"><span>RUNESCAPE CONTENT</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>SKILLING</span><i></i><span>PROGRESSION</span></div>
-    <p class="hero-tagline">Enter the world of Scaphex.</p>
+    <div class="hero-emblem"><img src="/assets/scaphex-emblem.jpg" alt="Scaphex purple and silver emblem"></div>
+    <h1>SCAPHEX</h1>
+    <div class="hero-pillars"><span>OSRS</span><i></i><span>GUIDES</span><i></i><span>BUILDS</span><i></i><span>PROGRESS</span></div>
+    <p class="hero-tagline">RuneScape content with a darker edge.</p>
     <div class="hero-ctas">
-      <a class="hero-button primary" href="#videos"><i data-lucide="play"></i>Watch Latest Videos</a>
+      <a class="hero-button primary" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer"><i data-lucide="play"></i>Watch on YouTube</a>
       <a class="hero-button secondary" href="#videos"><i data-lucide="book-open"></i>Browse Guides</a>
     </div>
   </div>
@@ -673,26 +611,33 @@ body{background:var(--sc-ink)!important;color:#f5efff}
         </div>
     </section>
 
-    <!-- Scaphex community CTA -->
-    <section class="scaphex-cta py-24 relative overflow-hidden">
-        <div class="scaphex-cta-glow" aria-hidden="true"></div>
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-900/20 via-orange-900/20 to-red-900/20"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23FFD700%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="scaphex-cta-icon mx-auto mb-6" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+            <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-red-600/20 flex items-center justify-center animate-pulse-slow">
+                <i data-lucide="youtube" class="w-10 h-10 text-red-500"></i>
             </div>
             <h2 class="font-cinzel text-4xl md:text-6xl font-bold mb-6">Join the Adventure Today!</h2>
-            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Don't miss out on the latest RuneScape content. Subscribe and become part of the Scaphex community!</p>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Don't miss out on the latest RuneScape content. Subscribe now and become part of the Scaphex community!</p>
+            
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="scaphex-cta-button primary">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="rs-button text-rs-dark px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center space-x-3 w-full sm:w-auto">
+                    <i data-lucide="bell" class="w-6 h-6"></i>
                     <span>Subscribe Now</span>
                 </a>
-                <a href="#videos" class="scaphex-cta-button secondary">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7V5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <a href="#videos" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center space-x-3 transition-all duration-300 hover:scale-105">
+                    <i data-lucide="play" class="w-6 h-6"></i>
                     <span>Browse Videos</span>
                 </a>
             </div>
-            <p class="scaphex-cta-note">Guides, bossing, skilling, and progression from the Scaphex community.</p>
+            
+            <p class="mt-8 text-sm text-gray-500 flex items-center justify-center space-x-2">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+                <span>New videos every week • High quality RuneScape content</span>
+            </p>
         </div>
     </section>
 
@@ -708,7 +653,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                     <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
                         Creating premium RuneScape content for the community. Guides, PvM, skilling, and progression series.
                     </p>
-                    <div class="footer-socials flex flex-wrap gap-4">
+                    <div class="flex space-x-4">
                         <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-all duration-300 hover:scale-110">
                             <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="w-5 h-5"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
                         </a>
