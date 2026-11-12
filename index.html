@@ -42,6 +42,8 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cinzel+Decorative:wght@700;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -381,6 +383,29 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art{background-position:center 43%;}
 @media(max-width:760px){.scaphex-hero{min-height:calc(100svh - 70px);padding:96px 18px 36px}.hero-content{padding:34px 0 18px}.hero-emblem{width:120px;height:120px;position:relative;top:-54px;margin-bottom:-42px}.hero-content h1{font-size:clamp(48px,13vw,76px)}.hero-pillars{gap:8px;letter-spacing:.11em}.hero-tagline{margin:20px 0 26px}.hero-button{min-width:0;width:min(100%,390px)}}
 
+/* SCAPHEX hero wordmark: the emblem becomes the S, paired with a metallic fantasy serif wordmark */
+.hero-emblem{display:none}
+.hero-content h1.hero-wordmark{
+  display:flex;align-items:center;justify-content:center;gap:clamp(0px,.12vw,3px);
+  width:100%;margin:18px 0 24px;padding:0;
+  font-family:'Cinzel Decorative','Cinzel',Georgia,serif;font-size:clamp(54px,8.2vw,116px);
+  font-weight:700;line-height:1;letter-spacing:.105em;white-space:nowrap;
+  color:#e8e4ed;
+  background:linear-gradient(180deg,#fff 0%,#c9c3d1 20%,#f5f0fa 38%,#888194 54%,#e4deeb 72%,#a7a0b2 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 4px 2px rgba(0,0,0,.95)) drop-shadow(0 0 13px rgba(177,75,255,.28));
+  text-shadow:none;
+}
+.hero-wordmark-s{
+  display:block;flex:0 0 auto;width:1.22em;height:1.12em;object-fit:contain;
+  margin-right:-.045em;filter:drop-shadow(0 0 9px rgba(168,45,255,.55));
+}
+.hero-wordmark span{display:block;padding-right:.08em}
+@media(max-width:760px){
+ .hero-content h1.hero-wordmark{font-size:clamp(39px,11vw,70px);letter-spacing:.075em;margin:14px 0 22px}
+ .hero-wordmark-s{width:1.2em;height:1.1em}
+}
+
 /* Responsive hero artwork: mobile uses the source image directly for reliable iOS rendering */
 @media(max-width:760px){
  .hero-art{background-image:linear-gradient(180deg,rgba(5,3,10,.12) 0%,rgba(5,3,10,.28) 36%,#08070d 78%),url('/assets/scaphex-intro-frame.webp');background-size:100% auto;background-repeat:no-repeat;background-position:center 18%;background-color:#08070d;transform:none}
@@ -424,8 +449,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-emblem"><img src="/assets/scaphex-emblem.jpg" alt="Scaphex purple and silver emblem"></div>
-    <h1>SCAPHEX</h1>
+    <h1 class="hero-wordmark" aria-label="Scaphex"><img class="hero-wordmark-s" src="/assets/scaphex-emblem.jpg" alt=""><span>CAPHEX</span></h1>
     <div class="hero-pillars"><span>RUNESCAPE CONTENT</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>SKILLING</span><i></i><span>PROGRESSION</span></div>
     <p class="hero-tagline">Enter the world of Scaphex.</p>
     <div class="hero-ctas">
