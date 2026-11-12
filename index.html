@@ -350,6 +350,23 @@ body{background:var(--sc-ink)!important;color:#f5efff}
     .brand-emblem{width:52px;height:52px}
     .hero-emblem{width:168px;height:168px}
 }
+
+/* Community CTA and footer social icon display */
+.scaphex-cta{isolation:isolate;background:linear-gradient(180deg,#09070f 0%,#10091a 52%,#08070d 100%)}
+.scaphex-cta:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;background-image:radial-gradient(rgba(202,119,255,.35) 1px,transparent 1px);background-size:34px 34px}
+.scaphex-cta-glow{position:absolute;z-index:-1;width:min(90vw,760px);height:360px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(130,42,190,.22),rgba(71,24,105,.09) 48%,transparent 72%);pointer-events:none}
+.scaphex-cta-icon{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;color:#e8c6ff;background:radial-gradient(circle at 50% 40%,rgba(142,57,195,.38),rgba(28,12,39,.82));border:1px solid rgba(204,126,255,.7);box-shadow:0 0 25px rgba(176,76,235,.28),inset 0 0 18px rgba(176,76,235,.2)}
+.scaphex-cta-icon svg{width:38px;height:38px;display:block}
+.scaphex-cta-button{width:100%;max-width:320px;min-height:64px;padding:16px 26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:13px;text-decoration:none;color:#fff;font-size:18px;font-weight:700;border:1px solid rgba(210,151,245,.55);transition:transform .2s,box-shadow .2s,background .2s}
+.scaphex-cta-button:hover{transform:translateY(-3px);box-shadow:0 0 26px rgba(177,74,255,.32)}
+.scaphex-cta-button svg{width:23px;height:23px;display:block;flex:0 0 auto}
+.scaphex-cta-button.primary{background:linear-gradient(110deg,#b94cf0,#68159b);box-shadow:0 0 22px rgba(160,63,220,.22)}
+.scaphex-cta-button.secondary{background:rgba(255,255,255,.055);border-color:rgba(210,190,225,.3)}
+.scaphex-cta-note{margin-top:30px;color:#a99db5;font-size:14px}
+.footer-socials .social-icon{width:42px;height:42px;min-width:42px;display:grid;place-items:center;border:1px solid rgba(194,142,222,.2);background:rgba(36,27,48,.9);border-radius:50%;color:#f2e9fb;flex:0 0 42px}
+.footer-socials .social-icon svg{display:block!important;width:20px!important;height:20px!important;min-width:20px;min-height:20px;opacity:1!important;visibility:visible!important;color:currentColor}
+@media(max-width:760px){.scaphex-cta-button{max-width:100%}}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -611,33 +628,26 @@ body{background:var(--sc-ink)!important;color:#f5efff}
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-red-900/20 via-orange-900/20 to-red-900/20"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23FFD700%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-        
+    <!-- Scaphex community CTA -->
+    <section class="scaphex-cta py-24 relative overflow-hidden">
+        <div class="scaphex-cta-glow" aria-hidden="true"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-red-600/20 flex items-center justify-center animate-pulse-slow">
-                <i data-lucide="youtube" class="w-10 h-10 text-red-500"></i>
+            <div class="scaphex-cta-icon mx-auto mb-6" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
             </div>
             <h2 class="font-cinzel text-4xl md:text-6xl font-bold mb-6">Join the Adventure Today!</h2>
-            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Don't miss out on the latest RuneScape content. Subscribe now and become part of the Scaphex community!</p>
-            
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Don't miss out on the latest RuneScape content. Subscribe and become part of the Scaphex community!</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="rs-button text-rs-dark px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center space-x-3 w-full sm:w-auto">
-                    <i data-lucide="bell" class="w-6 h-6"></i>
+                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="scaphex-cta-button primary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
                     <span>Subscribe Now</span>
                 </a>
-                <a href="#videos" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center space-x-3 transition-all duration-300 hover:scale-105">
-                    <i data-lucide="play" class="w-6 h-6"></i>
+                <a href="#videos" class="scaphex-cta-button secondary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7V5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
                     <span>Browse Videos</span>
                 </a>
             </div>
-            
-            <p class="mt-8 text-sm text-gray-500 flex items-center justify-center space-x-2">
-                <i data-lucide="clock" class="w-4 h-4"></i>
-                <span>New videos every week • High quality RuneScape content</span>
-            </p>
+            <p class="scaphex-cta-note">Guides, bossing, skilling, and progression from the Scaphex community.</p>
         </div>
     </section>
 
@@ -653,7 +663,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                     <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
                         Creating premium RuneScape content for the community. Guides, PvM, skilling, and progression series.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="footer-socials flex flex-wrap gap-4">
                         <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-all duration-300 hover:scale-110">
                             <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="w-5 h-5"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
                         </a>
