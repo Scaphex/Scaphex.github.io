@@ -390,6 +390,46 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 .hero-wordmark{display:block;width:min(92vw,820px);height:auto;max-height:270px;object-fit:contain;margin:0 auto 24px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.48)) drop-shadow(0 0 14px rgba(174,70,255,.2))}
 @media(max-width:760px){.hero-wordmark{width:min(96vw,620px);max-height:190px;margin:0 auto 18px}}
+
+/* Hero background polish — preserve the approved scene while revealing its depth */
+.hero-art{
+ background-image:
+  radial-gradient(ellipse 27% 38% at 50% 36%,rgba(175,75,255,.22),transparent 76%),
+  radial-gradient(ellipse 54% 62% at 50% 42%,rgba(82,31,125,.13),transparent 78%),
+  url('/assets/scaphex-hero-desktop.svg');
+ background-size:auto,auto,cover;
+ background-position:center,center,center 43%;
+ background-repeat:no-repeat;
+ filter:saturate(1.13) brightness(1.12);
+}
+.hero-vignette{
+ background:
+  linear-gradient(180deg,rgba(4,3,9,.10) 0%,rgba(4,3,9,.12) 43%,rgba(4,3,9,.80) 100%),
+  radial-gradient(ellipse 42% 40% at 50% 36%,rgba(155,61,224,.10),transparent 78%),
+  radial-gradient(ellipse 90% 78% at 50% 44%,transparent 38%,rgba(3,2,8,.48) 100%);
+}
+@media(max-width:760px){
+ .hero-art{
+  background-image:
+   radial-gradient(ellipse 31% 40% at 50% 34%,rgba(183,76,255,.25),transparent 76%),
+   radial-gradient(ellipse 68% 54% at 50% 38%,rgba(104,42,151,.14),transparent 80%),
+   linear-gradient(180deg,rgba(5,3,10,.06) 0%,rgba(5,3,10,.10) 42%,rgba(8,7,13,.32) 74%,#08070d 100%),
+   url('/assets/scaphex-intro-frame.webp');
+  background-size:auto,auto,auto,108% auto;
+  background-repeat:no-repeat;
+  background-position:center,center,center,center 16%;
+  background-color:#08070d;
+  filter:saturate(1.16) brightness(1.13);
+  transform:none;
+ }
+ .hero-vignette{
+  background:
+   linear-gradient(180deg,rgba(5,4,10,.10) 0%,rgba(5,4,10,.12) 46%,rgba(5,4,10,.90) 100%),
+   radial-gradient(ellipse 62% 35% at 50% 33%,rgba(160,62,226,.10),transparent 78%),
+   linear-gradient(90deg,rgba(5,4,10,.22),transparent 50%,rgba(5,4,10,.20));
+ }
+}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
