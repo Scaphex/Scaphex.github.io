@@ -430,6 +430,50 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  }
 }
 
+
+/* Living portal atmosphere — restrained, layered CSS animation */
+.hero-art{isolation:isolate;overflow:hidden}
+.hero-art::before,
+.hero-art::after{content:"";position:absolute;inset:-3%;pointer-events:none}
+.hero-art::before{
+ background:
+  radial-gradient(ellipse 22% 34% at 50% 39%,transparent 56%,rgba(194,112,255,.16) 61%,rgba(155,66,255,.07) 66%,transparent 73%),
+  radial-gradient(ellipse 28% 42% at 50% 39%,rgba(163,69,255,.12),transparent 76%),
+  radial-gradient(ellipse 42% 30% at 50% 52%,rgba(135,54,210,.08),transparent 78%);
+ opacity:.58;transform:scale(.985);
+ animation:scaphex-portal-breathe 9s ease-in-out infinite;
+}
+.hero-art::after{
+ inset:-8%;
+ background-image:
+  radial-gradient(circle,rgba(224,190,255,.82) 0 1px,transparent 2px),
+  radial-gradient(circle,rgba(177,91,255,.78) 0 1.3px,transparent 2.5px),
+  radial-gradient(circle,rgba(236,220,255,.56) 0 .8px,transparent 2px),
+  radial-gradient(circle,rgba(151,68,235,.66) 0 1px,transparent 2.2px);
+ background-size:173px 211px,239px 193px,127px 167px,293px 257px;
+ background-position:18px 24px,82px 71px,42px 112px,151px 39px;
+ opacity:.25;filter:blur(.25px);
+ animation:scaphex-particles-drift 34s linear infinite;
+}
+@keyframes scaphex-portal-breathe{
+ 0%,100%{opacity:.43;transform:scale(.985)}
+ 50%{opacity:.78;transform:scale(1.035)}
+}
+@keyframes scaphex-particles-drift{
+ 0%{transform:translate3d(-1.2%,1.5%,0)}
+ 50%{transform:translate3d(1.2%,-1%,0)}
+ 100%{transform:translate3d(-1.2%,1.5%,0)}
+}
+@media(max-width:760px){
+ .hero-art::before{opacity:.62;animation-duration:10s}
+ .hero-art::after{inset:-5%;opacity:.19;background-size:191px 227px,263px 219px,149px 181px,317px 281px;animation-duration:42s}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art::before,.hero-art::after{animation:none!important}
+ .hero-art::before{opacity:.52;transform:none}
+ .hero-art::after{opacity:.12;transform:none}
+}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
