@@ -388,6 +388,8 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 @media(min-width:2200px){
  .hero-art{background-image:url('/assets/scaphex-hero-tv.svg');background-size:cover;background-position:center center;transform:none}
 }
+.hero-wordmark{display:block;width:min(92vw,820px);height:auto;max-height:270px;object-fit:contain;margin:0 auto 24px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.48)) drop-shadow(0 0 14px rgba(174,70,255,.2))}
+@media(max-width:760px){.hero-wordmark{width:min(96vw,620px);max-height:190px;margin:0 auto 18px}}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -424,8 +426,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-emblem"><img src="/assets/scaphex-emblem.jpg" alt="Scaphex purple and silver emblem"></div>
-    <h1>SCAPHEX</h1>
+    <img class="hero-wordmark" src="/assets/scaphex-wordmark.png" alt="SCAPHEX metallic silver and purple wordmark" width="1536" height="512" fetchpriority="high">
     <div class="hero-pillars"><span>RUNESCAPE CONTENT</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>SKILLING</span><i></i><span>PROGRESSION</span></div>
     <p class="hero-tagline">Enter the world of Scaphex.</p>
     <div class="hero-ctas">
