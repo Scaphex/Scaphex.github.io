@@ -437,8 +437,8 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art::after{content:"";position:absolute;inset:-3%;pointer-events:none}
 .hero-art::before{
  background:
-  radial-gradient(ellipse 22% 34% at 50% 39%,transparent 56%,rgba(194,112,255,.16) 61%,rgba(155,66,255,.07) 66%,transparent 73%),
-  radial-gradient(ellipse 28% 42% at 50% 39%,rgba(163,69,255,.12),transparent 76%),
+  radial-gradient(circle at 50% 37%,transparent 0 17%,rgba(194,112,255,.17) 20%,rgba(155,66,255,.08) 23%,transparent 29%),
+  radial-gradient(circle at 50% 37%,rgba(163,69,255,.13),transparent 34%),
   radial-gradient(ellipse 42% 30% at 50% 52%,rgba(135,54,210,.08),transparent 78%);
  opacity:.58;transform:scale(.985);
  animation:scaphex-portal-breathe 9s ease-in-out infinite;
@@ -452,21 +452,21 @@ body{background:var(--sc-ink)!important;color:#f5efff}
   radial-gradient(circle,rgba(151,68,235,.66) 0 1px,transparent 2.2px);
  background-size:173px 211px,239px 193px,127px 167px,293px 257px;
  background-position:18px 24px,82px 71px,42px 112px,151px 39px;
- opacity:.25;filter:blur(.25px);
- animation:scaphex-particles-drift 34s linear infinite;
+ opacity:.32;filter:blur(.15px);
+ animation:scaphex-particles-drift 26s linear infinite;
 }
 @keyframes scaphex-portal-breathe{
  0%,100%{opacity:.43;transform:scale(.985)}
  50%{opacity:.78;transform:scale(1.035)}
 }
 @keyframes scaphex-particles-drift{
- 0%{transform:translate3d(-1.2%,1.5%,0)}
- 50%{transform:translate3d(1.2%,-1%,0)}
- 100%{transform:translate3d(-1.2%,1.5%,0)}
+ 0%{transform:translate3d(-3%,3%,0)}
+ 50%{transform:translate3d(3%,-2.5%,0)}
+ 100%{transform:translate3d(-3%,3%,0)}
 }
 @media(max-width:760px){
  .hero-art::before{opacity:.62;animation-duration:10s}
- .hero-art::after{inset:-5%;opacity:.19;background-size:191px 227px,263px 219px,149px 181px,317px 281px;animation-duration:42s}
+ .hero-art::after{inset:-5%;opacity:.25;background-size:191px 227px,263px 219px,149px 181px,317px 281px;animation-duration:30s}
 }
 @media(prefers-reduced-motion:reduce){
  .hero-art::before,.hero-art::after{animation:none!important}
