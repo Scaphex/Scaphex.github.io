@@ -465,6 +465,33 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  .hero-art::after{opacity:.16;transform:none}
 }
 
+
+/* Mobile portrait finishing pass: lift the wordmark and add restrained cinematic depth */
+@media(max-width:760px) and (orientation:portrait){
+ .hero-wordmark{
+  transform:translateY(-22px);
+  margin-bottom:14px;
+ }
+ .hero-art::before{
+  background:
+   radial-gradient(ellipse 58% 18% at 50% 48%,rgba(183,91,255,.16),transparent 78%),
+   radial-gradient(ellipse 34% 38% at 12% 58%,rgba(105,48,158,.15),transparent 78%),
+   radial-gradient(ellipse 34% 38% at 88% 58%,rgba(105,48,158,.15),transparent 78%),
+   radial-gradient(ellipse 48% 24% at 50% 76%,rgba(115,48,174,.12),transparent 82%),
+   radial-gradient(circle at 50% 37%,transparent 0 17%,rgba(211,157,255,.22) 19.5%,rgba(164,78,255,.14) 22%,transparent 28%),
+   radial-gradient(circle at 50% 37%,rgba(163,69,255,.19),transparent 35%),
+   radial-gradient(ellipse 42% 30% at 50% 52%,rgba(135,54,210,.12),transparent 78%);
+  opacity:.72;
+ }
+ .hero-art::after{opacity:.43}
+ .hero-vignette{
+  background:
+   linear-gradient(180deg,rgba(4,3,9,.08) 0%,rgba(4,3,9,.10) 38%,rgba(4,3,9,.72) 78%,rgba(3,2,8,.92) 100%),
+   radial-gradient(ellipse 72% 42% at 50% 43%,rgba(151,63,220,.10),transparent 82%),
+   radial-gradient(ellipse 110% 45% at 50% 88%,rgba(119,47,175,.08),transparent 76%);
+ }
+}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
