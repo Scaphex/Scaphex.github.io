@@ -663,23 +663,13 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .brand-wordmark{display:block;width:177px;height:auto;max-height:58px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 7px rgba(177,76,255,.22))}
 @media(max-width:760px){.brand-mark{gap:8px;align-items:center;overflow:visible}.brand-emblem{width:48px;height:48px;flex:0 0 48px}.brand-wordmark{display:block;width:124px;height:auto;max-height:none;object-fit:contain;overflow:visible;flex:0 0 auto}}
 
-/* Short portal arrival — the existing hero stays visible underneath */
-.portal-intro{position:absolute;inset:0;z-index:8;overflow:hidden;pointer-events:none;background:transparent;opacity:0;animation:scaphex-arrival 1.9s ease-out forwards}
-.portal-intro::before{display:none}
-.portal-intro .portal-pull,.portal-intro .portal-core,.portal-intro .portal-ring,.portal-intro .portal-shockwave,
-.portal-intro .energy-vortex,.portal-intro .energy-arcs,.portal-intro .energy-burst,.portal-intro .portal-flash{display:none!important}
-.portal-intro .ritual-smoke{position:absolute;inset:-20%;opacity:0;pointer-events:none;mix-blend-mode:screen;filter:url(#scaphex-smoke-distort) blur(20px)}
-.portal-intro .ritual-smoke-a{background:radial-gradient(ellipse 22% 44% at 0% 52%,transparent 20%,rgba(132,113,151,.32) 48%,rgba(72,51,92,.18) 66%,transparent 82%),radial-gradient(ellipse 22% 44% at 100% 48%,transparent 20%,rgba(132,113,151,.3) 48%,rgba(72,51,92,.17) 66%,transparent 82%);animation:arrival-smoke 1.75s ease-out forwards}
-.portal-intro .ritual-smoke-b{background:radial-gradient(ellipse 28% 24% at 50% 110%,transparent 18%,rgba(111,84,132,.22) 54%,transparent 82%);animation:arrival-smoke 1.65s ease-out .08s forwards}
-.portal-intro .portal-skip{display:none}
-.portal-intro.is-finished{animation:arrival-overlay-out .42s ease-out forwards}
-.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:arrival-content 1.15s ease-out .28s forwards}
-@keyframes scaphex-arrival{0%{opacity:0}12%{opacity:1}100%{opacity:1}}
-@keyframes arrival-overlay-out{to{opacity:0;visibility:hidden}}
-@keyframes arrival-content{to{opacity:1}}
-@keyframes arrival-smoke{0%{opacity:0;transform:translate3d(0,5%,0) scale(.92)}35%{opacity:.62}72%{opacity:.36;transform:translate3d(0,-1%,0) scale(1.04)}100%{opacity:0;transform:translate3d(0,-3%,0) scale(1.1)}}
-@media(max-width:760px){.portal-intro .ritual-smoke{filter:blur(13px);inset:-20% -30%}}
-@media(prefers-reduced-motion:reduce){.portal-intro{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
+/* Scaphex metallic portal assembly — one-time hero overlay */
+#portal-fx{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.hero-content,.hero-feature-grid{position:relative;z-index:3}
+.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:portal-content-reveal 1.15s ease-out 5.3s forwards}
+@keyframes portal-content-reveal{to{opacity:1}}
+@keyframes portal-canvas-out{to{opacity:0}}
+@media(prefers-reduced-motion:reduce){#portal-fx{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -715,7 +705,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 <section id="home" class="scaphex-hero">
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
-  <div class="portal-intro" id="portal-intro" aria-hidden="true"><div class="portal-pull"></div><div class="ritual-smoke ritual-smoke-a"></div><div class="ritual-smoke ritual-smoke-b"></div><div class="portal-core"></div><div class="energy-vortex"></div><div class="energy-arcs"></div><div class="energy-burst"></div><div class="portal-flash"></div><button class="portal-skip" type="button" id="portal-skip" aria-label="Skip portal intro">Skip intro</button></div>
+  <canvas id="portal-fx" aria-hidden="true"></canvas>
   <div class="hero-content">
     <img class="hero-wordmark" src="/assets/scaphex-wordmark.png" alt="SCAPHEX metallic silver and purple wordmark" width="1536" height="512" fetchpriority="high">
     <div class="hero-pillars"><span>OLD SCHOOL RUNESCAPE</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>PROGRESSION</span></div>
@@ -1027,25 +1017,118 @@ body{background:var(--sc-ink)!important;color:#f5efff}
     </footer>
 
     <script>
-        // Play the portal arrival once per browser tab session.
-        (function initPortalIntro() {
+        // Build the portal from Scaphex metal fragments once per browser tab session.
+        (function initMetalPortalIntro() {
             const hero = document.querySelector('.scaphex-hero');
-            const intro = document.getElementById('portal-intro');
-            const skip = document.getElementById('portal-skip');
-            if (!hero || !intro) return;
+            const canvas = document.getElementById('portal-fx');
+            if (!hero || !canvas) return;
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let alreadyPlayed = false;
-            try { alreadyPlayed = sessionStorage.getItem('scaphex-portal-intro-v4-played') === '1'; } catch (e) {}
-            if (reducedMotion || alreadyPlayed) { intro.remove(); return; }
-            try { sessionStorage.setItem('scaphex-portal-intro-v3-played', '1'); } catch (e) {}
+            try { alreadyPlayed = sessionStorage.getItem('scaphex-metal-portal-v1-played') === '1'; } catch (e) {}
+            if (reducedMotion || alreadyPlayed) { canvas.remove(); return; }
+            try { sessionStorage.setItem('scaphex-metal-portal-v1-played', '1'); } catch (e) {}
             hero.classList.add('portal-intro-active');
-            const finish = () => {
-                intro.classList.add('is-finished');
-                hero.classList.remove('portal-intro-active');
-                window.setTimeout(() => intro.remove(), 600);
-            };
-            if (skip) skip.addEventListener('click', finish, { once: true });
-            window.setTimeout(finish, 1900);
+
+            const ctx = canvas.getContext('2d');
+            let W = 0, H = 0, D = 1, items = [], sparks = [], start = 0, raf = 0;
+            const emblemTexture = new Image();
+            emblemTexture.src = '/assets/scaphex-logo3-transparent.png?v=20261114';
+            const rand = (a,b) => a + Math.random() * (b-a);
+            const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
+            const target = () => ({x:W*.5,y:H*(W<760 ? .29 : .36)});
+            function resize() {
+                D = Math.min(window.devicePixelRatio || 1, 2);
+                W = hero.clientWidth; H = hero.clientHeight;
+                canvas.width = Math.round(W*D); canvas.height = Math.round(H*D);
+                ctx.setTransform(D,0,0,D,0,0);
+            }
+            function makeDebris() {
+                const delay = rand(0,1.15), sx = W + rand(15,W*.5), sy = H + rand(15,H*.32);
+                return {sx,sy,x:sx,y:sy,delay,size:rand(Math.max(6,W*.0045),Math.max(13,W*.011)),
+                    angle:rand(-.5,.5),spin:rand(3,7)*(Math.random()<.5?-1:1),
+                    orbit:rand(Math.min(W,H)*.075,Math.min(W,H)*.17),orbitAngle:rand(0,Math.PI*2),
+                    orbitSpeed:rand(1.4,2.8)*(Math.random()<.5?-1:1),depth:rand(.6,1.3),
+                    shape:rand(.75,1.35),caught:false,alpha:rand(.72,1),seed:rand(0,100)};
+            }
+            function seed() {
+                items=[]; sparks=[];
+                const mobile=W<760, count=mobile?72:125, dust=mobile?110:220;
+                for(let i=0;i<count;i++) items.push(makeDebris());
+                for(let i=0;i<dust;i++) sparks.push({a:rand(0,Math.PI*2),r:rand(8,Math.min(W,H)*.2),
+                    speed:rand(1,3)*(Math.random()<.5?-1:1),size:rand(.5,1.8),
+                    alpha:rand(.15,.7),tone:Math.random()});
+            }
+            function drawPlate(p) {
+                const L=p.size*p.shape,B=p.size*.34;
+                ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.depth,1);
+                ctx.beginPath();ctx.moveTo(-L,-B*.18);ctx.lineTo(-L*.38,-B);
+                ctx.lineTo(L*.22,-B*.72);ctx.lineTo(L,B*.02);ctx.lineTo(L*.52,B*.3);
+                ctx.lineTo(L*.18,B);ctx.lineTo(-L*.58,B*.62);ctx.closePath();
+                ctx.save();ctx.clip();
+                const steel=ctx.createLinearGradient(-L,-B,L,B);
+                steel.addColorStop(0,'#17191f');steel.addColorStop(.2,'#555b65');
+                steel.addColorStop(.38,'#c3c7ce');steel.addColorStop(.52,'#454b55');
+                steel.addColorStop(.72,'#a3a9b2');steel.addColorStop(.88,'#383e48');steel.addColorStop(1,'#111319');
+                ctx.fillStyle=steel;ctx.fill();
+                if(emblemTexture.complete && emblemTexture.naturalWidth) {
+                    ctx.globalAlpha=.82;
+                    const sw=emblemTexture.naturalWidth,sh=emblemTexture.naturalHeight;
+                    const sx=rand(0,sw*.55),sy=rand(0,sh*.55),cw=sw*.45,ch=sh*.45;
+                    ctx.filter='grayscale(68%) brightness(82%) contrast(118%)';
+                    ctx.drawImage(emblemTexture,sx,sy,cw,ch,-L,-B,L*2,B*2);
+                    ctx.filter='none';ctx.globalAlpha=1;
+                }
+                ctx.strokeStyle='rgba(24,8,37,.98)';ctx.lineWidth=Math.max(2,B*.22);ctx.stroke();
+                ctx.restore();
+                ctx.lineJoin='miter';ctx.strokeStyle='rgba(245,233,255,.9)';
+                ctx.lineWidth=Math.max(.8,B*.07);ctx.stroke();
+                ctx.beginPath();ctx.moveTo(-L*.55,-B*.08);ctx.lineTo(-L*.05,-B*.34);ctx.lineTo(L*.55,B*.06);
+                ctx.strokeStyle='rgba(157,112,190,.72)';ctx.lineWidth=Math.max(.8,B*.055);
+                ctx.shadowBlur=4;ctx.shadowColor='#8b54b5';ctx.stroke();ctx.shadowBlur=0;
+                ctx.restore();
+            }
+            function draw(now) {
+                const elapsed=(now-start)/1000,t=target(),dt=1/60;
+                ctx.clearRect(0,0,W,H);
+                for(const p of items) {
+                    const local=elapsed-p.delay;if(local<0)continue;
+                    const approach=clamp(local/1.65,0,1);
+                    if(!p.caught) {
+                        const eased=1-Math.pow(1-approach,3),bend=Math.sin(approach*Math.PI*.82);
+                        const ex=t.x+Math.cos(p.orbitAngle)*p.orbit,ey=t.y+Math.sin(p.orbitAngle)*p.orbit*.58;
+                        p.x=p.sx+(ex-p.sx)*eased-bend*W*.055;
+                        p.y=p.sy+(ey-p.sy)*eased+bend*H*.035;
+                        p.angle=Math.atan2(ey-p.sy,ex-p.sx)+p.spin*approach*.18;
+                        if(approach>=1)p.caught=true;
+                    } else {
+                        p.orbitAngle+=p.orbitSpeed*dt;
+                        const settle=clamp((local-1.65)/2.2,0,1),desired=p.orbit*(1-settle*.22);
+                        p.orbit+=(desired-p.orbit)*.018;
+                        p.x=t.x+Math.cos(p.orbitAngle)*p.orbit;
+                        p.y=t.y+Math.sin(p.orbitAngle)*p.orbit*.58;
+                        p.angle=p.orbitAngle+Math.PI/2+Math.sin(now*.001+p.seed)*.12;
+                    }
+                    ctx.globalAlpha=p.alpha*clamp(local/.2,0,1);drawPlate(p);ctx.globalAlpha=1;
+                }
+                const core=clamp((elapsed-1.25)/3.8,0,1);
+                const glow=ctx.createRadialGradient(t.x,t.y,2,t.x,t.y,Math.min(W,H)*(.08+core*.2));
+                glow.addColorStop(0,`rgba(225,190,255,${core*.22})`);
+                glow.addColorStop(.22,`rgba(157,77,213,${core*.25})`);
+                glow.addColorStop(.62,`rgba(91,40,130,${core*.14})`);
+                glow.addColorStop(1,'rgba(20,10,30,0)');
+                ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
+                for(const p of sparks) {
+                    p.a+=p.speed*dt;const rr=p.r*(.35+core*.65);
+                    const x=t.x+Math.cos(p.a)*rr,y=t.y+Math.sin(p.a)*rr*.58;
+                    ctx.fillStyle=p.tone<.35?`rgba(194,125,239,${p.alpha*core})`:`rgba(216,211,224,${p.alpha*core*.8})`;
+                    ctx.beginPath();ctx.arc(x,y,p.size,0,Math.PI*2);ctx.fill();
+                }
+                ctx.globalAlpha=1;
+                if(elapsed<7.0) raf=requestAnimationFrame(draw);
+                else {canvas.style.animation='portal-canvas-out .55s ease-out forwards';window.setTimeout(()=>canvas.remove(),600);}
+            }
+            resize();seed();start=performance.now();raf=requestAnimationFrame(draw);
+            window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();seed();start=performance.now();raf=requestAnimationFrame(draw);},{passive:true});
         })();
 
         // Initialize Lucide Icons
