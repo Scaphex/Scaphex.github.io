@@ -1108,11 +1108,11 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 }
                 ctx.globalAlpha=1;
                 const completion=parts.length?landed/parts.length:0;
-                if(completion>.97&&elapsed>5.0&&!canvas.dataset.fading){
+                if(completion>.97&&elapsed>7.35&&!canvas.dataset.fading){
                     canvas.dataset.fading='1';canvas.style.transition='opacity 1.8s cubic-bezier(.22,.61,.36,1)';
                     requestAnimationFrame(()=>canvas.style.opacity='0');
                 }
-                if(elapsed<8.4)raf=requestAnimationFrame(draw);
+                if(elapsed<9.45)raf=requestAnimationFrame(draw);
                 else canvas.remove();
             }
             function begin(){
