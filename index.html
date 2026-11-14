@@ -1037,8 +1037,8 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 D=Math.min(window.devicePixelRatio||1,2);W=hero.clientWidth;H=hero.clientHeight;
                 canvas.width=Math.round(W*D);canvas.height=Math.round(H*D);ctx.setTransform(D,0,0,D,0,0);
             }
-            function boxCenterX(){return wordmark.offsetLeft+wordmark.offsetWidth/2;}
-            function boxCenterY(){return wordmark.offsetTop+wordmark.offsetHeight/2;}
+            function boxCenterX(){const a=wordmark.getBoundingClientRect(),h=hero.getBoundingClientRect();return a.left-h.left+a.width/2;}
+            function boxCenterY(){const a=wordmark.getBoundingClientRect(),h=hero.getBoundingClientRect();return a.top-h.top+a.height/2;}
             function sampleTargets(){
                 targets=[];if(!source.complete||!source.naturalWidth)return;
                 const off=document.createElement('canvas'),o=off.getContext('2d',{willReadFrequently:true});
