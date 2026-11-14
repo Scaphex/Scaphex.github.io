@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+
+<link rel="apple-touch-icon" href="/assets/scaphex-logo3-transparent.png?v=20261114">
+<link rel="icon" type="image/png" href="/assets/scaphex-logo3-transparent.png?v=20261114">
+<link rel="shortcut icon" type="image/png" href="/assets/scaphex-logo3-transparent.png?v=20261114">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scaphex | Old School RuneScape Guides, Builds & Progress</title>
+
+<meta name="description" content="Old School RuneScape guides, PvM, account builds, progression and money-making methods from Scaphex.">
+      <meta property="og:title" content="Scaphex | Old School RuneScape Guides & Progress">
+<meta property="og:description" content="Old School RuneScape guides, PvM, builds and progression from Scaphex.">
+<meta property="og:url" content="https://scaphex.com">
+<meta property="og:type" content="website">
+      <meta name="robots" content="index, follow">
+      <link rel="canonical" href="https://scaphex.com">
+      <meta name="author" content="Scaphex">
+      <meta name="theme-color" content="#0b0811">
+      <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scaphex | Old School RuneScape Guides & Progress">
+<meta name="twitter:description" content="Old School RuneScape guides, PvM, builds and progression from Scaphex.">
+      <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Scaphex",
+ "url": "https://scaphex.com",
+ "sameAs": [
+   "https://youtube.com/@scaphex",
+   "https://x.com/scaphex_",
+   "https://www.instagram.com/scaphex_rs"
+ ]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'rs-gold': '#FFD700',
+                        'rs-gold-dark': '#B8860B',
+                        'rs-gold-light': '#FFE55C',
+                        'rs-blue': '#1e3a8a',
+                        'rs-dark': '#0a0a0a',
+                        'rs-surface': '#141414',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #FFD700, 0 0 10px #FFD700' },
+                            '100%': { boxShadow: '0 0 20px #FFD700, 0 0 30px #FFD700' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 30, 0.85) 50%, rgba(0, 0, 0, 0.9) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -5px rgba(255, 215, 0, 0.15), 0 10px 20px -5px rgba(255, 215, 0, 0.1);
+        }
+        
+        .gold-border {
+            border: 2px solid transparent;
+            background: linear-gradient(var(--tw-bg-opacity, 1), var(--tw-bg-opacity, 1)) padding-box,
+                        linear-gradient(135deg, #FFD700, #B8860B) border-box;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .video-thumbnail::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover::after {
+            opacity: 1;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .rs-button {
+            background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .rs-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(255, 215, 0, 0.4);
+        }
+        
+        .rs-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .rs-button:hover::before {
+            left: 100%;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #FFD700, #B8860B);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFD700;
+        }
+        
+        .loading-skeleton {
+            background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .video-card {
+            animation: fadeIn 0.5s ease-out both;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .video-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(184,134,11,0.3)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container:hover::before {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .particle {
+                display: none;
+            }
+        }
+    
+/* SCAPHEX FANTASY ART DIRECTION */
+:root{--sc-purple:#c45cff;--sc-purple-bright:#e2a0ff;--sc-purple-deep:#5d168f;--sc-ink:#08070d;--sc-panel:rgba(12,9,18,.88);--sc-silver:#d9d3e2}
+html{scroll-padding-top:90px;background:var(--sc-ink)}
+body{background:var(--sc-ink)!important;color:#f5efff}
+.text-rs-gold,.text-rs-gold-dark{color:var(--sc-purple-bright)!important}
+.bg-rs-gold{background:var(--sc-purple)!important}
+.border-rs-gold,.border-rs-gold\/20,.border-rs-gold\/30{border-color:rgba(196,92,255,.38)!important}
+.gradient-text{background:linear-gradient(115deg,#fff 0%,#dca1ff 35%,#9b39e8 70%,#f5dfff 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.text-glow{text-shadow:0 0 18px rgba(190,75,255,.55)}
+.hero-gradient{background:linear-gradient(135deg,rgba(5,4,10,.88),rgba(18,8,29,.55),rgba(5,4,10,.9))}
+#navbar.scaphex-nav{height:auto;background:linear-gradient(180deg,rgba(7,6,12,.97),rgba(8,6,14,.88));backdrop-filter:blur(16px);border-bottom:1px solid rgba(205,130,255,.38);box-shadow:0 8px 35px rgba(0,0,0,.5)}
+.scaphex-nav-inner{max-width:1540px;margin:auto;min-height:76px;padding:0 30px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand-mark{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.brand-s{font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:54px;line-height:1;color:#dca0ff;text-shadow:0 0 10px #a32df0,0 0 26px #7c20bd}
+.brand-word{font-family:Georgia,serif;font-size:27px;letter-spacing:.28em;color:#f7efff;text-shadow:0 2px 12px #000}
+.desktop-nav{display:flex;align-items:center;gap:clamp(18px,3vw,48px);height:76px}
+.desktop-nav a{position:relative;color:#e5deeb;text-decoration:none;font-size:16px;padding:28px 0 24px;transition:.2s}
+.desktop-nav a:hover,.desktop-nav a.active{color:#fff;text-shadow:0 0 12px #c45cff}
+.desktop-nav a.active:after,.desktop-nav a:hover:after{content:"";position:absolute;left:0;right:0;bottom:13px;height:3px;background:#cf73ff;box-shadow:0 0 14px #c45cff}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.social-icon{color:#eee5f7;display:grid;place-items:center;width:22px;height:28px;transition:.2s}
+.social-icon svg{width:19px;height:19px}
+.social-icon:hover{color:#d98aff;filter:drop-shadow(0 0 7px #b34bff)}
+.subscribe-button{display:flex;align-items:center;gap:9px;padding:12px 18px;border:1px solid #ce78ff;border-radius:10px;color:#fff;text-decoration:none;background:rgba(27,10,39,.75);box-shadow:0 0 16px rgba(177,62,255,.3),inset 0 0 12px rgba(181,91,255,.12);font-weight:700}
+.subscribe-button svg{width:17px;height:17px;color:#e3b6ff}
+.mobile-menu-toggle,.mobile-menu{display:none}
+.scaphex-hero{position:relative;isolation:isolate;min-height:900px;padding:135px 28px 42px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#08070d}
+.hero-art{position:absolute;inset:0;z-index:-3;background-image:url('/assets/scaphex-hero-desktop.svg');background-size:cover;background-position:center 43%;transform:scale(1.015)}
+.hero-vignette{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(4,3,9,.1) 0%,rgba(4,3,9,.18) 50%,rgba(4,3,9,.84) 100%),radial-gradient(ellipse at 50% 42%,rgba(17,5,27,.08),rgba(4,3,9,.4) 72%)}
+.hero-content{width:min(100%,850px);margin:auto;text-align:center;position:relative;z-index:1;padding-bottom:105px}
+.hero-emblem{width:188px;height:188px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(202,112,255,.8);background:radial-gradient(circle at 50% 42%,rgba(100,30,142,.75),rgba(10,7,17,.93) 70%);box-shadow:0 0 20px rgba(177,63,255,.5),inset 0 0 34px rgba(177,63,255,.28)}
+.hero-emblem span{font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:150px;line-height:.9;color:#f5eaff;text-shadow:0 0 16px #c35bff,0 7px 0 #321344}
+.hero-content h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(58px,8vw,112px);font-weight:500;letter-spacing:.17em;line-height:1;margin:8px 0 20px;color:#f5efff;text-shadow:0 5px 22px #000,0 0 25px rgba(193,91,255,.35)}
+.hero-pillars{display:flex;justify-content:center;align-items:center;gap:20px;color:#f3eafa;font-size:14px;letter-spacing:.28em;font-weight:600}
+.hero-pillars i{width:2px;height:22px;background:#be58f5;box-shadow:0 0 10px #be58f5}
+.hero-tagline{font-family:Georgia,serif;font-style:italic;font-size:clamp(20px,2.2vw,29px);color:#eee1f6;margin:25px 0 30px;text-shadow:0 3px 12px #000}
+.hero-ctas{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.hero-button{min-width:255px;display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:17px 26px;border-radius:11px;text-decoration:none;color:#fff;font-size:17px;font-weight:700;letter-spacing:.02em;border:1px solid #d58bff;box-shadow:0 0 20px rgba(174,58,255,.4),inset 0 0 14px rgba(198,100,255,.15);transition:transform .2s,box-shadow .2s}
+.hero-button:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(190,75,255,.7)}
+.hero-button svg{width:22px;height:22px}
+.hero-button.primary{background:linear-gradient(110deg,rgba(111,30,158,.96),rgba(52,12,79,.94))}
+.hero-button.secondary{background:rgba(8,6,14,.88)}
+.hero-feature-grid{width:min(100%,1480px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative;z-index:2}
+.hero-feature{min-height:126px;padding:18px 20px;display:flex;align-items:center;gap:18px;text-decoration:none;color:#fff;background:linear-gradient(135deg,rgba(12,9,18,.94),rgba(22,13,31,.94));border:1px solid rgba(187,133,211,.48);border-radius:9px;box-shadow:0 12px 28px rgba(0,0,0,.6),inset 0 0 20px rgba(170,83,220,.08);transition:.25s;position:relative}
+.hero-feature:before{content:"";position:absolute;left:12px;right:12px;bottom:-3px;height:3px;background:linear-gradient(90deg,transparent,#c45cff,transparent);filter:blur(4px)}
+.hero-feature:hover{transform:translateY(-6px);border-color:#d48aff;box-shadow:0 12px 35px rgba(132,36,190,.35)}
+.feature-icon{color:#cb72ff;flex:0 0 54px;display:grid;place-items:center}
+.feature-icon svg{width:48px;height:48px;stroke-width:1.6;filter:drop-shadow(0 0 7px rgba(192,91,255,.65))}
+.feature-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.feature-copy strong{font-family:Georgia,serif;font-size:21px;color:#fff}
+.feature-copy small{font-size:13px;line-height:1.45;color:#c9c0d0}
+.feature-arrow{width:18px;height:18px;margin-left:auto;flex:0 0 auto;color:#d6a0f6}
+#videos,#about,#stats{background-color:#0b0811!important}
+#videos{background-image:linear-gradient(180deg,#0a0810,#100a18 50%,#08070d)}
+#about{background-image:linear-gradient(135deg,rgba(13,8,20,.98),rgba(22,11,32,.96))}
+#stats{background-image:linear-gradient(180deg,#08070d,#130a1c)}
+.stat-card{background:linear-gradient(145deg,rgba(25,15,35,.95),rgba(8,7,13,.98))!important;border-color:rgba(188,104,244,.28)!important}
+.card-hover:hover{box-shadow:0 20px 40px -5px rgba(177,74,255,.24),0 10px 20px -5px rgba(177,74,255,.18)}
+.rs-button{background:linear-gradient(135deg,#c65cff,#6816a0)!important;color:#fff!important}
+@media(max-width:1100px){.nav-actions{gap:10px}.desktop-nav{gap:20px}.hero-feature-grid{gap:12px}.hero-feature{padding:15px 12px;gap:11px}.feature-icon{flex-basis:42px}.feature-icon svg{width:40px;height:40px}.feature-copy strong{font-size:18px}.feature-copy small{font-size:12px}}
+@media(max-width:760px){
+ .scaphex-nav-inner{min-height:70px;padding:0 18px}.brand-s{font-size:48px}.brand-word{font-size:20px;letter-spacing:.2em}
+ .desktop-nav,.nav-actions{display:none}.mobile-menu-toggle{display:grid;place-items:center;width:48px;height:46px;border:1px solid rgba(208,145,241,.65);border-radius:10px;background:rgba(20,11,29,.85);color:#f5eaff}.mobile-menu-toggle svg{width:21px;height:21px}
+ .mobile-menu{position:absolute;top:100%;left:0;right:0;padding:12px 20px 20px;background:rgba(8,6,13,.98);border-top:1px solid rgba(195,92,255,.3);box-shadow:0 18px 30px #000;display:flex;flex-direction:column;gap:0}
+ .mobile-menu.hidden{display:none}.mobile-menu a{padding:14px 4px;color:#eee2f8;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08)}
+ .scaphex-hero{min-height:940px;padding:112px 18px 28px;justify-content:flex-start}
+ .hero-art{background-position:56% center}
+ .hero-vignette{background:linear-gradient(180deg,rgba(5,4,10,.22),rgba(5,4,10,.34) 48%,rgba(5,4,10,.95) 100%),linear-gradient(90deg,rgba(5,4,10,.42),transparent 50%,rgba(5,4,10,.35))}
+ .hero-content{padding:65px 0 38px}
+ .hero-emblem{width:142px;height:142px;margin-bottom:12px}.hero-emblem span{font-size:112px}
+ .hero-content h1{font-size:clamp(47px,13vw,72px);letter-spacing:.12em;margin:12px 0 18px}
+ .hero-pillars{gap:9px;font-size:10px;letter-spacing:.19em}.hero-pillars i{height:17px}
+ .hero-tagline{font-size:20px;margin:22px 0 28px}
+ .hero-ctas{flex-direction:column;gap:13px}.hero-button{width:min(100%,420px);min-width:0;padding:16px 18px;font-size:16px}
+ .hero-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:auto}
+ .hero-feature{min-height:104px;padding:12px 10px;gap:9px}.feature-icon{flex-basis:32px}.feature-icon svg{width:31px;height:31px}
+ .feature-copy strong{font-size:16px}.feature-copy small{font-size:10px;line-height:1.35}.feature-arrow{width:14px}
+}
+@media(max-width:390px){.hero-feature{padding:10px 8px;gap:7px}.feature-icon{flex-basis:27px}.feature-icon svg{width:26px;height:26px}.feature-copy strong{font-size:14px}.feature-copy small{font-size:9px}.hero-pillars{gap:7px;font-size:9px}}
+
+
+/* Scaphex emblem: circular image treatment, preserving the supplied artwork */
+.brand-emblem{
+    width:58px;height:58px;aspect-ratio:1;object-fit:contain;object-position:center;
+    display:block;border-radius:0;overflow:visible;
+    border:0;background:transparent;
+    filter:drop-shadow(0 0 10px rgba(180,75,255,.58)) drop-shadow(0 0 22px rgba(126,35,205,.24));
+}
+.hero-emblem{
+    width:176px;height:176px;aspect-ratio:1;margin:0 auto 12px;
+    border:2px solid rgba(204,126,255,.82);border-radius:50%;
+    overflow:hidden;display:block;position:relative;
+    background:#090510;
+    box-shadow:0 0 24px rgba(175,55,255,.52),0 0 58px rgba(126,35,205,.2),
+       inset 0 0 24px rgba(175,55,255,.18);
+}
+.hero-emblem img{
+    width:100%;height:100%;object-fit:cover;object-position:center;
+    display:block;border-radius:50%;
+    filter:drop-shadow(0 0 12px rgba(175,55,255,.38));
+}
+@media(max-width:760px){
+    .brand-emblem{width:52px;height:52px}
+    .hero-emblem{width:168px;height:168px}
+}
+
+/* Community CTA and footer social icon display */
+.scaphex-cta{isolation:isolate;background:linear-gradient(180deg,#09070f 0%,#10091a 52%,#08070d 100%)}
+.scaphex-cta:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.2;background-image:radial-gradient(rgba(202,119,255,.35) 1px,transparent 1px);background-size:34px 34px}
+.scaphex-cta-glow{position:absolute;z-index:-1;width:min(90vw,760px);height:360px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(130,42,190,.22),rgba(71,24,105,.09) 48%,transparent 72%);pointer-events:none}
+.scaphex-cta-icon{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;color:#e8c6ff;background:radial-gradient(circle at 50% 40%,rgba(142,57,195,.38),rgba(28,12,39,.82));border:1px solid rgba(204,126,255,.7);box-shadow:0 0 25px rgba(176,76,235,.28),inset 0 0 18px rgba(176,76,235,.2)}
+.scaphex-cta-icon svg{width:38px;height:38px;display:block}
+.scaphex-cta-button{width:100%;max-width:320px;min-height:64px;padding:16px 26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:13px;text-decoration:none;color:#fff;font-size:18px;font-weight:700;border:1px solid rgba(210,151,245,.55);transition:transform .2s,box-shadow .2s,background .2s}
+.scaphex-cta-button:hover{transform:translateY(-3px);box-shadow:0 0 26px rgba(177,74,255,.32)}
+.scaphex-cta-button svg{width:23px;height:23px;display:block;flex:0 0 auto}
+.scaphex-cta-button.primary{background:linear-gradient(110deg,#b94cf0,#68159b);box-shadow:0 0 22px rgba(160,63,220,.22)}
+.scaphex-cta-button.secondary{background:rgba(255,255,255,.055);border-color:rgba(210,190,225,.3)}
+.scaphex-cta-note{margin-top:30px;color:#a99db5;font-size:14px}
+.footer-socials .social-icon{width:42px;height:42px;min-width:42px;display:grid;place-items:center;border:1px solid rgba(194,142,222,.2);background:rgba(36,27,48,.9);border-radius:50%;color:#f2e9fb;flex:0 0 42px}
+.footer-socials .social-icon svg{display:block!important;width:20px!important;height:20px!important;min-width:20px;min-height:20px;opacity:1!important;visibility:visible!important;color:currentColor}
+@media(max-width:760px){.scaphex-cta-button{max-width:100%}}
+
+
+/* Homepage hero: align the live, functional layout with the approved cinematic concept */
+.scaphex-hero{min-height:calc(100vh - 76px);padding-top:112px;padding-bottom:54px;justify-content:center}
+.hero-content{width:min(100%,1050px);padding-bottom:36px}
+.hero-emblem{width:190px;height:190px;margin-bottom:8px}
+.hero-content h1{font-size:clamp(64px,9vw,122px);letter-spacing:.15em;margin:6px 0 18px}
+.hero-pillars{gap:clamp(8px,1.4vw,20px);font-size:clamp(9px,1vw,13px);letter-spacing:.17em;flex-wrap:wrap}
+.hero-pillars i{width:5px;height:5px;transform:rotate(45deg);border:0}
+.hero-tagline{font-style:normal;font-size:clamp(19px,2vw,26px);margin:22px 0 30px}
+.hero-button{border-radius:10px;min-width:270px}
+.hero-feature-grid{display:none}
+.hero-art{background-position:center 43%;}
+@media(max-width:760px){.scaphex-hero{min-height:calc(100svh - 70px);padding:96px 18px 36px}.hero-content{padding:34px 0 18px}.hero-emblem{width:120px;height:120px;position:relative;top:-54px;margin-bottom:-42px}.hero-content h1{font-size:clamp(48px,13vw,76px)}.hero-pillars{gap:8px;letter-spacing:.11em}.hero-tagline{margin:20px 0 26px}.hero-button{min-width:0;width:min(100%,390px)}}
+
+/* Mobile portrait shares the desktop/landscape hero artwork. */
+@media(min-width:2200px){
+ .hero-art{background-image:url('/assets/scaphex-hero-tv.svg');background-size:cover;background-position:center center;transform:none}
+}
+.hero-wordmark{display:block;width:min(92vw,820px);height:auto;max-height:270px;object-fit:contain;margin:0 auto 24px;filter:drop-shadow(0 8px 22px rgba(0,0,0,.48)) drop-shadow(0 0 14px rgba(174,70,255,.2))}
+@media(max-width:760px){.hero-wordmark{width:min(96vw,620px);max-height:190px;margin:0 auto 18px}}
+
+/* Hero background polish — preserve the approved scene while revealing its depth */
+.hero-art{
+ background-image:
+  radial-gradient(ellipse 27% 38% at 50% 36%,rgba(175,75,255,.22),transparent 76%),
+  radial-gradient(ellipse 54% 62% at 50% 42%,rgba(82,31,125,.13),transparent 78%),
+  url('/assets/scaphex-hero-desktop.svg');
+ background-size:auto,auto,cover;
+ background-position:center,center,center 43%;
+ background-repeat:no-repeat;
+ filter:saturate(1.13) brightness(1.12);
+}
+.hero-vignette{
+ background:
+  linear-gradient(180deg,rgba(4,3,9,.10) 0%,rgba(4,3,9,.12) 43%,rgba(4,3,9,.80) 100%),
+  radial-gradient(ellipse 42% 40% at 50% 36%,rgba(155,61,224,.10),transparent 78%),
+  radial-gradient(ellipse 90% 78% at 50% 44%,transparent 38%,rgba(3,2,8,.48) 100%);
+}
+/* Portrait now uses the same hero artwork and treatment as desktop and landscape. */
+
+
+/* Living portal atmosphere — enhanced particle depth, restrained around the wordmark */
+.hero-art{isolation:isolate;overflow:hidden}
+.hero-art::before,
+.hero-art::after{content:"";position:absolute;inset:-3%;pointer-events:none}
+.hero-art::before{
+ background:
+  radial-gradient(circle at 50% 37%,transparent 0 17%,rgba(211,157,255,.20) 19.5%,rgba(164,78,255,.12) 22%,transparent 28%),
+  radial-gradient(circle at 50% 37%,rgba(163,69,255,.17),transparent 35%),
+  radial-gradient(ellipse 42% 30% at 50% 52%,rgba(135,54,210,.09),transparent 78%);
+ opacity:.56;transform:scale(.985);
+ filter:drop-shadow(0 0 12px rgba(159,74,255,.16));
+ animation:scaphex-portal-breathe 7.5s ease-in-out infinite;
+}
+.hero-art::after{
+ inset:-8%;
+ background-image:
+  radial-gradient(circle,rgba(238,218,255,.92) 0 1px,transparent 2px),
+  radial-gradient(circle,rgba(190,112,255,.88) 0 1.35px,transparent 2.7px),
+  radial-gradient(circle,rgba(248,239,255,.72) 0 .9px,transparent 2.2px),
+  radial-gradient(circle,rgba(151,68,235,.82) 0 1.1px,transparent 2.4px),
+  radial-gradient(circle,rgba(214,177,255,.70) 0 .8px,transparent 2px),
+  radial-gradient(circle,rgba(174,91,255,.76) 0 1.5px,transparent 3px),
+  radial-gradient(circle,rgba(236,222,255,.58) 0 .75px,transparent 1.9px),
+  radial-gradient(circle,rgba(129,61,220,.74) 0 1.1px,transparent 2.5px);
+ background-size:83px 111px,127px 149px,173px 137px,211px 193px,251px 227px,97px 173px,307px 263px,149px 241px;
+ background-position:18px 24px,82px 71px,42px 112px,151px 39px,29px 181px,116px 13px,201px 91px,61px 217px;
+ opacity:.39;filter:blur(.12px);
+ animation:scaphex-particles-drift 19s linear infinite,scaphex-particles-twinkle 5.2s ease-in-out infinite;
+}
+@keyframes scaphex-portal-breathe{
+ 0%,100%{opacity:.43;transform:scale(.985)}
+ 50%{opacity:.78;transform:scale(1.025)}
+}
+@keyframes scaphex-particles-drift{
+ 0%{transform:translate3d(-3.5%,3%,0)}
+ 50%{transform:translate3d(3.5%,-3%,0)}
+ 100%{transform:translate3d(-3.5%,3%,0)}
+}
+@keyframes scaphex-particles-twinkle{
+ 0%,100%{opacity:.28}
+ 48%{opacity:.46}
+ 72%{opacity:.35}
+}
+@media(max-width:760px){
+ .hero-art::before{opacity:.60;animation-duration:8.5s}
+ .hero-art::after{
+  inset:-5%;opacity:.34;
+  background-size:91px 123px,139px 157px,181px 149px,223px 207px,263px 239px,103px 181px,317px 277px,157px 251px;
+  animation-duration:22s,5.8s;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art::before,.hero-art::after{animation:none!important}
+ .hero-art::before{opacity:.52;transform:none}
+ .hero-art::after{opacity:.16;transform:none}
+}
+
+
+/* Mobile portrait finishing pass: lift the wordmark and add restrained cinematic depth */
+@media(max-width:760px) and (orientation:portrait){
+ .hero-wordmark{
+  transform:translateY(-62px);
+  margin-bottom:14px;
+ }
+ .hero-art::before{
+  background:
+   radial-gradient(ellipse 58% 18% at 50% 40%,rgba(183,91,255,.16),transparent 78%),
+   radial-gradient(ellipse 34% 38% at 12% 58%,rgba(105,48,158,.15),transparent 78%),
+   radial-gradient(ellipse 34% 38% at 88% 58%,rgba(105,48,158,.15),transparent 78%),
+   radial-gradient(ellipse 48% 24% at 50% 68%,rgba(115,48,174,.12),transparent 82%),
+   radial-gradient(circle at 50% 29%,transparent 0 17%,rgba(211,157,255,.22) 19.5%,rgba(164,78,255,.14) 22%,transparent 28%),
+   radial-gradient(circle at 50% 29%,rgba(163,69,255,.19),transparent 35%),
+   radial-gradient(ellipse 42% 30% at 50% 44%,rgba(135,54,210,.12),transparent 78%);
+  opacity:.72;
+ }
+ .hero-art::after{opacity:.43}
+ .hero-vignette{
+  background:
+   linear-gradient(180deg,rgba(4,3,9,.08) 0%,rgba(4,3,9,.10) 38%,rgba(4,3,9,.72) 78%,rgba(3,2,8,.92) 100%),
+   radial-gradient(ellipse 72% 42% at 50% 43%,rgba(151,63,220,.10),transparent 82%),
+   radial-gradient(ellipse 110% 45% at 50% 88%,rgba(119,47,175,.08),transparent 76%);
+ }
+}
+
+
+/* Mobile portrait: tighten the handoff from the hero to Latest Adventures */
+@media(max-width:760px) and (orientation:portrait){
+ .scaphex-hero{min-height:calc(100svh - 150px);padding-bottom:24px}
+}
+
+
+/* Mobile portrait atmosphere upgrade — artwork and wordmark remain untouched */
+@media(max-width:760px) and (orientation:portrait){
+ .hero-art::before{
+  animation:scaphex-portal-flow 18s ease-in-out infinite;
+  filter:drop-shadow(0 0 18px rgba(159,74,255,.22));
+ }
+ .hero-art::after{
+  animation:scaphex-embers-rise 26s linear infinite,scaphex-embers-flicker 4.8s ease-in-out infinite;
+  opacity:.52;
+ }
+ .hero-vignette{isolation:isolate;overflow:hidden}
+ .hero-vignette::before,
+ .hero-vignette::after{
+  content:"";position:absolute;inset:-18%;pointer-events:none;
+ }
+ .hero-vignette::before{
+  background:
+   radial-gradient(ellipse 18% 42% at 22% 62%,rgba(172,89,255,.15),transparent 76%),
+   radial-gradient(ellipse 16% 38% at 78% 48%,rgba(133,69,221,.14),transparent 78%),
+   radial-gradient(ellipse 34% 16% at 50% 82%,rgba(177,91,255,.12),transparent 80%);
+  filter:blur(17px);
+  mix-blend-mode:screen;
+  animation:scaphex-mist-drift 23s ease-in-out infinite alternate;
+ }
+ .hero-vignette::after{
+  background:
+   linear-gradient(112deg,transparent 34%,rgba(190,128,255,.055) 47%,transparent 57%),
+   linear-gradient(72deg,transparent 40%,rgba(164,103,255,.045) 50%,transparent 60%);
+  opacity:.7;
+  mix-blend-mode:screen;
+  animation:scaphex-light-sweep 17s ease-in-out infinite alternate;
+ }
+}
+@keyframes scaphex-portal-flow{
+ 0%,100%{opacity:.55;transform:scale(.985) rotate(-2deg)}
+ 50%{opacity:.82;transform:scale(1.045) rotate(2deg)}
+}
+@keyframes scaphex-embers-rise{
+ 0%{background-position:18px 24px,82px 71px,42px 112px,151px 39px,29px 181px,116px 13px,201px 91px,61px 217px;transform:translate3d(-1%,5%,0)}
+ 50%{background-position:58px -70px,22px -45px,92px -38px,101px -110px,79px -40px,46px -95px,251px -58px,21px -80px;transform:translate3d(1%,-2%,0)}
+ 100%{background-position:98px -164px,-38px -161px,142px -188px,51px -259px,129px -261px,-24px -203px,301px -225px,-19px -297px;transform:translate3d(-1%,-9%,0)}
+}
+@keyframes scaphex-embers-flicker{
+ 0%,100%{opacity:.34;filter:brightness(.9)}
+ 35%{opacity:.58;filter:brightness(1.25)}
+ 68%{opacity:.43;filter:brightness(1.05)}
+}
+@keyframes scaphex-mist-drift{
+ 0%{transform:translate3d(-3%,2%,0) scale(.96);opacity:.55}
+ 100%{transform:translate3d(3%,-2%,0) scale(1.08);opacity:.95}
+}
+@keyframes scaphex-light-sweep{
+ 0%{transform:translateX(-5%) rotate(-2deg);opacity:.25}
+ 100%{transform:translateX(5%) rotate(2deg);opacity:.75}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-vignette::before,.hero-vignette::after{animation:none!important}
+}
+
+
+/* Scaphex navigation finish: glass depth, restrained amethyst energy */
+#navbar.scaphex-nav{
+ position:relative;
+ isolation:isolate;
+ background:linear-gradient(180deg,rgba(7,6,12,.91) 0%,rgba(10,7,17,.82) 100%);
+ border-bottom:1px solid rgba(205,130,255,.32);
+ box-shadow:0 10px 34px rgba(0,0,0,.48),0 1px 18px rgba(151,65,208,.10);
+ transition:background .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+#navbar.scaphex-nav::before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;left:8%;right:8%;bottom:-1px;height:1px;
+ background:linear-gradient(90deg,transparent,rgba(184,104,255,.08) 12%,rgba(205,135,255,.72) 50%,rgba(184,104,255,.08) 88%,transparent);
+ box-shadow:0 0 12px rgba(184,104,255,.32);
+}
+#navbar.scaphex-nav::after{
+ content:"";position:absolute;z-index:-1;pointer-events:none;left:34%;right:8%;top:-34px;height:100px;
+ background:radial-gradient(ellipse at 50% 100%,rgba(131,48,184,.15),transparent 72%);
+ filter:blur(13px);opacity:.8;
+}
+#navbar.scaphex-nav .scaphex-nav-inner{position:relative;z-index:1}
+#navbar.scaphex-nav .mobile-menu-toggle{
+ transition:background .25s ease,border-color .25s ease,box-shadow .25s ease,transform .2s ease;
+ box-shadow:inset 0 0 12px rgba(183,91,255,.07),0 3px 12px rgba(0,0,0,.25);
+}
+#navbar.scaphex-nav .mobile-menu-toggle:hover,
+#navbar.scaphex-nav .mobile-menu-toggle:focus-visible{
+ background:rgba(47,21,65,.92);border-color:rgba(224,170,255,.95);
+ box-shadow:0 0 18px rgba(174,83,255,.25),inset 0 0 14px rgba(183,91,255,.13);
+ outline:none;
+}
+#navbar.scaphex-nav .mobile-menu-toggle:active{transform:scale(.96)}
+#navbar.scaphex-nav .mobile-menu{
+ background:linear-gradient(180deg,rgba(12,8,19,.98),rgba(7,6,12,.99));
+ backdrop-filter:blur(18px);
+ border-top:1px solid rgba(195,92,255,.32);
+ box-shadow:0 18px 34px rgba(0,0,0,.58),inset 0 1px rgba(220,171,255,.04);
+}
+#navbar.scaphex-nav .mobile-menu a{transition:color .2s ease,padding-left .2s ease,text-shadow .2s ease}
+#navbar.scaphex-nav .mobile-menu a:hover,
+#navbar.scaphex-nav .mobile-menu a:focus-visible{color:#fff;padding-left:10px;text-shadow:0 0 12px rgba(196,92,255,.55)}
+@media(max-width:760px){
+ #navbar.scaphex-nav{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+ #navbar.scaphex-nav::after{left:12%;right:12%;top:-24px;height:92px;opacity:.72}
+}
+@media(prefers-reduced-motion:reduce){
+ #navbar.scaphex-nav,#navbar.scaphex-nav .mobile-menu-toggle,#navbar.scaphex-nav .mobile-menu a{transition:none}
+}
+
+
+/* Final responsive fit pass — preserve approved artwork and existing desktop/mobile composition */
+@media (min-width:761px) and (max-width:1399px){
+ .scaphex-hero{min-height:max(760px,calc(100svh - 76px));}
+ .hero-content{width:min(94vw,1050px);}
+ .hero-wordmark{width:min(88vw,820px);max-height:clamp(190px,25vw,270px);}
+ .hero-ctas{gap:clamp(12px,1.6vw,20px);}
+ .hero-button{min-width:clamp(220px,20vw,270px);}
+}
+@media (max-width:760px) and (orientation:portrait){
+ .scaphex-hero{min-height:max(680px,calc(100svh - 150px));}
+ .hero-content{width:100%;padding-left:0;padding-right:0;}
+ .hero-wordmark{display:block;width:min(96vw,620px);height:auto;max-height:none;object-fit:contain;overflow:visible;transform:translateY(-62px);margin:0 auto 14px;}
+ .hero-pillars{max-width:100%;justify-content:center;flex-wrap:wrap;row-gap:8px;}
+ .hero-tagline{max-width:100%;padding:0 8px;}
+ .hero-ctas{width:100%;align-items:center;}
+ .hero-button{width:min(100%,420px);}
+}
+@media (max-width:760px) and (orientation:landscape){
+ .scaphex-hero{min-height:max(540px,calc(100svh - 70px));padding:28px 22px 30px;justify-content:center;}
+ .hero-content{width:min(100%,900px);padding:20px 0 14px;}
+ .hero-wordmark{width:min(72vw,620px);max-height:clamp(105px,28svh,165px);transform:none;margin:0 auto 10px;}
+ .hero-pillars{gap:clamp(7px,1.6vw,14px);font-size:clamp(8px,1.35vw,11px);letter-spacing:.12em;flex-wrap:wrap;}
+ .hero-tagline{font-size:clamp(17px,2.5vw,22px);margin:12px 0 16px;}
+ .hero-ctas{flex-direction:row;gap:12px;flex-wrap:wrap;}
+ .hero-button{width:auto;min-width:clamp(190px,32vw,270px);padding:12px 16px;font-size:15px;}
+ .hero-art::before{background:
+  radial-gradient(circle at 50% 40%,transparent 0 17%,rgba(211,157,255,.20) 19.5%,rgba(164,78,255,.12) 22%,transparent 28%),
+  radial-gradient(circle at 50% 40%,rgba(163,69,255,.17),transparent 35%),
+  radial-gradient(ellipse 42% 30% at 50% 52%,rgba(135,54,210,.09),transparent 78%);}
+}
+@media (min-width:2200px){
+ .scaphex-hero{min-height:clamp(1000px,calc(100svh - 90px),1600px);padding:clamp(120px,8vh,180px) 5vw 7vh;}
+ .hero-art{
+  background-image:
+   radial-gradient(ellipse 27% 38% at 50% 36%,rgba(175,75,255,.22),transparent 76%),
+   radial-gradient(ellipse 54% 62% at 50% 42%,rgba(82,31,125,.13),transparent 78%),
+   url('/assets/scaphex-hero-tv.svg');
+  background-size:auto,auto,cover;background-position:center,center,center;
+ }
+ .hero-content{width:min(88vw,1500px);padding-bottom:clamp(36px,4vh,90px);}
+ .hero-wordmark{width:min(76vw,1100px);max-height:clamp(300px,34vh,440px);margin:0 auto clamp(24px,3vh,42px);}
+ .hero-pillars{font-size:clamp(15px,.9vw,21px);gap:clamp(18px,1.6vw,32px);}
+ .hero-tagline{font-size:clamp(28px,1.6vw,40px);margin:clamp(28px,3vh,46px) 0;}
+ .hero-button{min-width:clamp(320px,20vw,440px);padding:22px 34px;font-size:clamp(19px,1vw,24px);}
+}
+@media (prefers-reduced-motion:reduce){
+ .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{animation:none!important;}
+}
+
+
+/* Header brand lockup: stronger desktop presence, balanced within the existing nav height */
+.brand-mark{gap:7px}
+.brand-emblem{width:67px;height:67px}
+.brand-wordmark{display:block;width:177px;height:auto;max-height:58px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 7px rgba(177,76,255,.22))}
+@media(max-width:760px){.brand-mark{gap:8px;align-items:center;overflow:visible}.brand-emblem{width:48px;height:48px;flex:0 0 48px}.brand-wordmark{display:block;width:124px;height:auto;max-height:none;object-fit:contain;overflow:visible;flex:0 0 auto}}
+
+/* Scaphex metallic wordmark assembly — one-time hero overlay */
+#portal-fx{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+.hero-content,.hero-feature-grid{position:relative;z-index:3}
+.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:wordmark-content-reveal 1.1s ease-out 6.15s forwards}
+@keyframes wordmark-content-reveal{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){#portal-fx{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
+</style>
+</head>
+<body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
+
+    <!-- Navigation -->
+    <nav class="scaphex-nav fixed w-full z-50" id="navbar">
+  <div class="scaphex-nav-inner">
+    <a class="brand-mark" href="#home" aria-label="Scaphex home"><img class="brand-emblem" src="/assets/scaphex-logo3-transparent.png?v=20261114" alt="Scaphex emblem"><img class="brand-wordmark" src="/assets/scaphex-wordmark.png?v=20261114" alt="Scaphex"></a>
+    <div class="desktop-nav">
+      <a class="active" href="#home">Home</a>
+      <a href="#videos">Guides</a>
+      <a href="#videos">Videos</a>
+      <a href="#stats">Resources</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="nav-actions">
+      <a class="social-icon" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+      <a class="social-icon" href="https://www.twitch.tv/scaphexx" target="_blank" rel="noopener noreferrer" aria-label="Twitch"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4 2 1.5 6v15h5v3h3l3-3h4l6-6V2H4Zm16 12-3.5 3.5H11l-3 3v-3H4V4h16v10ZM13 7h2v6h-2V7Zm5 0v6h-2V7h2Z"/></svg></a>
+      <a class="social-icon" href="https://www.tiktok.com/@john_kossak" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i data-lucide="music-2"></i></a>
+      <a class="social-icon" href="https://www.instagram.com/scaphex_rs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="social-icon" href="https://x.com/Scaphex_" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.8 2h6.4l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg></a>
+      <a class="subscribe-button" href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer"><i data-lucide="bell"></i><span>Subscribe</span></a>
+    </div>
+    <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+  </div>
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <a href="#home">Home</a><a href="#videos">Guides & Videos</a><a href="#stats">Resources</a><a href="#about">About</a>
+    <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer">Subscribe on YouTube</a>
+  </div>
+</nav>
+
+<!-- Scaphex fantasy hero -->
+<section id="home" class="scaphex-hero">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <canvas id="portal-fx" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <img class="hero-wordmark" src="/assets/scaphex-wordmark.png" alt="SCAPHEX metallic silver and purple wordmark" width="1536" height="512" fetchpriority="high">
+    <div class="hero-pillars"><span>OLD SCHOOL RUNESCAPE</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>PROGRESSION</span></div>
+    <p class="hero-tagline">The grind is only the beginning.</p>
+    <div class="hero-ctas">
+      <a class="hero-button primary" href="#videos"><i data-lucide="play"></i>Watch Latest Videos</a>
+      <a class="hero-button secondary" href="#videos"><i data-lucide="book-open"></i>Browse Guides</a>
+    </div>
+  </div>
+  <div class="hero-feature-grid">
+    <a class="hero-feature" href="#videos"><span class="feature-icon"><i data-lucide="swords"></i></span><span class="feature-copy"><strong>Guides</strong><small>AFK methods, training, and money makers.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+    <a class="hero-feature" href="#stats"><span class="feature-icon"><i data-lucide="chart-no-axes-column-increasing"></i></span><span class="feature-copy"><strong>Progress</strong><small>Account builds, goals, and long-term grinds.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+    <a class="hero-feature" href="#stats"><span class="feature-icon"><i data-lucide="book-open"></i></span><span class="feature-copy"><strong>Resources</strong><small>Tools, calculators, and helpful links.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+    <a class="hero-feature" href="#about"><span class="feature-icon"><i data-lucide="user-round"></i></span><span class="feature-copy"><strong>About Scaphex</strong><small>The creator, the grind, and the mission.</small></span><i class="feature-arrow" data-lucide="chevron-right"></i></a>
+  </div>
+</section>
+
+<!-- Featured Videos Section -->
+    <section id="videos" class="py-24 bg-rs-dark relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-rs-gold/50 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4 px-4 py-1 rounded-full bg-rs-gold/10 border border-rs-gold/30 text-rs-gold text-sm font-semibold tracking-wider uppercase">
+                    Fresh Content
+                </div>
+                <h2 class="font-cinzel text-4xl md:text-5xl font-bold mb-4">Latest <span class="gradient-text">Adventures</span></h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Check out the newest content from the world of Gielinor</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="video-grid">
+                <!-- Skeleton Loader -->
+                <div class="col-span-full md:col-span-2 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="skeleton-loader">
+                    <div class="space-y-3">
+                        <div class="aspect-video rounded-xl loading-skeleton"></div>
+                        <div class="h-4 loading-skeleton rounded w-3/4"></div>
+                        <div class="h-3 loading-skeleton rounded w-1/2"></div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="aspect-video rounded-xl loading-skeleton"></div>
+                        <div class="h-4 loading-skeleton rounded w-3/4"></div>
+                        <div class="h-3 loading-skeleton rounded w-1/2"></div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="aspect-video rounded-xl loading-skeleton"></div>
+                        <div class="h-4 loading-skeleton rounded w-3/4"></div>
+                        <div class="h-3 loading-skeleton rounded w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://youtube.com/@scaphex/videos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-rs-gold hover:text-white transition-colors duration-300 text-lg font-semibold group">
+                    <span>View All Videos</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-rs-surface relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-rs-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-rs-gold/20 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="inline-block mb-4 px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold tracking-wider uppercase">
+                        The Creator
+                    </div>
+                    <h2 class="font-cinzel text-4xl md:text-5xl font-bold mb-6">About <span class="gradient-text">Scaphex</span></h2>
+                    <div class="space-y-4 text-gray-300 text-lg leading-relaxed">
+                        <p>
+                            Welcome to my corner of Gielinor! I'm a passionate RuneScape player creating content that ranges from efficient skilling guides to epic PvM battles and everything in between.
+                        </p>
+                        <p>
+                            Whether you're a new player looking for direction or a veteran seeking optimized methods, my channel offers valuable insights, entertaining gameplay, and a community-focused approach to Old School RuneScape.
+                        </p>
+                        <p>
+                            Join me on my journey to achieve the coveted Max Cape, complete all quests, and conquer the most challenging bosses in the game!
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                            <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="target" class="w-6 h-6 text-red-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">PvM Content</p>
+                                <p class="text-sm text-gray-400">Boss guides & drops</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Money Making</p>
+                                <p class="text-sm text-gray-400">GP/hr methods</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="book-open" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Quest Guides</p>
+                                <p class="text-sm text-gray-400">Step-by-step help</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i data-lucide="zap" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-white">Skilling</p>
+                                <p class="text-sm text-gray-400">Efficient training</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 relative flex justify-center items-center">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-rs-gold to-orange-500 rounded-2xl opacity-30 blur-2xl animate-pulse-slow"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-rs-gold/30 group video-container">
+                        <img src="https://i.imgur.com/EJhvpwW.png" alt="Scaphex RuneScape Character" class="w-full object-cover h-[400px] md:h-[500px] group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        
+                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-rs-dark/90 backdrop-blur-md border border-rs-gold/30 rounded-xl p-5 shadow-2xl w-72">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rs-gold to-orange-500 flex items-center justify-center shadow-lg shadow-rs-gold/30">
+                                    <i data-lucide="award" class="w-5 h-5 text-rs-dark"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 uppercase tracking-wider">Achievements</p>
+                                    <p class="font-cinzel font-bold text-sm text-rs-gold"></p>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400 flex-shrink-0"></i>
+                                    <span class="text-gray-300">YouTube Partner Program</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400 flex-shrink-0"></i>
+                                    <span class="text-gray-300">Twitch Affiliate</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400 flex-shrink-0"></i>
+                                    <span class="text-gray-300">RuneScape 3 Creator Program</span>
+                                </div>
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400 flex-shrink-0"></i>
+                                    <span class="text-gray-300"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Stats Section -->
+    <section id="stats" class="py-24 bg-rs-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-4 px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-sm font-semibold tracking-wider uppercase">
+                    Growth Metrics
+                </div>
+                <h2 class="font-cinzel text-4xl md:text-5xl font-bold mb-4">Channel <span class="gradient-text">Statistics</span></h2>
+                <p class="text-gray-400">Real-time growth and achievements</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card rounded-2xl p-8 border border-rs-gold/20 card-hover group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center">
+                            <i data-lucide="calendar" class="w-7 h-7 text-green-400"></i>
+                        </div>
+                        <span class="text-green-400 text-sm font-semibold bg-green-500/10 px-2 py-1 rounded">+12%</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-1">Channel Age</p>
+                    <p class="text-3xl font-bold text-white group-hover:text-rs-gold transition-colors">3+ Years</p>
+                </div>
+
+                <div class="stat-card rounded-2xl p-8 border border-rs-gold/20 card-hover group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                            <i data-lucide="thumbs-up" class="w-7 h-7 text-blue-400"></i>
+                        </div>
+                        <span class="text-blue-400 text-sm font-semibold bg-blue-500/10 px-2 py-1 rounded">98%</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-1">Engagement Rate</p>
+                    <p class="text-3xl font-bold text-white group-hover:text-rs-gold transition-colors">High</p>
+                </div>
+
+                <div class="stat-card rounded-2xl p-8 border border-rs-gold/20 card-hover group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                            <i data-lucide="message-circle" class="w-7 h-7 text-purple-400"></i>
+                        </div>
+                        <span class="text-purple-400 text-sm font-semibold bg-purple-500/10 px-2 py-1 rounded">Active</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-1">Community</p>
+                    <p class="text-3xl font-bold text-white group-hover:text-rs-gold transition-colors">Discord</p>
+                </div>
+
+                <div class="stat-card rounded-2xl p-8 border border-rs-gold/20 card-hover group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-14 h-14 rounded-xl bg-rs-gold/20 flex items-center justify-center">
+                            <i data-lucide="award" class="w-7 h-7 text-rs-gold"></i>
+                        </div>
+                        <span class="text-rs-gold text-sm font-semibold bg-rs-gold/10 px-2 py-1 rounded">4K</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-1">Content Quality</p>
+                    <p class="text-3xl font-bold text-white group-hover:text-rs-gold transition-colors">Ultra HD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scaphex community CTA -->
+    <section class="scaphex-cta py-24 relative overflow-hidden">
+        <div class="scaphex-cta-glow" aria-hidden="true"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="scaphex-cta-icon mx-auto mb-6" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+            </div>
+            <h2 class="font-cinzel text-4xl md:text-6xl font-bold mb-6">Join the Adventure Today!</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Don't miss out on the latest RuneScape content. Subscribe and become part of the Scaphex community!</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" class="scaphex-cta-button primary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+                    <span>Subscribe Now</span>
+                </a>
+                <a href="#videos" class="scaphex-cta-button secondary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7V5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    <span>Browse Videos</span>
+                </a>
+            </div>
+            <p class="scaphex-cta-note">Guides, bossing, skilling, and progression from the Scaphex community.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rs-surface border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="/assets/scaphex-logo3-transparent.png?v=20261114" alt="Scaphex emblem" class="w-6 h-6 object-contain">
+                        <span class="font-cinzel text-xl font-bold gradient-text">SCAPHEX</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
+                        Creating premium RuneScape content for the community. Guides, PvM, skilling, and progression series.
+                    </p>
+                    <div class="footer-socials flex flex-wrap gap-4">
+                        <a href="https://youtube.com/@scaphex" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-all duration-300 hover:scale-110">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="w-5 h-5"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+                        </a>
+                        <a href="https://x.com/Scaphex_" target="_blank" rel="noopener noreferrer" aria-label="X" title="X" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-600 transition-all duration-300 hover:scale-110">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="w-5 h-5"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/scaphex_rs" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition-all duration-300 hover:scale-110">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="https://www.twitch.tv/scaphexx" target="_blank" rel="noopener noreferrer" aria-label="Twitch" title="Twitch" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="w-5 h-5"><path d="M4 2 1.5 6v14h5v3h3l3-3h4l6-6V2H4Zm16 11-3 3h-5l-3 3v-3H5V4h15v9ZM9 7h2v5H9V7Zm5 0h2v5h-2V7Z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@john_kossak" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok" class="social-icon w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition-all duration-300 hover:scale-110">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="w-5 h-5"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.7h-3.5v13.7a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.4a6.3 6.3 0 1 0 5.5 6.3v-7a8.2 8.2 0 0 0 4.8 1.5V6.7h-1Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-cinzel font-bold text-white mb-4 text-lg">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Home</span></a></li>
+                        <li><a href="#videos" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Videos</span></a></li>
+                        <li><a href="#about" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>About</span></a></li>
+                        <li><a href="#stats" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Stats</span></a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-cinzel font-bold text-white mb-4 text-lg">Content</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Boss Guides</span></a></li>
+                        <li><a href="#" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Money Making</span></a></li>
+                        <li><a href="#" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Quest Guides</span></a></li>
+                        <li><a href="#" class="hover:text-rs-gold transition-colors flex items-center space-x-2 group"><i data-lucide="chevron-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i><span>Ironman Series</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 Scaphex. Not affiliated with Jagex Ltd.</p>
+                <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                    <i data-lucide="shield" class="w-4 h-4 text-gray-600"></i>
+                    <p class="text-gray-600 text-sm">RuneScape is a trademark of Jagex Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Assemble the SCAPHEX wordmark from flying gunmetal and silver fragments.
+        (function initMetalWordmarkIntro() {
+            const hero=document.querySelector('.scaphex-hero');
+            const canvas=document.getElementById('portal-fx');
+            const wordmark=hero&&hero.querySelector('.hero-wordmark');
+            if(!hero||!canvas||!wordmark)return;
+            const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let played=false;
+            try{played=sessionStorage.getItem('scaphex-wordmark-shards-v1')==='1';}catch(e){}
+            if(reduced||played){canvas.remove();return;}
+            try{sessionStorage.setItem('scaphex-wordmark-shards-v1','1');}catch(e){}
+            hero.classList.add('portal-intro-active');
+            const ctx=canvas.getContext('2d');
+            const source=new Image();source.src=wordmark.currentSrc||wordmark.src;
+            let W=0,H=0,D=1,parts=[],start=0,raf=0,targets=[];
+            const rand=(a,b)=>a+Math.random()*(b-a);
+            const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+            function resize(){
+                D=Math.min(window.devicePixelRatio||1,2);W=hero.clientWidth;H=hero.clientHeight;
+                canvas.width=Math.round(W*D);canvas.height=Math.round(H*D);ctx.setTransform(D,0,0,D,0,0);
+            }
+            function boxCenterX(){const a=wordmark.getBoundingClientRect(),h=hero.getBoundingClientRect();return a.left-h.left+a.width/2;}
+            function boxCenterY(){const a=wordmark.getBoundingClientRect(),h=hero.getBoundingClientRect();return a.top-h.top+a.height/2;}
+            function sampleTargets(){
+                targets=[];if(!source.complete||!source.naturalWidth)return;
+                const off=document.createElement('canvas'),o=off.getContext('2d',{willReadFrequently:true});
+                off.width=source.naturalWidth;off.height=source.naturalHeight;o.drawImage(source,0,0);
+                const pixels=o.getImageData(0,0,off.width,off.height).data;
+                const box=wordmark.getBoundingClientRect(),heroBox=hero.getBoundingClientRect();
+                const left=box.left-heroBox.left,top=box.top-heroBox.top;
+                const scaleX=box.width/off.width,scaleY=box.height/off.height;
+                const step=Math.max(3,Math.floor(off.width/180));
+                for(let y=0;y<off.height;y+=step)for(let x=0;x<off.width;x+=step){
+                    const a=pixels[(y*off.width+x)*4+3];
+                    if(a>90)targets.push({x:left+(x+rand(-step*.45,step*.45))*scaleX,
+                        y:top+(y+rand(-step*.45,step*.45))*scaleY});
+                }
+                if(!targets.length)return;
+                const count=W<760?280:560;
+                parts=[];
+                for(let i=0;i<count;i++){
+                    const t=targets[Math.floor(Math.random()*targets.length)];
+                    const sx=W+rand(24,W*.42),sy=H+rand(12,H*.24);
+                    const cx=(sx+t.x)*.5+rand(-W*.08,W*.04),cy=(sy+t.y)*.5-rand(H*.12,H*.27);
+                    const centerDistance=Math.hypot(t.x-boxCenterX(),t.y-boxCenterY());
+                    parts.push({sx,sy,cx,cy,x:sx,y:sy,tx:t.x,ty:t.y,
+                        delay:.12+centerDistance/Math.max(1,W)*1.25+rand(0,.42),
+                        size:rand(W<760?3.8:4.8,W<760?8.5:11),length:rand(1.25,2.0),
+                        breadth:rand(.42,.52),angle:rand(-Math.PI,Math.PI),spin:rand(-5,5),
+                        landed:false,alpha:rand(.82,1),tone:Math.random(),trail:rand(5,13)});
+                }
+            }
+            function plate(p){
+                const l=p.size*p.length,b=p.size*p.breadth;
+                ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);
+                ctx.beginPath();ctx.moveTo(-l,-b*.25);ctx.lineTo(-l*.28,-b);
+                ctx.lineTo(l*.55,-b*.62);ctx.lineTo(l,b*.1);ctx.lineTo(l*.25,b);
+                ctx.lineTo(-l*.7,b*.55);ctx.closePath();ctx.clip();
+                const g=ctx.createLinearGradient(-l,-b,l,b);
+                g.addColorStop(0,'#17191f');g.addColorStop(.22,'#606773');
+                g.addColorStop(.43,'#e0e3e8');g.addColorStop(.58,'#555b65');
+                g.addColorStop(.78,'#aeb4bf');g.addColorStop(1,'#20232b');
+                ctx.fillStyle=g;ctx.fill();
+                ctx.strokeStyle='rgba(238,220,255,.9)';ctx.lineWidth=.8;ctx.stroke();
+                ctx.beginPath();ctx.moveTo(-l*.55,-b*.08);ctx.lineTo(l*.45,b*.05);
+                ctx.strokeStyle=p.tone<.28?'rgba(191,83,255,.95)':'rgba(255,255,255,.48)';
+                ctx.lineWidth=1.1;ctx.shadowBlur=5;ctx.shadowColor='#a84aff';ctx.stroke();
+                ctx.restore();
+            }
+            function draw(now){
+                const elapsed=(now-start)/1000;ctx.clearRect(0,0,W,H);
+                let landed=0;
+                for(const p of parts){
+                    const local=elapsed-p.delay;if(local<0)continue;
+                    const progress=clamp(local/2.85,0,1);
+                    const ease=progress*progress*(3-2*progress);
+                    const inv=1-ease;
+                    p.x=inv*inv*p.sx+2*inv*ease*p.cx+ease*ease*p.tx;
+                    p.y=inv*inv*p.sy+2*inv*ease*p.cy+ease*ease*p.ty;
+                    p.angle+=p.spin*.008*(1-progress);
+                    if(progress>.88)p.angle+=(Math.atan2(p.ty-p.cy,p.tx-p.cx)-p.angle)*.035;
+                    if(progress>=1){p.landed=true;landed++;}
+                    const arrival=clamp((1-progress)/.18,0,1);
+                    ctx.globalAlpha=p.alpha*clamp(local/.3,0,1);plate(p);
+                    if(progress<.96){
+                        ctx.beginPath();ctx.moveTo(p.x,p.y);
+                        ctx.lineTo(p.x+p.trail*.72,p.y+p.trail*.42);
+                        ctx.strokeStyle='rgba(190,105,255,.32)';ctx.lineWidth=.9;ctx.stroke();
+                    }
+                }
+                ctx.globalAlpha=1;
+                const completion=parts.length?landed/parts.length:0;
+                if(completion>.97&&elapsed>5.0&&!canvas.dataset.fading){
+                    canvas.dataset.fading='1';canvas.style.transition='opacity 1.8s cubic-bezier(.22,.61,.36,1)';
+                    requestAnimationFrame(()=>canvas.style.opacity='0');
+                }
+                if(elapsed<8.4)raf=requestAnimationFrame(draw);
+                else canvas.remove();
+            }
+            function begin(){
+                resize();sampleTargets();start=performance.now();
+                if(!parts.length){canvas.remove();hero.classList.remove('portal-intro-active');return;}
+                raf=requestAnimationFrame(draw);
+            }
+            if(source.complete&&source.naturalWidth)begin();
+            else source.onload=begin;
+            window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();sampleTargets();start=performance.now();raf=requestAnimationFrame(draw);},{passive:true});
+        })();
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Create floating particles for hero section
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container || window.innerWidth < 768) return;
+            
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                container.appendChild(particle);
+            }
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = !mobileMenu.classList.contains('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(isExpanded));
+            mobileMenuBtn.setAttribute('aria-label', isExpanded ? 'Close menu' : 'Open menu');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-lucide', isExpanded ? 'x' : 'menu');
+                lucide.createIcons();
+            }
+        });
+
+        // Close mobile menu when link clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            });
+        });
+
+        // Load public YouTube uploads through a Netlify Function.
+        // The function reads YouTube's public RSS feed server-side; no API key is exposed.
+        async function fetchChannelData() {
+            ['subscriber-count', 'video-count', 'view-count'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = '--';
+            });
+
+            try {
+                const response = await fetch('/.netlify/functions/youtube-feed');
+                if (!response.ok) throw new Error('YouTube feed request failed');
+                const data = await response.json();
+                const videos = Array.isArray(data.videos) ? data.videos.map(video => ({
+                    videoId: video.videoId,
+                    title: video.title || 'Untitled Video',
+                    thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`,
+                    views: '',
+                    date: formatDate(video.publishedAt),
+                    duration: ''
+                })) : [];
+                renderVideos(videos);
+            } catch (error) {
+                console.error('Unable to load YouTube uploads:', error);
+                renderVideos([]);
+            }
+        }
+
+        // Format relative date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffTime = Math.abs(now - date);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            if (diffDays === 0) return 'Today';
+            if (diffDays === 1) return 'Yesterday';
+            if (diffDays < 7) return `${diffDays} days ago`;
+            if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+            if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+            return `${Math.floor(diffDays / 365)} years ago`;
+        }
+
+        // Format ISO 8601 duration to readable time
+        function formatDuration(duration) {
+            if (!duration || typeof duration !== 'string') return '0:00';
+            
+            const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+            if (!match) return '0:00';
+            
+            const hours = (match[1] ? parseInt(match[1]) : 0);
+            const minutes = (match[2] ? parseInt(match[2]) : 0);
+            const seconds = (match[3] ? parseInt(match[3]) : 0);
+            
+            if (hours > 0) {
+                return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Render video grid
+        function renderVideos(videos) {
+            const videoGrid = document.getElementById('video-grid');
+            const skeleton = document.getElementById('skeleton-loader');
+            
+            if (skeleton) {
+                skeleton.style.display = 'none';
+            }
+            
+            if (!videoGrid) {
+                console.warn('Video grid element was not found.');
+                return;
+            }
+
+            if (!videos || videos.length === 0) {
+                videoGrid.innerHTML = '<div class="col-span-full text-center text-gray-400 py-12">No videos found</div>';
+                return;
+            }
+            
+            videoGrid.innerHTML = videos.map((video, index) => `
+                <a href="https://youtube.com/watch?v=${video.videoId}" target="_blank" rel="noopener noreferrer" class="group cursor-pointer block video-card" style="animation-delay: ${index * 0.1}s">
+                    <div class="relative overflow-hidden rounded-xl mb-3 aspect-video video-thumbnail bg-gray-800 shadow-lg video-container">
+                        <img src="${video.thumbnail}" alt="${video.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <div class="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-8 h-8 text-white fill-white ml-1"></i>
+                            </div>
+                        </div>
+                        ${video.duration ? `<div class="absolute bottom-2 right-2 bg-black/80 px-2 py-1 rounded text-xs font-semibold border border-white/10 text-white">${video.duration}</div>` : ''}
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 line-clamp-2 text-white group-hover:text-rs-gold transition-colors duration-300 leading-tight">${video.title}</h3>
+                    <div class="flex items-center text-gray-400 text-sm space-x-2">
+                        ${video.views ? `<span class="text-rs-gold-dark">${video.views}</span><span class="w-1 h-1 rounded-full bg-gray-600"></span>` : ''}
+                        <span>${video.date}</span>
+                    </div>
+                </a>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            fetchChannelData();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (!nav) return;
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'bg-rs-dark/95');
+                nav.classList.remove('bg-rs-dark/80');
+            } else {
+                nav.classList.remove('shadow-lg', 'bg-rs-dark/95');
+                nav.classList.add('bg-rs-dark/80');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards after page load
+        setTimeout(() => {
+            document.querySelectorAll('.card-hover, .stat-card').forEach((el) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        }, 100);
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
