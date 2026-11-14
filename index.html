@@ -743,6 +743,64 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 @media(max-width:760px){.portal-intro .energy-vortex{width:145vw;top:34%}.portal-intro .energy-arcs{top:-12%}.portal-intro .portal-core{top:34%}.portal-intro .ritual-smoke-a,.portal-intro .ritual-smoke-b{inset:-24%;filter:blur(18px)}}
 @media(prefers-reduced-motion:reduce){.portal-intro{display:none!important}}
 
+<svg aria-hidden="true" width="0" height="0" style="position:absolute"><filter id="scaphex-smoke-distort" x="-35%" y="-35%" width="170%" height="170%"><feTurbulence type="fractalNoise" baseFrequency=".009 .018" numOctaves="3" seed="17" result="noise"><animate attributeName="baseFrequency" values=".008 .015;.012 .022;.008 .015" dur="5.5s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="78" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+
+/* Smoke pass: organic turbulent vapor, not glowing rings or party-light streaks */
+.portal-intro .ritual-smoke{
+  inset:-30% -24%;
+  opacity:0;
+  filter:url(#scaphex-smoke-distort) blur(13px);
+  mix-blend-mode:screen;
+  background:
+    radial-gradient(ellipse 18% 34% at 0% 52%,rgba(126,113,139,.0) 0 28%,rgba(122,105,137,.68) 49%,rgba(68,51,83,.42) 66%,transparent 82%),
+    radial-gradient(ellipse 21% 39% at 100% 46%,rgba(126,113,139,0) 0 26%,rgba(126,109,145,.7) 48%,rgba(67,51,83,.48) 68%,transparent 84%),
+    radial-gradient(ellipse 26% 28% at 14% 100%,rgba(110,96,126,0) 0 28%,rgba(110,96,126,.54) 53%,transparent 82%),
+    radial-gradient(ellipse 25% 30% at 88% 100%,rgba(110,96,126,0) 0 28%,rgba(110,96,126,.56) 53%,transparent 82%);
+  background-size:100% 100%;
+  animation:smoke-billow-in 6.3s cubic-bezier(.18,.62,.22,1) .15s forwards;
+}
+.portal-intro .ritual-smoke-a{
+  filter:url(#scaphex-smoke-distort) blur(16px);
+  animation:smoke-billow-in 6.3s cubic-bezier(.18,.62,.22,1) .15s forwards,smoke-drift-a 5.6s ease-in-out .2s both;
+}
+.portal-intro .ritual-smoke-b{
+  inset:-38% -32%;
+  opacity:0;
+  filter:url(#scaphex-smoke-distort) blur(24px);
+  background:
+    radial-gradient(ellipse 22% 36% at 2% 22%,rgba(165,151,177,0) 0 24%,rgba(139,124,153,.56) 48%,rgba(72,57,88,.3) 68%,transparent 84%),
+    radial-gradient(ellipse 25% 40% at 98% 76%,rgba(165,151,177,0) 0 24%,rgba(143,127,160,.58) 48%,rgba(72,57,88,.32) 68%,transparent 84%),
+    radial-gradient(ellipse 30% 22% at 50% 110%,rgba(150,135,164,0) 0 22%,rgba(130,115,145,.45) 50%,transparent 82%);
+  animation:smoke-billow-in 6.6s cubic-bezier(.18,.62,.22,1) .45s forwards,smoke-drift-b 6s ease-in-out .4s both;
+}
+.portal-intro .portal-pull{opacity:0!important;animation:none!important}
+.portal-intro .energy-arcs{opacity:0!important;animation:none!important}
+.portal-intro .energy-vortex{
+  filter:blur(15px) drop-shadow(0 0 22px rgba(119,64,151,.55));
+  background:conic-gradient(from 0deg,transparent 0 18%,rgba(164,144,180,.18) 24%,transparent 31% 48%,rgba(196,177,210,.28) 54%,transparent 63% 82%,rgba(144,116,164,.2) 88%,transparent 100%);
+}
+.portal-intro .energy-burst{
+  background:radial-gradient(ellipse at 50% 43%,rgba(220,208,229,.28),rgba(122,83,145,.2) 8%,rgba(70,43,91,.12) 22%,transparent 43%);
+}
+@keyframes smoke-billow-in{
+  0%{opacity:0;transform:translate3d(0,7%,0) scale(.72)}
+  18%{opacity:.62}
+  46%{opacity:.88;transform:translate3d(0,1%,0) scale(1.04)}
+  72%{opacity:.72;transform:translate3d(0,-2%,0) scale(1.12)}
+  100%{opacity:0;transform:translate3d(0,-5%,0) scale(1.2)}
+}
+@keyframes smoke-drift-a{
+  0%,100%{background-position:0 0;transform:translateX(-2%) scale(1)}
+  50%{background-position:3% -4%;transform:translateX(3%) scale(1.08)}
+}
+@keyframes smoke-drift-b{
+  0%,100%{transform:translate3d(2%,2%,0) rotate(-3deg) scale(1)}
+  50%{transform:translate3d(-3%,-2%,0) rotate(4deg) scale(1.1)}
+}
+@media(max-width:760px){
+ .portal-intro .ritual-smoke{filter:url(#scaphex-smoke-distort) blur(10px);inset:-22% -34%}
+ .portal-intro .ritual-smoke-b{filter:url(#scaphex-smoke-distort) blur(15px)}
+}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
