@@ -1098,9 +1098,9 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             if (!hero || !intro) return;
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let alreadyPlayed = false;
-            try { alreadyPlayed = sessionStorage.getItem('scaphex-portal-intro-played') === '1'; } catch (e) {}
+            try { alreadyPlayed = sessionStorage.getItem('scaphex-portal-intro-v3-played') === '1'; } catch (e) {}
             if (reducedMotion || alreadyPlayed) { intro.remove(); return; }
-            try { sessionStorage.setItem('scaphex-portal-intro-played', '1'); } catch (e) {}
+            try { sessionStorage.setItem('scaphex-portal-intro-v3-played', '1'); } catch (e) {}
             hero.classList.add('portal-intro-active');
             const finish = () => {
                 intro.classList.add('is-finished');
