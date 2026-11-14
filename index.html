@@ -559,6 +559,55 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  .hero-vignette::before,.hero-vignette::after{animation:none!important}
 }
 
+
+/* Scaphex navigation finish: glass depth, restrained amethyst energy */
+#navbar.scaphex-nav{
+ position:relative;
+ isolation:isolate;
+ background:linear-gradient(180deg,rgba(7,6,12,.91) 0%,rgba(10,7,17,.82) 100%);
+ border-bottom:1px solid rgba(205,130,255,.32);
+ box-shadow:0 10px 34px rgba(0,0,0,.48),0 1px 18px rgba(151,65,208,.10);
+ transition:background .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+#navbar.scaphex-nav::before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;left:8%;right:8%;bottom:-1px;height:1px;
+ background:linear-gradient(90deg,transparent,rgba(184,104,255,.08) 12%,rgba(205,135,255,.72) 50%,rgba(184,104,255,.08) 88%,transparent);
+ box-shadow:0 0 12px rgba(184,104,255,.32);
+}
+#navbar.scaphex-nav::after{
+ content:"";position:absolute;z-index:-1;pointer-events:none;left:34%;right:8%;top:-34px;height:100px;
+ background:radial-gradient(ellipse at 50% 100%,rgba(131,48,184,.15),transparent 72%);
+ filter:blur(13px);opacity:.8;
+}
+#navbar.scaphex-nav .scaphex-nav-inner{position:relative;z-index:1}
+#navbar.scaphex-nav .mobile-menu-toggle{
+ transition:background .25s ease,border-color .25s ease,box-shadow .25s ease,transform .2s ease;
+ box-shadow:inset 0 0 12px rgba(183,91,255,.07),0 3px 12px rgba(0,0,0,.25);
+}
+#navbar.scaphex-nav .mobile-menu-toggle:hover,
+#navbar.scaphex-nav .mobile-menu-toggle:focus-visible{
+ background:rgba(47,21,65,.92);border-color:rgba(224,170,255,.95);
+ box-shadow:0 0 18px rgba(174,83,255,.25),inset 0 0 14px rgba(183,91,255,.13);
+ outline:none;
+}
+#navbar.scaphex-nav .mobile-menu-toggle:active{transform:scale(.96)}
+#navbar.scaphex-nav .mobile-menu{
+ background:linear-gradient(180deg,rgba(12,8,19,.98),rgba(7,6,12,.99));
+ backdrop-filter:blur(18px);
+ border-top:1px solid rgba(195,92,255,.32);
+ box-shadow:0 18px 34px rgba(0,0,0,.58),inset 0 1px rgba(220,171,255,.04);
+}
+#navbar.scaphex-nav .mobile-menu a{transition:color .2s ease,padding-left .2s ease,text-shadow .2s ease}
+#navbar.scaphex-nav .mobile-menu a:hover,
+#navbar.scaphex-nav .mobile-menu a:focus-visible{color:#fff;padding-left:10px;text-shadow:0 0 12px rgba(196,92,255,.55)}
+@media(max-width:760px){
+ #navbar.scaphex-nav{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+ #navbar.scaphex-nav::after{left:12%;right:12%;top:-24px;height:92px;opacity:.72}
+}
+@media(prefers-reduced-motion:reduce){
+ #navbar.scaphex-nav,#navbar.scaphex-nav .mobile-menu-toggle,#navbar.scaphex-nav .mobile-menu a{transition:none}
+}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
