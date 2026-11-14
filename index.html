@@ -666,7 +666,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 /* Scaphex metallic portal assembly — one-time hero overlay */
 #portal-fx{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
 .hero-content,.hero-feature-grid{position:relative;z-index:3}
-.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:portal-content-reveal 1.15s ease-out 5.3s forwards}
+.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:portal-content-reveal 1.15s ease-out 5.75s forwards}
 @keyframes portal-content-reveal{to{opacity:1}}
 @keyframes portal-canvas-out{to{opacity:0}}
 @media(prefers-reduced-motion:reduce){#portal-fx{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
@@ -1046,7 +1046,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 const delay = rand(0,1.15), sx = W + rand(15,W*.5), sy = H + rand(15,H*.32);
                 return {sx,sy,x:sx,y:sy,delay,size:rand(Math.max(6,W*.0045),Math.max(13,W*.011)),
                     angle:rand(-.5,.5),spin:rand(3,7)*(Math.random()<.5?-1:1),
-                    orbit:rand(Math.min(W,H)*.075,Math.min(W,H)*.17),orbitAngle:rand(0,Math.PI*2),
+                    orbit:Math.min(W,H)*rand(.142,.158),orbitAngle:rand(0,Math.PI*2),
                     orbitSpeed:rand(1.4,2.8)*(Math.random()<.5?-1:1),depth:rand(.6,1.3),
                     shape:rand(.75,1.35),caught:false,alpha:rand(.72,1),seed:rand(0,100)};
             }
@@ -1105,7 +1105,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                         const settle=clamp((local-1.65)/2.2,0,1),desired=p.orbit*(1-settle*.22);
                         p.orbit+=(desired-p.orbit)*.018;
                         p.x=t.x+Math.cos(p.orbitAngle)*p.orbit;
-                        p.y=t.y+Math.sin(p.orbitAngle)*p.orbit*.58;
+                        p.y=t.y+Math.sin(p.orbitAngle)*p.orbit;
                         p.angle=p.orbitAngle+Math.PI/2+Math.sin(now*.001+p.seed)*.12;
                     }
                     ctx.globalAlpha=p.alpha*clamp(local/.2,0,1);drawPlate(p);ctx.globalAlpha=1;
@@ -1124,8 +1124,13 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                     ctx.beginPath();ctx.arc(x,y,p.size,0,Math.PI*2);ctx.fill();
                 }
                 ctx.globalAlpha=1;
-                if(elapsed<7.0) raf=requestAnimationFrame(draw);
-                else {canvas.style.animation='portal-canvas-out .55s ease-out forwards';window.setTimeout(()=>canvas.remove(),600);}
+                if(elapsed>=5.15 && !canvas.dataset.fading) {
+                    canvas.dataset.fading='1';
+                    canvas.style.transition='opacity 1.8s ease-in-out';
+                    requestAnimationFrame(()=>{canvas.style.opacity='0';});
+                }
+                if(elapsed<7.05) raf=requestAnimationFrame(draw);
+                else {canvas.remove();}
             }
             resize();seed();start=performance.now();raf=requestAnimationFrame(draw);
             window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();seed();start=performance.now();raf=requestAnimationFrame(draw);},{passive:true});
