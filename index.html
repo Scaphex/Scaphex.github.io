@@ -688,6 +688,31 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 @media(max-width:760px){.portal-intro .portal-ring{width:74px}.portal-intro .portal-skip{font-size:10px}.portal-intro .portal-flash{background:radial-gradient(ellipse at 50% 34%,rgba(245,221,255,.85),rgba(184,93,255,.45) 9%,rgba(111,35,174,.16) 25%,transparent 54%)}}
 @media(prefers-reduced-motion:reduce){.portal-intro{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
 
+
+/* Portal v2: an energy vortex forms the portal, rather than expanding rings */
+.portal-intro{background:radial-gradient(ellipse at 50% 43%,#160923 0,#08040e 36%,#030207 78%);isolation:isolate}
+.portal-intro::before{inset:-25%;background:radial-gradient(ellipse at 50% 43%,rgba(5,2,10,.98) 0 8%,rgba(5,2,10,.78) 28%,rgba(3,2,7,.96) 70%);animation:portal-darken 5.2s ease-in-out forwards}
+.portal-intro .portal-pull{background-image:radial-gradient(circle,rgba(255,240,255,.98) 0 1.5px,transparent 3px),radial-gradient(circle,rgba(184,93,255,.95) 0 2px,transparent 4px),radial-gradient(circle,rgba(230,194,255,.8) 0 1px,transparent 2px);background-size:61px 73px,97px 113px,139px 127px;animation:portal-particles-vortex 3.5s cubic-bezier(.4,0,.15,1) forwards}
+.portal-intro .portal-core{top:43%;width:18px;height:18px;box-shadow:0 0 18px 8px #f4dfff,0 0 65px 32px #b34aff,0 0 180px 85px rgba(112,20,210,.9);animation:portal-core-v2 5.2s ease-in-out forwards}
+.portal-intro .portal-ring,.portal-intro .portal-ring::before,.portal-intro .portal-ring::after,.portal-intro .portal-shockwave{display:none}
+.portal-intro .energy-vortex{position:absolute;left:50%;top:43%;width:min(92vw,1050px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%) scale(.08) rotate(0deg);opacity:0;background:conic-gradient(from 0deg,transparent 0 8%,rgba(153,48,255,.08) 10%,rgba(227,179,255,.96) 12%,rgba(103,20,184,.08) 15% 24%,rgba(194,105,255,.75) 27%,transparent 31% 43%,rgba(140,36,231,.8) 47%,rgba(244,218,255,.9) 49%,transparent 53% 67%,rgba(153,48,255,.72) 72%,transparent 77% 100%);filter:blur(5px) drop-shadow(0 0 28px rgba(169,61,255,.95));mask:radial-gradient(circle,transparent 0 38%,#000 43% 52%,transparent 61%);animation:portal-vortex-bloom 4.2s cubic-bezier(.16,.7,.18,1) .65s forwards}
+.portal-intro .energy-vortex::before,.portal-intro .energy-vortex::after{content:"";position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from 130deg,transparent 0 10%,rgba(238,208,255,.95) 13%,rgba(125,27,215,.08) 18% 34%,rgba(184,87,255,.9) 40%,transparent 46% 62%,rgba(222,174,255,.8) 68%,transparent 74%);filter:blur(8px);mask:radial-gradient(circle,transparent 0 35%,#000 44% 58%,transparent 68%);animation:portal-vortex-spin 2.8s linear infinite}
+.portal-intro .energy-vortex::after{inset:18%;opacity:.7;filter:blur(13px);animation-duration:1.8s;animation-direction:reverse}
+.portal-intro .energy-arcs{position:absolute;inset:-15%;opacity:0;background:repeating-conic-gradient(from 12deg at 50% 43%,transparent 0deg 8deg,rgba(188,93,255,.0) 8.5deg,rgba(212,163,255,.7) 9deg,transparent 10deg 19deg);filter:blur(3px) drop-shadow(0 0 12px #a53cff);mask:radial-gradient(ellipse at 50% 43%,transparent 0 17%,#000 24%,transparent 54%);animation:portal-arcs-gather 3.8s ease-out .2s forwards,portal-vortex-spin 7s linear .2s infinite}
+.portal-intro .energy-burst{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at 50% 43%,rgba(255,245,255,.95) 0,rgba(210,150,255,.68) 2%,rgba(142,42,226,.34) 12%,transparent 37%);mix-blend-mode:screen;animation:portal-burst 1.15s ease-out 3.45s forwards}
+.portal-intro .portal-flash{background:radial-gradient(ellipse at 50% 43%,rgba(255,246,255,.98),rgba(200,130,255,.72) 5%,rgba(127,39,207,.3) 18%,transparent 50%);animation:portal-flash 1.2s ease-out 3.55s forwards}
+.portal-intro .portal-skip{z-index:10}
+.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:portal-content-reveal .9s ease-out 4.15s forwards}
+@keyframes portal-darken{0%,100%{opacity:1}35%{opacity:.96}76%{opacity:.15}100%{opacity:0}}
+@keyframes portal-particles-vortex{0%{opacity:0;transform:scale(1.7) rotate(0)}15%{opacity:1}58%{opacity:1;transform:scale(.34) rotate(90deg)}82%{opacity:.8;transform:scale(.15) rotate(160deg)}100%{opacity:0;transform:scale(.08) rotate(210deg)}}
+@keyframes portal-core-v2{0%,45%{opacity:0;transform:translate(-50%,-50%) scale(.05)}58%{opacity:1;transform:translate(-50%,-50%) scale(1.5)}76%{opacity:1;transform:translate(-50%,-50%) scale(2.8)}100%{opacity:0;transform:translate(-50%,-50%) scale(5)}}
+@keyframes portal-vortex-bloom{0%{opacity:0;transform:translate(-50%,-50%) scale(.08) rotate(-90deg)}28%{opacity:1}68%{opacity:.95;transform:translate(-50%,-50%) scale(1) rotate(130deg)}100%{opacity:.08;transform:translate(-50%,-50%) scale(1.18) rotate(250deg)}}
+@keyframes portal-vortex-spin{to{transform:rotate(360deg)}}
+@keyframes portal-arcs-gather{0%{opacity:0;transform:scale(1.8) rotate(0)}25%{opacity:.95}72%{opacity:.9;transform:scale(.92) rotate(-120deg)}100%{opacity:0;transform:scale(.7) rotate(-220deg)}}
+@keyframes portal-burst{0%{opacity:0;transform:scale(.2)}24%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:scale(2.3)}}
+@media(max-width:760px){.portal-intro .energy-vortex{width:125vw;top:34%}.portal-intro .energy-arcs{top:-8%;background-size:auto}.portal-intro .portal-core{top:34%}.portal-intro .portal-flash,.portal-intro .energy-burst{background:radial-gradient(ellipse at 50% 34%,rgba(255,246,255,.95),rgba(200,130,255,.62) 6%,rgba(127,39,207,.28) 20%,transparent 52%)}}
+@media(prefers-reduced-motion:reduce){.portal-intro{display:none!important}}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -723,7 +748,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 <section id="home" class="scaphex-hero">
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
-  <div class="portal-intro" id="portal-intro" aria-hidden="true"><div class="portal-pull"></div><div class="portal-core"></div><div class="portal-ring"></div><div class="portal-shockwave"></div><div class="portal-flash"></div><button class="portal-skip" type="button" id="portal-skip" aria-label="Skip portal intro">Skip intro</button></div>
+  <div class="portal-intro" id="portal-intro" aria-hidden="true"><div class="portal-pull"></div><div class="portal-core"></div><div class="energy-vortex"></div><div class="energy-arcs"></div><div class="energy-burst"></div><div class="portal-flash"></div><button class="portal-skip" type="button" id="portal-skip" aria-label="Skip portal intro">Skip intro</button></div>
   <div class="hero-content">
     <img class="hero-wordmark" src="/assets/scaphex-wordmark.png" alt="SCAPHEX metallic silver and purple wordmark" width="1536" height="512" fetchpriority="high">
     <div class="hero-pillars"><span>OLD SCHOOL RUNESCAPE</span><i></i><span>GUIDES</span><i></i><span>PVM</span><i></i><span>PROGRESSION</span></div>
@@ -1053,7 +1078,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 window.setTimeout(() => intro.remove(), 600);
             };
             if (skip) skip.addEventListener('click', finish, { once: true });
-            window.setTimeout(finish, 3450);
+            window.setTimeout(finish, 5200);
         })();
 
         // Initialize Lucide Icons
