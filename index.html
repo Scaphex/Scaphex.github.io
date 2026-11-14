@@ -1024,9 +1024,9 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             if (!hero || !canvas) return;
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let alreadyPlayed = false;
-            try { alreadyPlayed = sessionStorage.getItem('scaphex-metal-portal-v1-played') === '1'; } catch (e) {}
+            try { alreadyPlayed = sessionStorage.getItem('scaphex-metal-portal-v2-played') === '1'; } catch (e) {}
             if (reducedMotion || alreadyPlayed) { canvas.remove(); return; }
-            try { sessionStorage.setItem('scaphex-metal-portal-v1-played', '1'); } catch (e) {}
+            try { sessionStorage.setItem('scaphex-metal-portal-v2-played', '1'); } catch (e) {}
             hero.classList.add('portal-intro-active');
 
             const ctx = canvas.getContext('2d');
