@@ -618,7 +618,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 @media (max-width:760px) and (orientation:portrait){
  .scaphex-hero{min-height:max(680px,calc(100svh - 150px));}
  .hero-content{width:100%;padding-left:0;padding-right:0;}
- .hero-wordmark{width:min(96vw,620px);max-height:min(190px,22svh);transform:translateY(-62px);margin:0 auto 14px;}
+ .hero-wordmark{display:block;width:min(96vw,620px);height:auto;max-height:none;object-fit:contain;overflow:visible;transform:translateY(-62px);margin:0 auto 14px;}
  .hero-pillars{max-width:100%;justify-content:center;flex-wrap:wrap;row-gap:8px;}
  .hero-tagline{max-width:100%;padding:0 8px;}
  .hero-ctas{width:100%;align-items:center;}
@@ -661,7 +661,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .brand-mark{gap:7px}
 .brand-emblem{width:67px;height:67px}
 .brand-wordmark{display:block;width:177px;height:auto;max-height:58px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 7px rgba(177,76,255,.22))}
-@media(max-width:760px){.brand-mark{gap:8px}.brand-emblem{width:48px;height:48px}.brand-wordmark{width:124px;max-height:43px}}
+@media(max-width:760px){.brand-mark{gap:8px;align-items:center;overflow:visible}.brand-emblem{width:48px;height:48px;flex:0 0 48px}.brand-wordmark{display:block;width:124px;height:auto;max-height:none;object-fit:contain;overflow:visible;flex:0 0 auto}}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
