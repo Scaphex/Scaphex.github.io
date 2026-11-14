@@ -499,6 +499,66 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  .hero-content{transform:translateY(40px)}
 }
 
+
+/* Mobile portrait atmosphere upgrade — artwork and wordmark remain untouched */
+@media(max-width:760px) and (orientation:portrait){
+ .hero-art::before{
+  animation:scaphex-portal-flow 18s ease-in-out infinite;
+  filter:drop-shadow(0 0 18px rgba(159,74,255,.22));
+ }
+ .hero-art::after{
+  animation:scaphex-embers-rise 26s linear infinite,scaphex-embers-flicker 4.8s ease-in-out infinite;
+  opacity:.52;
+ }
+ .hero-vignette{isolation:isolate;overflow:hidden}
+ .hero-vignette::before,
+ .hero-vignette::after{
+  content:"";position:absolute;inset:-18%;pointer-events:none;
+ }
+ .hero-vignette::before{
+  background:
+   radial-gradient(ellipse 18% 42% at 22% 62%,rgba(172,89,255,.15),transparent 76%),
+   radial-gradient(ellipse 16% 38% at 78% 48%,rgba(133,69,221,.14),transparent 78%),
+   radial-gradient(ellipse 34% 16% at 50% 82%,rgba(177,91,255,.12),transparent 80%);
+  filter:blur(17px);
+  mix-blend-mode:screen;
+  animation:scaphex-mist-drift 23s ease-in-out infinite alternate;
+ }
+ .hero-vignette::after{
+  background:
+   linear-gradient(112deg,transparent 34%,rgba(190,128,255,.055) 47%,transparent 57%),
+   linear-gradient(72deg,transparent 40%,rgba(164,103,255,.045) 50%,transparent 60%);
+  opacity:.7;
+  mix-blend-mode:screen;
+  animation:scaphex-light-sweep 17s ease-in-out infinite alternate;
+ }
+}
+@keyframes scaphex-portal-flow{
+ 0%,100%{opacity:.55;transform:scale(.985) rotate(-2deg)}
+ 50%{opacity:.82;transform:scale(1.045) rotate(2deg)}
+}
+@keyframes scaphex-embers-rise{
+ 0%{background-position:18px 24px,82px 71px,42px 112px,151px 39px,29px 181px,116px 13px,201px 91px,61px 217px;transform:translate3d(-1%,5%,0)}
+ 50%{background-position:58px -70px,22px -45px,92px -38px,101px -110px,79px -40px,46px -95px,251px -58px,21px -80px;transform:translate3d(1%,-2%,0)}
+ 100%{background-position:98px -164px,-38px -161px,142px -188px,51px -259px,129px -261px,-24px -203px,301px -225px,-19px -297px;transform:translate3d(-1%,-9%,0)}
+}
+@keyframes scaphex-embers-flicker{
+ 0%,100%{opacity:.34;filter:brightness(.9)}
+ 35%{opacity:.58;filter:brightness(1.25)}
+ 68%{opacity:.43;filter:brightness(1.05)}
+}
+@keyframes scaphex-mist-drift{
+ 0%{transform:translate3d(-3%,2%,0) scale(.96);opacity:.55}
+ 100%{transform:translate3d(3%,-2%,0) scale(1.08);opacity:.95}
+}
+@keyframes scaphex-light-sweep{
+ 0%{transform:translateX(-5%) rotate(-2deg);opacity:.25}
+ 100%{transform:translateX(5%) rotate(2deg);opacity:.75}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-vignette::before,.hero-vignette::after{animation:none!important}
+}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
