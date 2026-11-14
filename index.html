@@ -656,6 +656,11 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{animation:none!important;}
 }
 
+
+/* Header brand lockup: reuse the exact hero wordmark artwork at a restrained size */
+.brand-mark{gap:10px}
+.brand-wordmark{display:block;width:154px;height:auto;max-height:52px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 7px rgba(177,76,255,.22))}
+@media(max-width:760px){.brand-mark{gap:8px}.brand-emblem{width:48px;height:48px}.brand-wordmark{width:124px;max-height:43px}}
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
@@ -663,7 +668,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
     <!-- Navigation -->
     <nav class="scaphex-nav fixed w-full z-50" id="navbar">
   <div class="scaphex-nav-inner">
-    <a class="brand-mark" href="#home" aria-label="Scaphex home"><img class="brand-emblem" src="/assets/scaphex-logo.png.png" alt="Scaphex emblem"><span class="brand-word">SCAPHEX</span></a>
+    <a class="brand-mark" href="#home" aria-label="Scaphex home"><img class="brand-emblem" src="/assets/scaphex-logo.png.png" alt="Scaphex emblem"><img class="brand-wordmark" src="/assets/scaphex-wordmark.png" alt="Scaphex"></a>
     <div class="desktop-nav">
       <a class="active" href="#home">Home</a>
       <a href="#videos">Guides</a>
