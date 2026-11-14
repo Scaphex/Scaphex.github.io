@@ -663,12 +663,11 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .brand-wordmark{display:block;width:177px;height:auto;max-height:58px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 7px rgba(177,76,255,.22))}
 @media(max-width:760px){.brand-mark{gap:8px;align-items:center;overflow:visible}.brand-emblem{width:48px;height:48px;flex:0 0 48px}.brand-wordmark{display:block;width:124px;height:auto;max-height:none;object-fit:contain;overflow:visible;flex:0 0 auto}}
 
-/* Scaphex metallic portal assembly — one-time hero overlay */
-#portal-fx{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+/* Scaphex metallic wordmark assembly — one-time hero overlay */
+#portal-fx{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
 .hero-content,.hero-feature-grid{position:relative;z-index:3}
-.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:portal-content-reveal 1.15s ease-out 5.75s forwards}
-@keyframes portal-content-reveal{to{opacity:1}}
-@keyframes portal-canvas-out{to{opacity:0}}
+.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:wordmark-content-reveal 1.1s ease-out 6.15s forwards}
+@keyframes wordmark-content-reveal{to{opacity:1}}
 @media(prefers-reduced-motion:reduce){#portal-fx{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
 </style>
 </head>
@@ -1017,131 +1016,101 @@ body{background:var(--sc-ink)!important;color:#f5efff}
     </footer>
 
     <script>
-        // Build the portal from Scaphex metal fragments once per browser tab session.
-        (function initMetalPortalIntro() {
-            const hero = document.querySelector('.scaphex-hero');
-            const canvas = document.getElementById('portal-fx');
-            if (!hero || !canvas) return;
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            let alreadyPlayed = false;
-            try { alreadyPlayed = sessionStorage.getItem('scaphex-metal-portal-v3-played') === '1'; } catch (e) {}
-            if (reducedMotion || alreadyPlayed) { canvas.remove(); return; }
-            try { sessionStorage.setItem('scaphex-metal-portal-v3-played', '1'); } catch (e) {}
+        // Assemble the SCAPHEX wordmark from flying gunmetal and silver fragments.
+        (function initMetalWordmarkIntro() {
+            const hero=document.querySelector('.scaphex-hero');
+            const canvas=document.getElementById('portal-fx');
+            const wordmark=hero&&hero.querySelector('.hero-wordmark');
+            if(!hero||!canvas||!wordmark)return;
+            const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let played=false;
+            try{played=sessionStorage.getItem('scaphex-wordmark-shards-v1')==='1';}catch(e){}
+            if(reduced||played){canvas.remove();return;}
+            try{sessionStorage.setItem('scaphex-wordmark-shards-v1','1');}catch(e){}
             hero.classList.add('portal-intro-active');
-
-            const ctx = canvas.getContext('2d');
-            let W = 0, H = 0, D = 1, items = [], sparks = [], start = 0, raf = 0;
-            const emblemTexture = new Image();
-            emblemTexture.src = '/assets/scaphex-logo3-transparent.png?v=20261114';
-            const rand = (a,b) => a + Math.random() * (b-a);
-            const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
-            const target = () => ({x:W*.5,y:H*(W<760 ? .29 : .36)});
-            function resize() {
-                D = Math.min(window.devicePixelRatio || 1, 2);
-                W = hero.clientWidth; H = hero.clientHeight;
-                canvas.width = Math.round(W*D); canvas.height = Math.round(H*D);
-                ctx.setTransform(D,0,0,D,0,0);
+            const ctx=canvas.getContext('2d');
+            const source=new Image();source.src=wordmark.currentSrc||wordmark.src;
+            let W=0,H=0,D=1,parts=[],start=0,raf=0,targets=[];
+            const rand=(a,b)=>a+Math.random()*(b-a);
+            const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+            function resize(){
+                D=Math.min(window.devicePixelRatio||1,2);W=hero.clientWidth;H=hero.clientHeight;
+                canvas.width=Math.round(W*D);canvas.height=Math.round(H*D);ctx.setTransform(D,0,0,D,0,0);
             }
-            function makeDebris() {
-                const delay = rand(0,1.15), sx = W + rand(15,W*.5), sy = H + rand(15,H*.32);
-                return {sx,sy,x:sx,y:sy,delay,size:rand(Math.max(6,W*.0045),Math.max(13,W*.011)),
-                    angle:rand(-.5,.5),spin:rand(3,7)*(Math.random()<.5?-1:1),
-                    orbit:Math.min(W,H)*rand(.142,.158),orbitAngle:rand(0,Math.PI*2),
-                    orbitSpeed:rand(1.4,2.8)*(Math.random()<.5?-1:1),depth:rand(.6,1.3),
-                    shape:rand(.75,1.35),caught:false,alpha:rand(.72,1),seed:rand(0,100)};
-            }
-            function seed() {
-                items=[]; sparks=[];
-                const mobile=W<760, count=mobile?72:125, dust=mobile?110:220;
-                for(let i=0;i<count;i++) items.push(makeDebris());
-                for(let i=0;i<dust;i++) sparks.push({a:rand(0,Math.PI*2),r:rand(8,Math.min(W,H)*.2),
-                    speed:rand(1,3)*(Math.random()<.5?-1:1),size:rand(.5,1.8),
-                    alpha:rand(.15,.7),tone:Math.random()});
-            }
-            function drawPlate(p) {
-                const L=p.size*p.shape,B=p.size*.34;
-                ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.depth,1);
-                ctx.beginPath();ctx.moveTo(-L,-B*.18);ctx.lineTo(-L*.38,-B);
-                ctx.lineTo(L*.22,-B*.72);ctx.lineTo(L,B*.02);ctx.lineTo(L*.52,B*.3);
-                ctx.lineTo(L*.18,B);ctx.lineTo(-L*.58,B*.62);ctx.closePath();
-                ctx.save();ctx.clip();
-                const steel=ctx.createLinearGradient(-L,-B,L,B);
-                steel.addColorStop(0,'#17191f');steel.addColorStop(.2,'#555b65');
-                steel.addColorStop(.38,'#c3c7ce');steel.addColorStop(.52,'#454b55');
-                steel.addColorStop(.72,'#a3a9b2');steel.addColorStop(.88,'#383e48');steel.addColorStop(1,'#111319');
-                ctx.fillStyle=steel;ctx.fill();
-                if(emblemTexture.complete && emblemTexture.naturalWidth) {
-                    ctx.globalAlpha=.82;
-                    const sw=emblemTexture.naturalWidth,sh=emblemTexture.naturalHeight;
-                    const sx=rand(0,sw*.55),sy=rand(0,sh*.55),cw=sw*.45,ch=sh*.45;
-                    ctx.filter='grayscale(68%) brightness(82%) contrast(118%)';
-                    ctx.drawImage(emblemTexture,sx,sy,cw,ch,-L,-B,L*2,B*2);
-                    ctx.filter='none';ctx.globalAlpha=1;
+            function sampleTargets(){
+                targets=[];if(!source.complete||!source.naturalWidth)return;
+                const off=document.createElement('canvas'),o=off.getContext('2d',{willReadFrequently:true});
+                off.width=source.naturalWidth;off.height=source.naturalHeight;o.drawImage(source,0,0);
+                const pixels=o.getImageData(0,0,off.width,off.height).data;
+                const box=wordmark.getBoundingClientRect(),heroBox=hero.getBoundingClientRect();
+                const left=box.left-heroBox.left,top=box.top-heroBox.top;
+                const scaleX=box.width/off.width,scaleY=box.height/off.height;
+                const step=Math.max(3,Math.floor(off.width/180));
+                for(let y=0;y<off.height;y+=step)for(let x=0;x<off.width;x+=step){
+                    const a=pixels[(y*off.width+x)*4+3];
+                    if(a>90)targets.push({x:left+(x+rand(-step*.45,step*.45))*scaleX,
+                        y:top+(y+rand(-step*.45,step*.45))*scaleY});
                 }
-                ctx.strokeStyle='rgba(24,8,37,.98)';ctx.lineWidth=Math.max(2,B*.22);ctx.stroke();
-                ctx.restore();
-                ctx.lineJoin='miter';ctx.strokeStyle='rgba(245,233,255,.9)';
-                ctx.lineWidth=Math.max(.8,B*.07);ctx.stroke();
-                ctx.beginPath();ctx.moveTo(-L*.55,-B*.08);ctx.lineTo(-L*.05,-B*.34);ctx.lineTo(L*.55,B*.06);
-                ctx.strokeStyle='rgba(157,112,190,.72)';ctx.lineWidth=Math.max(.8,B*.055);
-                ctx.shadowBlur=4;ctx.shadowColor='#8b54b5';ctx.stroke();ctx.shadowBlur=0;
+                if(!targets.length)return;
+                const count=W<760?190:360;
+                parts=[];
+                for(let i=0;i<count;i++){
+                    const t=targets[Math.floor(Math.random()*targets.length)];
+                    const sx=W+rand(20,W*.45),sy=H+rand(10,H*.28);
+                    parts.push({sx,sy,x:sx,y:sy,tx:t.x,ty:t.y,delay:rand(0,1.55),
+                        size:rand(W<760?3.5:4.5,W<760?8:10.5),angle:rand(-Math.PI,Math.PI),
+                        spin:rand(-7,7),landed:false,alpha:rand(.78,1),tone:Math.random()});
+                }
+            }
+            function plate(p){
+                const l=p.size*rand(1.25,2.0),b=p.size*.48;
+                ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);
+                ctx.beginPath();ctx.moveTo(-l,-b*.25);ctx.lineTo(-l*.28,-b);
+                ctx.lineTo(l*.55,-b*.62);ctx.lineTo(l,b*.1);ctx.lineTo(l*.25,b);
+                ctx.lineTo(-l*.7,b*.55);ctx.closePath();ctx.clip();
+                const g=ctx.createLinearGradient(-l,-b,l,b);
+                g.addColorStop(0,'#17191f');g.addColorStop(.22,'#606773');
+                g.addColorStop(.43,'#e0e3e8');g.addColorStop(.58,'#555b65');
+                g.addColorStop(.78,'#aeb4bf');g.addColorStop(1,'#20232b');
+                ctx.fillStyle=g;ctx.fill();
+                ctx.strokeStyle='rgba(238,220,255,.9)';ctx.lineWidth=.8;ctx.stroke();
+                ctx.beginPath();ctx.moveTo(-l*.55,-b*.08);ctx.lineTo(l*.45,b*.05);
+                ctx.strokeStyle=p.tone<.28?'rgba(191,83,255,.95)':'rgba(255,255,255,.48)';
+                ctx.lineWidth=1.1;ctx.shadowBlur=5;ctx.shadowColor='#a84aff';ctx.stroke();
                 ctx.restore();
             }
-            function draw(now) {
-                const elapsed=(now-start)/1000,t=target(),dt=1/60;
-                ctx.clearRect(0,0,W,H);
-                // Conceal the pre-rendered portal in the hero artwork, then reveal it as the metal ring forms.
-                const reveal=clamp((elapsed-1.0)/4.25,0,1);
-                const concealRadius=Math.min(W,H)*.235;
-                const conceal=ctx.createRadialGradient(t.x,t.y,concealRadius*.28,t.x,t.y,concealRadius);
-                conceal.addColorStop(0,`rgba(5,4,10,${.97*(1-reveal)})`);
-                conceal.addColorStop(.68,`rgba(5,4,10,${.82*(1-reveal)})`);
-                conceal.addColorStop(1,'rgba(5,4,10,0)');
-                ctx.fillStyle=conceal;ctx.fillRect(0,0,W,H);
-                for(const p of items) {
+            function draw(now){
+                const elapsed=(now-start)/1000;ctx.clearRect(0,0,W,H);
+                let landed=0;
+                for(const p of parts){
                     const local=elapsed-p.delay;if(local<0)continue;
-                    const approach=clamp(local/1.65,0,1);
-                    if(!p.caught) {
-                        const eased=1-Math.pow(1-approach,3),bend=Math.sin(approach*Math.PI*.82);
-                        const ex=t.x+Math.cos(p.orbitAngle)*p.orbit,ey=t.y+Math.sin(p.orbitAngle)*p.orbit*.58;
-                        p.x=p.sx+(ex-p.sx)*eased-bend*W*.055;
-                        p.y=p.sy+(ey-p.sy)*eased+bend*H*.035;
-                        p.angle=Math.atan2(ey-p.sy,ex-p.sx)+p.spin*approach*.18;
-                        if(approach>=1)p.caught=true;
-                    } else {
-                        p.orbitAngle+=p.orbitSpeed*dt;
-                        const settle=clamp((local-1.65)/2.2,0,1),desired=p.orbit*(1-settle*.22);
-                        p.orbit+=(desired-p.orbit)*.018;
-                        p.x=t.x+Math.cos(p.orbitAngle)*p.orbit;
-                        p.y=t.y+Math.sin(p.orbitAngle)*p.orbit;
-                        p.angle=p.orbitAngle+Math.PI/2+Math.sin(now*.001+p.seed)*.12;
+                    const progress=clamp(local/2.35,0,1),ease=1-Math.pow(1-progress,3);
+                    p.x=p.sx+(p.tx-p.sx)*ease;p.y=p.sy+(p.ty-p.sy)*ease;
+                    p.angle+=p.spin*.012*(1-progress);
+                    if(progress>=1){p.landed=true;landed++;}
+                    ctx.globalAlpha=p.alpha*clamp(local/.18,0,1);plate(p);
+                    if(progress<1){
+                        ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x+rand(5,15),p.y+rand(5,15));
+                        ctx.strokeStyle='rgba(190,105,255,.5)';ctx.lineWidth=1;ctx.stroke();
                     }
-                    ctx.globalAlpha=p.alpha*clamp(local/.2,0,1);drawPlate(p);ctx.globalAlpha=1;
-                }
-                const core=clamp((elapsed-1.25)/3.8,0,1);
-                const glow=ctx.createRadialGradient(t.x,t.y,2,t.x,t.y,Math.min(W,H)*(.08+core*.2));
-                glow.addColorStop(0,`rgba(225,190,255,${core*.22})`);
-                glow.addColorStop(.22,`rgba(157,77,213,${core*.25})`);
-                glow.addColorStop(.62,`rgba(91,40,130,${core*.14})`);
-                glow.addColorStop(1,'rgba(20,10,30,0)');
-                ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
-                for(const p of sparks) {
-                    p.a+=p.speed*dt;const rr=p.r*(.35+core*.65);
-                    const x=t.x+Math.cos(p.a)*rr,y=t.y+Math.sin(p.a)*rr*.58;
-                    ctx.fillStyle=p.tone<.35?`rgba(194,125,239,${p.alpha*core})`:`rgba(216,211,224,${p.alpha*core*.8})`;
-                    ctx.beginPath();ctx.arc(x,y,p.size,0,Math.PI*2);ctx.fill();
                 }
                 ctx.globalAlpha=1;
-                if(elapsed>=5.15 && !canvas.dataset.fading) {
-                    canvas.dataset.fading='1';
-                    canvas.style.transition='opacity 1.8s ease-in-out';
-                    requestAnimationFrame(()=>{canvas.style.opacity='0';});
+                const completion=parts.length?landed/parts.length:0;
+                if(completion>.94&&elapsed>4.2&&!canvas.dataset.fading){
+                    canvas.dataset.fading='1';canvas.style.transition='opacity 1.35s ease-in-out';
+                    requestAnimationFrame(()=>canvas.style.opacity='0');
                 }
-                if(elapsed<7.05) raf=requestAnimationFrame(draw);
-                else {canvas.remove();}
+                if(elapsed<7.5)raf=requestAnimationFrame(draw);
+                else canvas.remove();
             }
-            resize();seed();start=performance.now();raf=requestAnimationFrame(draw);
-            window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();seed();start=performance.now();raf=requestAnimationFrame(draw);},{passive:true});
+            function begin(){
+                resize();sampleTargets();start=performance.now();
+                if(!parts.length){canvas.remove();hero.classList.remove('portal-intro-active');return;}
+                raf=requestAnimationFrame(draw);
+            }
+            if(source.complete&&source.naturalWidth)begin();
+            else source.onload=begin;
+            window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();sampleTargets();start=performance.now();raf=requestAnimationFrame(draw);},{passive:true});
         })();
 
         // Initialize Lucide Icons
