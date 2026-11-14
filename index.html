@@ -492,6 +492,13 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  }
 }
 
+
+/* Mobile portrait: tighten the handoff from the hero to Latest Adventures */
+@media(max-width:760px) and (orientation:portrait){
+ .scaphex-hero{min-height:calc(100svh - 150px);padding-bottom:24px}
+ .hero-content{transform:translateY(40px)}
+}
+
 </style>
 </head>
 <body class="bg-rs-dark text-gray-100 font-inter overflow-x-hidden antialiased">
