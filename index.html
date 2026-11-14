@@ -1024,9 +1024,9 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             if (!hero || !canvas) return;
             const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let alreadyPlayed = false;
-            try { alreadyPlayed = sessionStorage.getItem('scaphex-metal-portal-v2-played') === '1'; } catch (e) {}
+            try { alreadyPlayed = sessionStorage.getItem('scaphex-metal-portal-v3-played') === '1'; } catch (e) {}
             if (reducedMotion || alreadyPlayed) { canvas.remove(); return; }
-            try { sessionStorage.setItem('scaphex-metal-portal-v2-played', '1'); } catch (e) {}
+            try { sessionStorage.setItem('scaphex-metal-portal-v3-played', '1'); } catch (e) {}
             hero.classList.add('portal-intro-active');
 
             const ctx = canvas.getContext('2d');
@@ -1090,6 +1090,14 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             function draw(now) {
                 const elapsed=(now-start)/1000,t=target(),dt=1/60;
                 ctx.clearRect(0,0,W,H);
+                // Conceal the pre-rendered portal in the hero artwork, then reveal it as the metal ring forms.
+                const reveal=clamp((elapsed-1.0)/4.25,0,1);
+                const concealRadius=Math.min(W,H)*.235;
+                const conceal=ctx.createRadialGradient(t.x,t.y,concealRadius*.28,t.x,t.y,concealRadius);
+                conceal.addColorStop(0,`rgba(5,4,10,${.97*(1-reveal)})`);
+                conceal.addColorStop(.68,`rgba(5,4,10,${.82*(1-reveal)})`);
+                conceal.addColorStop(1,'rgba(5,4,10,0)');
+                ctx.fillStyle=conceal;ctx.fillRect(0,0,W,H);
                 for(const p of items) {
                     const local=elapsed-p.delay;if(local<0)continue;
                     const approach=clamp(local/1.65,0,1);
