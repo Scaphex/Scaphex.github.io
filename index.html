@@ -1089,6 +1089,13 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             }
             function draw(now){
                 const elapsed=(now-start)/1000;ctx.clearRect(0,0,W,H);
+                const blend=clamp((elapsed-7.05)/1.75,0,1);
+                const box=wordmark.getBoundingClientRect(),heroBox=hero.getBoundingClientRect();
+                if(source.complete&&source.naturalWidth&&blend>0){
+                    ctx.save();ctx.globalAlpha=blend;
+                    ctx.drawImage(source,box.left-heroBox.left,box.top-heroBox.top,box.width,box.height);
+                    ctx.restore();
+                }
                 let landed=0;
                 for(const p of parts){
                     const local=elapsed-p.delay;if(local<0)continue;
@@ -1101,7 +1108,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                     if(progress>.88)p.angle+=(Math.atan2(p.ty-p.cy,p.tx-p.cx)-p.angle)*.035;
                     if(progress>=1){p.landed=true;landed++;}
                     const arrival=clamp((1-progress)/.18,0,1);
-                    ctx.globalAlpha=p.alpha*clamp(local/.3,0,1);plate(p);
+                    ctx.globalAlpha=p.alpha*clamp(local/.3,0,1)*Math.pow(1-blend,1.35);plate(p);
                     if(progress<.96){
                         ctx.beginPath();ctx.moveTo(p.x,p.y);
                         ctx.lineTo(p.x+p.trail*.72,p.y+p.trail*.42);
@@ -1110,27 +1117,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 }
                 ctx.globalAlpha=1;
                 const completion=parts.length?landed/parts.length:0;
-                const box=wordmark.getBoundingClientRect(),heroBox=hero.getBoundingClientRect();
-                const blend=clamp((elapsed-7.05)/1.75,0,1);
-                if(source.complete&&source.naturalWidth&&blend>0){
-                    ctx.save();
-                    ctx.globalAlpha=blend;
-                    ctx.globalCompositeOperation='source-over';
-                    ctx.drawImage(source,box.left-heroBox.left,box.top-heroBox.top,box.width,box.height);
-                    ctx.restore();
-                }
-                // The fragments dissolve into the exact wordmark artwork, rather than fading away separately.
-                if(blend>0){
-                    ctx.save();
-                    ctx.globalCompositeOperation='destination-out';
-                    const dissolve=blend*.94;
-                    for(const p of parts){
-                        if(!p.landed)continue;
-                        ctx.globalAlpha=dissolve;
-                        ctx.beginPath();ctx.arc(p.x,p.y,p.size*2.2,0,Math.PI*2);ctx.fill();
-                    }
-                    ctx.restore();
-                }
+                // The exact wordmark artwork emerges beneath the fragments as they melt into it.
                 if(completion>.97&&blend>=1&&!canvas.dataset.fading){
                     canvas.dataset.fading='1';
                     canvas.style.transition='opacity 1.15s cubic-bezier(.22,.61,.36,1)';
