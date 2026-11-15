@@ -667,7 +667,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 #portal-fx{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
 .hero-content,.hero-feature-grid{position:relative;z-index:3}
 .portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:0;animation:wordmark-content-reveal 1.1s ease-out 6.15s forwards}
-.portal-intro-active .hero-wordmark{opacity:0;animation:wordmark-final-reveal 1.15s cubic-bezier(.2,.7,.25,1) 8.55s forwards}
+.portal-intro-active .hero-wordmark{opacity:0;animation:wordmark-final-reveal .85s cubic-bezier(.2,.7,.25,1) 7.45s forwards}
 @keyframes wordmark-content-reveal{to{opacity:1}}
 @keyframes wordmark-final-reveal{to{opacity:1}}
 @media(prefers-reduced-motion:reduce){#portal-fx{display:none!important}.portal-intro-active .hero-content,.portal-intro-active .hero-feature-grid{opacity:1!important;animation:none!important}}
@@ -1089,7 +1089,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
             }
             function draw(now){
                 const elapsed=(now-start)/1000;ctx.clearRect(0,0,W,H);
-                const blend=clamp((elapsed-7.05)/1.75,0,1);
+                const blend=clamp((elapsed-6.35)/1.2,0,1);
                 const box=wordmark.getBoundingClientRect(),heroBox=hero.getBoundingClientRect();
                 if(source.complete&&source.naturalWidth&&blend>0){
                     ctx.save();ctx.globalAlpha=blend;
@@ -1120,10 +1120,10 @@ body{background:var(--sc-ink)!important;color:#f5efff}
                 // The exact wordmark artwork emerges beneath the fragments as they melt into it.
                 if(completion>.97&&blend>=1&&!canvas.dataset.fading){
                     canvas.dataset.fading='1';
-                    canvas.style.transition='opacity 1.15s cubic-bezier(.22,.61,.36,1)';
+                    canvas.style.transition='opacity .9s cubic-bezier(.22,.61,.36,1)';
                     requestAnimationFrame(()=>canvas.style.opacity='0');
                 }
-                if(elapsed<10.1)raf=requestAnimationFrame(draw);
+                if(elapsed<8.9)raf=requestAnimationFrame(draw);
                 else canvas.remove();
             }
             function begin(){
