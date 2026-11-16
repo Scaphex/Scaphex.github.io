@@ -654,15 +654,15 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
  content:"";position:absolute;inset:-12%;pointer-events:none;
 }
-/* Localized purple aura centered on the existing S on the hanging cape */
+/* Brighter localized purple aura around the existing S on the hanging banner */
 .hero-art::before{
  z-index:0;
  background:
-  radial-gradient(ellipse 4.5% 7% at 14% 64%,rgba(244,213,255,.78),transparent 62%),
-  radial-gradient(ellipse 8% 12% at 14% 64%,rgba(202,111,255,.62),transparent 72%),
-  radial-gradient(ellipse 13% 19% at 14% 64%,rgba(137,49,224,.34),transparent 82%);
+  radial-gradient(ellipse 4.5% 7% at 14% 64%,rgba(255,239,255,.98),transparent 58%),
+  radial-gradient(ellipse 8.5% 13% at 14% 64%,rgba(218,133,255,.82),transparent 70%),
+  radial-gradient(ellipse 14% 20% at 14% 64%,rgba(157,65,245,.52),transparent 82%);
  mix-blend-mode:screen;
- filter:blur(8px);
+ filter:blur(9px);
  opacity:1;
 }
 /* No extra lightning, cloud, or mist effects in this pass */
