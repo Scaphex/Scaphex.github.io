@@ -708,6 +708,33 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  .hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
 }
  
+/* Force the new inline forest artwork above all retired background assets */
+.hero-art{
+ background-image:none!important;
+ background-color:#080710!important;
+}
+.hero-art .forest-scene{
+ display:block!important;
+ position:absolute!important;
+ inset:0!important;
+ z-index:0!important;
+ width:100%!important;
+ height:100%!important;
+ min-width:100%!important;
+ min-height:100%!important;
+ visibility:visible!important;
+ opacity:1!important;
+}
+.hero-art::before{z-index:1!important}
+.hero-art::after{z-index:2!important}
+.hero-vignette{z-index:-2}
+.hero-vignette::before{z-index:0!important}
+.hero-vignette::after{z-index:1!important}
+@media(max-width:760px){
+ .hero-art{background-image:none!important;background-size:cover!important}
+ .hero-art .forest-scene{width:100%!important;height:100%!important;object-fit:cover!important;transform:scale(1.12)!important}
+}
+ 
 /* Living motion inside the illustrated forest scene */
 .forest-scene{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.025);animation:forest-camera-drift 42s ease-in-out infinite alternate}
 .forest-scene .forest-fog{animation:forest-fog-roll 24s ease-in-out infinite alternate}
