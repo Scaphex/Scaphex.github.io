@@ -642,7 +642,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
-/* SCAPHEX cinematic forest — slow, natural cloud and mist movement */
+/* SCAPHEX cinematic forest — original artwork, focused cape-emblem lighting */
 .hero-art{
  isolation:isolate;overflow:hidden;background-color:#080710!important;
  background-image:url('/assets/scaphex-forest-hero.webp.PNG')!important;
@@ -654,31 +654,19 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
  content:"";position:absolute;inset:-12%;pointer-events:none;
 }
-/* Broad, translucent cloud shadows drift slowly across the existing storm sky */
+/* Localized purple aura centered on the existing S on the hanging cape */
 .hero-art::before{
  z-index:0;
  background:
-  radial-gradient(ellipse 34% 13% at 62% 25%,rgba(205,177,235,.13),transparent 78%),
-  radial-gradient(ellipse 27% 11% at 78% 34%,rgba(147,111,190,.14),transparent 80%),
-  radial-gradient(ellipse 31% 12% at 42% 39%,rgba(171,145,208,.10),transparent 82%),
-  radial-gradient(ellipse 38% 10% at 22% 72%,rgba(180,151,207,.10),transparent 84%);
+  radial-gradient(ellipse 4.5% 7% at 14% 64%,rgba(244,213,255,.78),transparent 62%),
+  radial-gradient(ellipse 8% 12% at 14% 64%,rgba(202,111,255,.62),transparent 72%),
+  radial-gradient(ellipse 13% 19% at 14% 64%,rgba(137,49,224,.34),transparent 82%);
  mix-blend-mode:screen;
- filter:blur(23px);
- opacity:.56;
- animation:forest-cloud-drift 42s ease-in-out infinite alternate;
+ filter:blur(8px);
+ opacity:1;
 }
-/* Fine wisps in the lower mist move independently and remain deliberately subtle */
-.hero-art::after{
- z-index:1;
- background:
-  radial-gradient(ellipse 38% 7% at 28% 76%,rgba(193,164,218,.13),transparent 82%),
-  radial-gradient(ellipse 43% 8% at 73% 81%,rgba(157,128,193,.12),transparent 84%),
-  radial-gradient(ellipse 24% 6% at 53% 68%,rgba(207,180,229,.09),transparent 82%);
- mix-blend-mode:screen;
- filter:blur(17px);
- opacity:.48;
- animation:forest-mist-drift 34s ease-in-out infinite alternate;
-}
+/* No extra lightning, cloud, or mist effects in this pass */
+.hero-art::after{display:none}
 .hero-vignette{isolation:isolate;overflow:hidden;z-index:-2}
 .hero-vignette::before{
  z-index:0;
@@ -688,32 +676,20 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 .hero-vignette::after{
  z-index:1;
- background:linear-gradient(180deg,transparent 55%,rgba(180,145,210,.045) 78%,transparent 96%);
- mix-blend-mode:screen;
- filter:blur(20px);
- opacity:.35;
- animation:forest-ground-haze 38s ease-in-out infinite alternate;
+ background:
+  linear-gradient(110deg,transparent 0 45%,rgba(193,139,232,.08) 49%,transparent 54%),
+  radial-gradient(ellipse 35% 12% at 73% 24%,rgba(186,112,236,.12),transparent 82%);
+ mix-blend-mode:screen;opacity:.45;
+ animation:forest-moonlight-shift 17s ease-in-out infinite alternate;
 }
 @keyframes forest-photo-drift{
  0%{background-position:48% 42%}
  100%{background-position:52% 47%}
 }
-@keyframes forest-cloud-drift{
- 0%{transform:translate3d(-2.2%,.5%,0) scale(1.02)}
- 100%{transform:translate3d(2.2%,-.8%,0) scale(1.06)}
-}
-@keyframes forest-mist-drift{
- 0%{transform:translate3d(2%,0,0) scale(1.02)}
- 100%{transform:translate3d(-2%, -1%,0) scale(1.07)}
-}
-@keyframes forest-ground-haze{
- 0%{transform:translate3d(-1.5%,0,0)}
- 100%{transform:translate3d(1.5%,-.5%,0)}
-}
+@keyframes forest-moonlight-shift{0%{transform:translateX(-3%) rotate(-1deg);opacity:.22}100%{transform:translateX(3%) rotate(1deg);opacity:.62}}
 @media(max-width:760px){
  .hero-art{background-position:68% center!important;background-size:auto 108%!important;animation:forest-mobile-drift 48s ease-in-out infinite alternate}
- .hero-art::before{filter:blur(19px);opacity:.48}
- .hero-art::after{filter:blur(15px);opacity:.42}
+ .hero-art::before{filter:blur(7px);opacity:1}
  .hero-vignette::after{opacity:.28}
 }
 @keyframes forest-mobile-drift{
@@ -721,7 +697,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  100%{background-position:72% center;background-size:auto 112%}
 }
 @media(prefers-reduced-motion:reduce){
- .hero-art,.hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
+ .hero-art,.hero-vignette::after{animation:none!important}
 }
  
 /* Header brand lockup: stronger desktop presence, balanced within the existing nav height */
