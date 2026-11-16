@@ -657,7 +657,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
-/* SCAPHEX cinematic forest photo — real artwork with layered motion */
+/* SCAPHEX cinematic forest photo — living storm, no floating particles */
 .hero-art{
  isolation:isolate;overflow:hidden;background-color:#080710!important;
  background-image:url('/assets/scaphex-forest-hero.webp.PNG')!important;
@@ -669,28 +669,31 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
  content:"";position:absolute;inset:-12%;pointer-events:none;
 }
+/* Slow atmosphere plus a focused energy halo around the S on the hanging banner */
 .hero-art::before{
  z-index:0;
  background:
+  radial-gradient(ellipse 7% 17% at 14% 64%,rgba(218,157,255,.42),transparent 72%),
+  radial-gradient(ellipse 15% 26% at 14% 64%,rgba(158,65,231,.24),transparent 80%),
   radial-gradient(ellipse 36% 13% at 18% 69%,rgba(176,126,204,.18),transparent 80%),
   radial-gradient(ellipse 40% 12% at 74% 62%,rgba(183,129,214,.22),transparent 82%),
   radial-gradient(ellipse 32% 10% at 48% 82%,rgba(138,83,169,.20),transparent 82%),
   linear-gradient(180deg,rgba(6,4,13,.12),rgba(4,3,10,.18));
- filter:blur(22px);mix-blend-mode:screen;opacity:.65;
+ filter:blur(18px);mix-blend-mode:screen;opacity:.62;
  animation:forest-photo-mist 22s ease-in-out infinite alternate;
 }
+/* A restrained lightning strike flashes over the existing storm sky */
 .hero-art::after{
  z-index:1;
- background-image:
-  radial-gradient(ellipse 2px 4px at 12% 78%,rgba(231,190,255,.85),transparent 75%),
-  radial-gradient(ellipse 1.5px 3px at 28% 92%,rgba(178,126,218,.85),transparent 75%),
-  radial-gradient(ellipse 1px 3px at 44% 84%,rgba(242,218,255,.72),transparent 75%),
-  radial-gradient(ellipse 2px 4px at 63% 96%,rgba(192,132,228,.8),transparent 75%),
-  radial-gradient(ellipse 1.5px 3px at 81% 82%,rgba(230,188,255,.75),transparent 75%);
- background-size:137px 191px,181px 223px,227px 173px,251px 239px,193px 211px;
- background-position:18px 0,82px 40px,42px 15px,151px 70px,29px 20px;
- opacity:.42;filter:blur(.4px);
- animation:forest-embers-rise 23s linear infinite,forest-embers-pulse 6s ease-in-out infinite;
+ inset:-2%;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 680'%3E%3Cpath d='M292 0 L238 132 L279 132 L190 292 L260 194 L220 194 L310 48' fill='none' stroke='%23f4e7ff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M238 132 L164 190 L211 183' fill='none' stroke='%23d7a2ff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;
+ background-size:44% 78%;
+ background-position:70% 3%;
+ opacity:0;
+ filter:drop-shadow(0 0 5px rgba(231,190,255,.95)) drop-shadow(0 0 18px rgba(169,78,255,.9));
+ mix-blend-mode:screen;
+ animation:forest-lightning 9.5s linear infinite;
 }
 .hero-vignette{isolation:isolate;overflow:hidden;z-index:-2}
 .hero-vignette::before{
@@ -712,19 +715,24 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  100%{background-position:52% 47%}
 }
 @keyframes forest-photo-mist{
- 0%{transform:translate3d(-4%,2%,0) scale(.96);opacity:.32}
- 100%{transform:translate3d(4%,-3%,0) scale(1.08);opacity:.78}
+ 0%{transform:translate3d(-3%,2%,0) scale(.98);opacity:.48}
+ 100%{transform:translate3d(3%,-2%,0) scale(1.04);opacity:.76}
 }
-@keyframes forest-embers-rise{
- 0%{background-position:18px 130px,82px 170px,42px 145px,151px 190px,29px 150px}
- 100%{background-position:58px -300px,22px -340px,92px -285px,101px -360px,79px -320px}
+/* Two quick pulses, a brief afterglow, then a long quiet interval */
+@keyframes forest-lightning{
+ 0%,17%,18.5%,20%,21%,100%{opacity:0}
+ 17.3%{opacity:.82}
+ 17.7%{opacity:.12}
+ 18%{opacity:.68}
+ 18.8%{opacity:.04}
+ 19.2%{opacity:.48}
+ 20.2%{opacity:0}
 }
-@keyframes forest-embers-pulse{0%,100%{opacity:.2}50%{opacity:.52}}
 @keyframes forest-moonlight-shift{0%{transform:translateX(-3%) rotate(-1deg);opacity:.22}100%{transform:translateX(3%) rotate(1deg);opacity:.62}}
 @media(max-width:760px){
  .hero-art{background-position:68% center!important;background-size:auto 108%!important;animation:forest-mobile-drift 48s ease-in-out infinite alternate}
- .hero-art::before{filter:blur(18px);opacity:.5}
- .hero-art::after{opacity:.28;animation-duration:28s,7s}
+ .hero-art::before{filter:blur(16px);opacity:.58;background-position:center}
+ .hero-art::after{background-size:58% 62%;background-position:100% 7%}
  .hero-vignette::after{opacity:.28}
 }
 @keyframes forest-mobile-drift{
@@ -733,6 +741,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 @media(prefers-reduced-motion:reduce){
  .hero-art,.hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
+ .hero-art::after{opacity:.12}
 }
  
 /* Header brand lockup: stronger desktop presence, balanced within the existing nav height */
