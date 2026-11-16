@@ -654,15 +654,16 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
  content:"";position:absolute;inset:-12%;pointer-events:none;
 }
-/* Brighter localized purple aura around the existing S on the hanging banner */
+/* Strong, unmistakable purple-white energy glow centered on the existing banner S */
 .hero-art::before{
  z-index:0;
  background:
-  radial-gradient(ellipse 4.5% 7% at 14% 64%,rgba(255,239,255,.98),transparent 58%),
-  radial-gradient(ellipse 8.5% 13% at 14% 64%,rgba(218,133,255,.82),transparent 70%),
-  radial-gradient(ellipse 14% 20% at 14% 64%,rgba(157,65,245,.52),transparent 82%);
+  radial-gradient(ellipse 5.5% 8% at 14% 64%,rgba(255,255,255,1),transparent 54%),
+  radial-gradient(ellipse 10% 15% at 14% 64%,rgba(239,184,255,.98),transparent 66%),
+  radial-gradient(ellipse 17% 25% at 14% 64%,rgba(190,91,255,.78),transparent 78%),
+  radial-gradient(ellipse 24% 34% at 14% 64%,rgba(132,43,235,.42),transparent 88%);
  mix-blend-mode:screen;
- filter:blur(9px);
+ filter:blur(11px);
  opacity:1;
 }
 /* No extra lightning, cloud, or mist effects in this pass */
