@@ -657,6 +657,80 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
+/* SCAPHEX: bring the darkness — replace glitter with living shadow, ash and restrained amethyst energy */
+.hero-art{isolation:isolate;overflow:hidden}
+.hero-art::before{
+ content:"";position:absolute;inset:-12%;pointer-events:none;
+ background:
+  radial-gradient(ellipse 24% 42% at 50% 43%,rgba(111,38,158,.18),transparent 76%),
+  radial-gradient(ellipse 52% 62% at 50% 48%,rgba(35,13,52,.52),transparent 78%),
+  radial-gradient(ellipse 76% 30% at 50% 78%,rgba(104,35,145,.13),transparent 78%),
+  conic-gradient(from 210deg at 50% 45%,transparent 0deg,rgba(141,59,191,.08) 48deg,transparent 105deg,rgba(75,30,108,.13) 178deg,transparent 245deg,rgba(168,82,211,.08) 310deg,transparent 360deg);
+ filter:blur(13px) saturate(.85);
+ opacity:.76;transform:scale(1);
+ animation:scaphex-shadow-heartbeat 13s ease-in-out infinite;
+}
+.hero-art::after{
+ content:"";position:absolute;inset:-18%;pointer-events:none;
+ background-image:
+  radial-gradient(ellipse 2px 5px at 12% 78%,rgba(194,145,218,.42),transparent 75%),
+  radial-gradient(ellipse 2px 4px at 28% 92%,rgba(112,63,139,.55),transparent 75%),
+  radial-gradient(ellipse 1.5px 4px at 44% 84%,rgba(210,176,226,.35),transparent 75%),
+  radial-gradient(ellipse 2px 5px at 63% 96%,rgba(139,77,166,.52),transparent 75%),
+  radial-gradient(ellipse 1.5px 4px at 81% 82%,rgba(202,160,222,.36),transparent 75%),
+  linear-gradient(112deg,transparent 0 46%,rgba(132,67,163,.10) 49%,transparent 52%),
+  linear-gradient(72deg,transparent 0 61%,rgba(95,43,128,.12) 64%,transparent 67%);
+ background-size:137px 191px,181px 223px,227px 173px,251px 239px,193px 211px,100% 100%,100% 100%;
+ background-position:18px 0,82px 40px,42px 15px,151px 70px,29px 20px,0 0,0 0;
+ opacity:.46;filter:blur(.7px);
+ animation:scaphex-ashfall 34s linear infinite,scaphex-ash-breathe 7s ease-in-out infinite;
+}
+.hero-vignette{isolation:isolate;overflow:hidden}
+.hero-vignette::before{
+ content:"";position:absolute;inset:-22%;pointer-events:none;
+ background:
+  radial-gradient(ellipse 27% 52% at 17% 72%,rgba(20,10,28,.0),rgba(4,3,8,.56) 74%,transparent 100%),
+  radial-gradient(ellipse 24% 48% at 82% 58%,rgba(9,5,15,.0),rgba(4,3,8,.62) 76%,transparent 100%),
+  radial-gradient(ellipse 48% 20% at 50% 88%,rgba(108,48,132,.13),transparent 82%);
+ filter:blur(20px);opacity:.82;mix-blend-mode:multiply;
+ animation:scaphex-dark-mist 29s ease-in-out infinite alternate;
+}
+.hero-vignette::after{
+ content:"";position:absolute;inset:-12%;pointer-events:none;
+ background:
+  linear-gradient(108deg,transparent 0 43%,rgba(167,101,196,.055) 49%,transparent 54%),
+  radial-gradient(ellipse 36% 14% at 50% 47%,rgba(143,67,177,.09),transparent 82%);
+ mix-blend-mode:screen;opacity:.38;
+ animation:scaphex-rift-glow 18s ease-in-out infinite alternate;
+}
+@keyframes scaphex-shadow-heartbeat{
+ 0%,100%{opacity:.54;transform:scale(.97) rotate(-1deg)}
+ 48%{opacity:.88;transform:scale(1.045) rotate(1deg)}
+ 62%{opacity:.72;transform:scale(1.015) rotate(.2deg)}
+}
+@keyframes scaphex-ashfall{
+ 0%{background-position:18px 0,82px 40px,42px 15px,151px 70px,29px 20px,0 0,0 0;transform:translate3d(-.4%,2%,0)}
+ 100%{background-position:58px -360px,22px -420px,92px -310px,101px -460px,79px -390px,0 0,0 0;transform:translate3d(.4%,-3%,0)}
+}
+@keyframes scaphex-ash-breathe{0%,100%{opacity:.30}50%{opacity:.52}}
+@keyframes scaphex-dark-mist{
+ 0%{transform:translate3d(-2%,1%,0) scale(.98);opacity:.58}
+ 100%{transform:translate3d(2%,-2%,0) scale(1.06);opacity:.92}
+}
+@keyframes scaphex-rift-glow{
+ 0%{transform:translateX(-2%) scale(.98);opacity:.18}
+ 100%{transform:translateX(2%) scale(1.04);opacity:.48}
+}
+@media(max-width:760px){
+ .hero-art::before{opacity:.68;filter:blur(16px)}
+ .hero-art::after{opacity:.32;filter:blur(1px);animation-duration:42s,9s}
+ .hero-vignette::before{opacity:.72;filter:blur(24px)}
+ .hero-vignette::after{opacity:.25}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{animation:none!important}
+}
+ 
 /* Header brand lockup: stronger desktop presence, balanced within the existing nav height */
 .brand-mark{gap:7px}
 .brand-emblem{width:67px;height:67px}
