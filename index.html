@@ -708,6 +708,22 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  .hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
 }
  
+/* Living motion inside the illustrated forest scene */
+.forest-scene{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.025);animation:forest-camera-drift 42s ease-in-out infinite alternate}
+.forest-scene .forest-fog{animation:forest-fog-roll 24s ease-in-out infinite alternate}
+.forest-scene .forest-lightning{animation:forest-storm-flash 13s linear infinite}
+.forest-scene g[fill="#b76aff"]{animation:forest-castle-lights 5.5s ease-in-out infinite}
+.forest-scene path[stroke="#b17ad9"]{animation:forest-water-glimmer 8s ease-in-out infinite}
+.forest-scene circle[fill="#a64be5"]{animation:forest-moon-pulse 9s ease-in-out infinite}
+@keyframes forest-camera-drift{0%{transform:scale(1.025) translate3d(-.3%,0,0)}100%{transform:scale(1.075) translate3d(.3%,-.4%,0)}}
+@keyframes forest-fog-roll{0%{transform:translate3d(-7%,0,0) scaleX(1);opacity:.07}50%{opacity:.17}100%{transform:translate3d(7%,-10px,0) scaleX(1.08);opacity:.12}}
+@keyframes forest-storm-flash{0%,91%,93%,100%{opacity:0}91.5%{opacity:.9}92%{opacity:.12}92.5%{opacity:.72}}
+@keyframes forest-castle-lights{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes forest-water-glimmer{0%,100%{opacity:.22}50%{opacity:.58}}
+@keyframes forest-moon-pulse{0%,100%{opacity:.18}50%{opacity:.32}}
+@media(max-width:760px){.forest-scene{transform:scale(1.12);animation-duration:48s}}
+@media(prefers-reduced-motion:reduce){.forest-scene,.forest-scene *{animation:none!important}}
+ 
 /* Header brand lockup: stronger desktop presence, balanced within the existing nav height */
 .brand-mark{gap:7px}
 .brand-emblem{width:67px;height:67px}
