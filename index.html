@@ -657,99 +657,83 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
-/* SCAPHEX forest realm — animated atmosphere around the existing hero artwork */
-.hero-art{isolation:isolate;overflow:hidden;background:#080710}
-.hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{content:"";position:absolute;inset:-12%;pointer-events:none}
+/* SCAPHEX cinematic forest photo — real artwork with layered motion */
+.hero-art{
+ isolation:isolate;overflow:hidden;background-color:#080710!important;
+ background-image:url('/assets/scaphex-forest-hero.webp.PNG')!important;
+ background-repeat:no-repeat!important;
+ background-size:108% 108%!important;
+ background-position:50% 44%!important;
+ animation:forest-photo-drift 48s ease-in-out infinite alternate;
+}
+.hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
+ content:"";position:absolute;inset:-12%;pointer-events:none;
+}
 .hero-art::before{
  z-index:0;
  background:
-  radial-gradient(ellipse 24% 38% at 78% 15%,rgba(159,82,230,.26),transparent 75%),
-  radial-gradient(ellipse 48% 18% at 50% 88%,rgba(99,38,132,.22),transparent 78%),
-  linear-gradient(180deg,rgba(7,5,14,.05),rgba(4,3,9,.18));
- animation:forest-night-breath 12s ease-in-out infinite alternate;
+  radial-gradient(ellipse 36% 13% at 18% 69%,rgba(176,126,204,.18),transparent 80%),
+  radial-gradient(ellipse 40% 12% at 74% 62%,rgba(183,129,214,.22),transparent 82%),
+  radial-gradient(ellipse 32% 10% at 48% 82%,rgba(138,83,169,.20),transparent 82%),
+  linear-gradient(180deg,rgba(6,4,13,.12),rgba(4,3,10,.18));
+ filter:blur(22px);mix-blend-mode:screen;opacity:.65;
+ animation:forest-photo-mist 22s ease-in-out infinite alternate;
 }
 .hero-art::after{
  z-index:1;
- background:
-  radial-gradient(ellipse 30% 7% at 18% 72%,rgba(150,87,190,.22),transparent 78%),
-  radial-gradient(ellipse 36% 9% at 72% 65%,rgba(174,112,211,.20),transparent 80%),
-  radial-gradient(ellipse 28% 6% at 50% 82%,rgba(131,70,164,.18),transparent 82%);
- filter:blur(24px);mix-blend-mode:screen;opacity:.7;
- animation:forest-mist-drift 19s ease-in-out infinite alternate;
+ background-image:
+  radial-gradient(ellipse 2px 4px at 12% 78%,rgba(231,190,255,.85),transparent 75%),
+  radial-gradient(ellipse 1.5px 3px at 28% 92%,rgba(178,126,218,.85),transparent 75%),
+  radial-gradient(ellipse 1px 3px at 44% 84%,rgba(242,218,255,.72),transparent 75%),
+  radial-gradient(ellipse 2px 4px at 63% 96%,rgba(192,132,228,.8),transparent 75%),
+  radial-gradient(ellipse 1.5px 3px at 81% 82%,rgba(230,188,255,.75),transparent 75%);
+ background-size:137px 191px,181px 223px,227px 173px,251px 239px,193px 211px;
+ background-position:18px 0,82px 40px,42px 15px,151px 70px,29px 20px;
+ opacity:.42;filter:blur(.4px);
+ animation:forest-embers-rise 23s linear infinite,forest-embers-pulse 6s ease-in-out infinite;
 }
-.hero-vignette{isolation:isolate;overflow:hidden}
+.hero-vignette{isolation:isolate;overflow:hidden;z-index:-2}
 .hero-vignette::before{
  z-index:0;
  background:
-  linear-gradient(180deg,rgba(3,3,8,.38) 0%,transparent 24%,transparent 55%,rgba(3,2,8,.66) 100%),
-  radial-gradient(ellipse at 50% 48%,transparent 36%,rgba(3,2,8,.42) 100%);
+  linear-gradient(180deg,rgba(3,3,8,.26) 0%,transparent 22%,transparent 55%,rgba(3,2,8,.70) 100%),
+  radial-gradient(ellipse at 50% 45%,transparent 34%,rgba(3,2,8,.42) 100%);
 }
 .hero-vignette::after{
  z-index:1;
  background:
-  radial-gradient(ellipse 2px 3px at 14% 78%,rgba(214,165,255,.78),transparent 75%),
-  radial-gradient(ellipse 2px 3px at 31% 90%,rgba(167,111,213,.82),transparent 75%),
-  radial-gradient(ellipse 1px 2px at 62% 74%,rgba(235,201,255,.78),transparent 75%),
-  radial-gradient(ellipse 2px 3px at 83% 86%,rgba(175,117,219,.78),transparent 75%),
-  radial-gradient(ellipse 1px 2px at 48% 68%,rgba(230,191,255,.66),transparent 75%);
- background-size:100% 100%;
- opacity:.52;filter:blur(.4px);
- animation:forest-fireflies 11s ease-in-out infinite;
+  linear-gradient(110deg,transparent 0 45%,rgba(193,139,232,.08) 49%,transparent 54%),
+  radial-gradient(ellipse 35% 12% at 73% 24%,rgba(186,112,236,.12),transparent 82%);
+ mix-blend-mode:screen;opacity:.45;
+ animation:forest-moonlight-shift 17s ease-in-out infinite alternate;
 }
-@keyframes forest-night-breath{0%{opacity:.45;transform:scale(1)}100%{opacity:.92;transform:scale(1.035)}}
-@keyframes forest-mist-drift{0%{transform:translate3d(-3%,2%,0) scale(.96);opacity:.38}100%{transform:translate3d(3%,-2%,0) scale(1.08);opacity:.82}}
-@keyframes forest-fireflies{0%,100%{opacity:.2;transform:translateY(1%)}50%{opacity:.68;transform:translateY(-2%)}}
+@keyframes forest-photo-drift{
+ 0%{background-position:48% 42%;background-size:106% 106%}
+ 100%{background-position:52% 47%;background-size:112% 112%}
+}
+@keyframes forest-photo-mist{
+ 0%{transform:translate3d(-4%,2%,0) scale(.96);opacity:.32}
+ 100%{transform:translate3d(4%,-3%,0) scale(1.08);opacity:.78}
+}
+@keyframes forest-embers-rise{
+ 0%{background-position:18px 130px,82px 170px,42px 145px,151px 190px,29px 150px}
+ 100%{background-position:58px -300px,22px -340px,92px -285px,101px -360px,79px -320px}
+}
+@keyframes forest-embers-pulse{0%,100%{opacity:.2}50%{opacity:.52}}
+@keyframes forest-moonlight-shift{0%{transform:translateX(-3%) rotate(-1deg);opacity:.22}100%{transform:translateX(3%) rotate(1deg);opacity:.62}}
 @media(max-width:760px){
- .hero-art::before{opacity:.8}
- .hero-art::after{filter:blur(19px);opacity:.55}
- .hero-vignette::after{opacity:.34}
+ .hero-art{background-position:68% center!important;background-size:auto 108%!important;animation:forest-mobile-drift 48s ease-in-out infinite alternate}
+ .hero-art::before{filter:blur(18px);opacity:.5}
+ .hero-art::after{opacity:.28;animation-duration:28s,7s}
+ .hero-vignette::after{opacity:.28}
+}
+@keyframes forest-mobile-drift{
+ 0%{background-position:65% center;background-size:auto 105%}
+ 100%{background-position:72% center;background-size:auto 112%}
 }
 @media(prefers-reduced-motion:reduce){
- .hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
+ .hero-art,.hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
 }
- 
-/* Force the new inline forest artwork above all retired background assets */
-.hero-art{
- background-image:none!important;
- background-color:#080710!important;
-}
-.hero-art .forest-scene{
- display:block!important;
- position:absolute!important;
- inset:0!important;
- z-index:0!important;
- width:100%!important;
- height:100%!important;
- min-width:100%!important;
- min-height:100%!important;
- visibility:visible!important;
- opacity:1!important;
-}
-.hero-art::before{z-index:1!important}
-.hero-art::after{z-index:2!important}
-.hero-vignette{z-index:-2}
-.hero-vignette::before{z-index:0!important}
-.hero-vignette::after{z-index:1!important}
-@media(max-width:760px){
- .hero-art{background-image:none!important;background-size:cover!important}
- .hero-art .forest-scene{width:100%!important;height:100%!important;object-fit:cover!important;transform:scale(1.12)!important}
-}
- 
-/* Living motion inside the illustrated forest scene */
-.forest-scene{position:absolute;inset:0;width:100%;height:100%;transform:scale(1.025);animation:forest-camera-drift 42s ease-in-out infinite alternate}
-.forest-scene .forest-fog{animation:forest-fog-roll 24s ease-in-out infinite alternate}
-.forest-scene .forest-lightning{animation:forest-storm-flash 13s linear infinite}
-.forest-scene g[fill="#b76aff"]{animation:forest-castle-lights 5.5s ease-in-out infinite}
-.forest-scene path[stroke="#b17ad9"]{animation:forest-water-glimmer 8s ease-in-out infinite}
-.forest-scene circle[fill="#a64be5"]{animation:forest-moon-pulse 9s ease-in-out infinite}
-@keyframes forest-camera-drift{0%{transform:scale(1.025) translate3d(-.3%,0,0)}100%{transform:scale(1.075) translate3d(.3%,-.4%,0)}}
-@keyframes forest-fog-roll{0%{transform:translate3d(-7%,0,0) scaleX(1);opacity:.07}50%{opacity:.17}100%{transform:translate3d(7%,-10px,0) scaleX(1.08);opacity:.12}}
-@keyframes forest-storm-flash{0%,91%,93%,100%{opacity:0}91.5%{opacity:.9}92%{opacity:.12}92.5%{opacity:.72}}
-@keyframes forest-castle-lights{0%,100%{opacity:.55}50%{opacity:1}}
-@keyframes forest-water-glimmer{0%,100%{opacity:.22}50%{opacity:.58}}
-@keyframes forest-moon-pulse{0%,100%{opacity:.18}50%{opacity:.32}}
-@media(max-width:760px){.forest-scene{transform:scale(1.12);animation-duration:48s}}
-@media(prefers-reduced-motion:reduce){.forest-scene,.forest-scene *{animation:none!important}}
  
 /* Header brand lockup: stronger desktop presence, balanced within the existing nav height */
 .brand-mark{gap:7px}
@@ -791,79 +775,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 <!-- Scaphex fantasy hero -->
 <section id="home" class="scaphex-hero">
   <div class="hero-art" aria-hidden="true">
-<svg class="forest-scene" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-<defs>
- <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#090812"/><stop offset=".52" stop-color="#171126"/><stop offset="1" stop-color="#080710"/></linearGradient>
- <radialGradient id="moon"><stop stop-color="#e6c8ff"/><stop offset=".28" stop-color="#bd79f4"/><stop offset=".7" stop-color="#7432a9"/><stop offset="1" stop-color="#35154e" stop-opacity="0"/></radialGradient>
- <linearGradient id="mountain" x2="0" y2="1"><stop stop-color="#292039"/><stop offset="1" stop-color="#080910"/></linearGradient>
- <linearGradient id="stone" x2=".2" y2="1"><stop stop-color="#393143"/><stop offset="1" stop-color="#111018"/></linearGradient>
- <linearGradient id="water" x2="0" y2="1"><stop stop-color="#3c2456" stop-opacity=".75"/><stop offset="1" stop-color="#080a13"/></linearGradient>
- <linearGradient id="crystal"><stop stop-color="#9d43f5"/><stop offset=".45" stop-color="#e6c4ff"/><stop offset="1" stop-color="#552080"/></linearGradient>
- <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
- <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
-</defs>
-<rect width="1920" height="1080" fill="url(#sky)"/>
-<circle cx="1450" cy="205" r="245" fill="#a64be5" opacity=".22" filter="url(#glow)"/>
-<circle cx="1450" cy="205" r="175" fill="url(#moon)"/>
-<g opacity=".22" fill="#eee0ff"><circle cx="1390" cy="150" r="22"/><circle cx="1494" cy="234" r="34"/><circle cx="1422" cy="282" r="15"/><circle cx="1522" cy="125" r="18"/></g>
-<path d="M0 380 Q240 240 420 360T820 340T1210 350T1600 310T1920 370V780H0Z" fill="#151321"/>
-<path d="M0 520L170 365 280 435 430 290 570 455 760 345 930 475 1110 330 1290 440 1480 290 1660 425 1810 315 1920 390V850H0Z" fill="url(#mountain)"/>
-<path d="M0 600Q240 470 470 565T900 540T1320 530T1920 500V890H0Z" fill="#11111b"/>
-<!-- distant forest ridges -->
-<g fill="#090b12">
-<path d="M0 560l55-145 45 145 55-190 65 190 65-145 65 145 55-210 65 210 70-160 70 160V820H0Z"/>
-<path d="M900 570l50-170 50 170 65-220 65 220 55-160 55 160 65-205 60 205 65-150 55 150V850H900Z"/>
-<path d="M1450 555l45-175 55 175 55-225 65 225 55-160 55 160 65-200 75 200V850H1450Z"/>
-</g>
-<!-- castle on the ridge -->
-<g transform="translate(1260 300)" fill="#0b0a13" stroke="#514063" stroke-width="5">
- <path d="M-60 250V80h55V35h40v45h55V10h48v70h52V45h42v35h45v170Z"/>
- <path d="M-82 80h40v-38h38v38h40V-4h40v84h54V15h36v65h48v-42h38v42h48v170H-82Z" fill="#100d1b"/>
- <path d="M-30 250V145h38v105M55 250V125h38v125M145 250V150h40v100M230 250V135h38v115" fill="#05060b" stroke="none"/>
- <g fill="#b76aff" stroke="none" opacity=".9"><path d="M-18 102h14v40h-14zM75 89h14v42H75zM168 106h14v40h-14zM247 92h14v42h-14z"/></g>
-</g>
-<!-- waterfall and distant mist -->
-<path d="M1515 565q25 80 8 180t25 120q-5-110 18-175t-2-125" fill="#b18ad7" opacity=".36" filter="url(#soft)"/>
-<path d="M1518 555q12 100 5 185t18 110" stroke="#bfa1e8" stroke-width="5" opacity=".48" fill="none"/>
-<!-- ruined arch and banner -->
-<g transform="translate(270 385)">
- <path d="M0 370V50h60v90h-25v230M220 370V40h65v330M0 95h65v65H0M220 80h65v65h-65" fill="url(#stone)" stroke="#4c4357" stroke-width="8"/>
- <path d="M54 185Q140 30 228 185" fill="none" stroke="#62566c" stroke-width="24"/>
- <path d="M118 35V-12h8v47" stroke="#8e8295" stroke-width="5"/>
- <path d="M126 5L310 42 290 255 208 222 126 260Z" fill="#170d23" stroke="#6d3d88" stroke-width="4"/>
- <path d="M214 75l42 26-39 17 23 41-47-14-28 36 5-48-43-19 49-8 12-45 18 42Z" fill="none" stroke="#b95cff" stroke-width="9" opacity=".9"/>
- <path d="M214 75l42 26-39 17 23 41-47-14-28 36 5-48-43-19 49-8 12-45 18 42Z" fill="none" stroke="#c47bff" stroke-width="18" opacity=".5" filter="url(#glow)"/>
-</g>
-<!-- forest floor and creek -->
-<path d="M0 760Q260 680 470 760T880 735T1320 760T1920 700V1080H0Z" fill="#080910"/>
-<path d="M610 1080Q760 890 950 850T1250 875Q1470 940 1690 1080Z" fill="url(#water)" stroke="#38224f" stroke-width="7"/>
-<path d="M720 1020q190-120 390-104t380 112M810 1052q210-90 420-65t280 85" fill="none" stroke="#b17ad9" stroke-width="7" opacity=".4"/>
-<path d="M850 988q150-40 290-18M1130 1042q180-45 320-4" fill="none" stroke="#e2bfff" stroke-width="3" opacity=".38"/>
-<!-- foreground crystal clusters -->
-<g stroke="#c28aff" stroke-width="5" fill="url(#crystal)">
- <path d="M100 940l38-155 42 155-25-18-18 28Z"/><path d="M150 970l55-230 53 230-32-25-22 38Z"/><path d="M210 980l28-140 32 140-20-15-13 24Z"/>
- <path d="M1620 900l38-160 43 160-27-20-17 28Z"/><path d="M1680 930l55-215 54 215-32-22-21 36Z"/>
- <path d="M540 870l28-115 34 115-20-14-14 22Z"/><path d="M1300 850l26-110 34 110-19-12-14 20Z"/>
-</g>
-<g fill="#a64aff" opacity=".5" filter="url(#glow)"><ellipse cx="180" cy="920" rx="120" ry="45"/><ellipse cx="1690" cy="880" rx="130" ry="42"/></g>
-<!-- towering framing trees -->
-<g fill="#05070d" stroke="#171321" stroke-width="18">
- <path d="M0 0h170q-35 170 8 300t-40 240q-38 140 30 260l-90 280H0Z"/>
- <path d="M0 170q160-40 300 80l150 120-12 38-190-90Q120 270 0 330Z"/>
- <path d="M1920 0h-170q35 170-8 300t40 240q38 140-30 260l90 280h78Z"/>
- <path d="M1920 160q-160-40-300 80l-150 120 12 38 190-90q128-78 248-8Z"/>
-</g>
-<g stroke="#21182a" stroke-width="12" fill="none" opacity=".8">
- <path d="M80 0q-30 160 20 300t-8 300M1800 0q35 160-18 300t12 300M20 250q100-40 190 15M1900 240q-100-35-190 20"/>
-</g>
-<!-- animated fog ribbons -->
-<g class="forest-fog" fill="none" stroke="#b89acb" stroke-width="42" opacity=".12" filter="url(#soft)">
- <path d="M-100 700Q300 590 650 700T1300 690T2050 670"/>
- <path d="M-100 820Q300 720 650 820T1300 810T2050 790"/>
-</g>
-<!-- storm flash -->
-<path class="forest-lightning" d="M1170 250l-38 80 46-12-28 65 86-105-49 14 30-42Z" fill="#d7a2ff" opacity="0"/>
-</svg></div>
+</div>
   <div class="hero-vignette" aria-hidden="true"></div>
   <div class="hero-content">
     <img class="hero-wordmark" src="/assets/scaphex-wordmark.png" alt="SCAPHEX metallic silver and purple wordmark" width="1536" height="512" fetchpriority="high">
