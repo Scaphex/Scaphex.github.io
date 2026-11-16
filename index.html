@@ -642,7 +642,7 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
-/* SCAPHEX cinematic forest — original artwork, focused cape-emblem lighting */
+/* SCAPHEX cinematic forest photo — original artwork with restrained energy glow */
 .hero-art{
  isolation:isolate;overflow:hidden;background-color:#080710!important;
  background-image:url('/assets/scaphex-forest-hero.webp.PNG')!important;
@@ -654,20 +654,30 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
  content:"";position:absolute;inset:-12%;pointer-events:none;
 }
-/* Strong, unmistakable purple-white energy glow centered on the existing banner S */
+/* Soft purple energy around the existing S on the hanging banner — no new particles */
 .hero-art::before{
  z-index:0;
  background:
-  radial-gradient(ellipse 5.5% 8% at 14% 64%,rgba(255,255,255,1),transparent 54%),
-  radial-gradient(ellipse 10% 15% at 14% 64%,rgba(239,184,255,.98),transparent 66%),
-  radial-gradient(ellipse 17% 25% at 14% 64%,rgba(190,91,255,.78),transparent 78%),
-  radial-gradient(ellipse 24% 34% at 14% 64%,rgba(132,43,235,.42),transparent 88%);
+  radial-gradient(ellipse 5.5% 10% at 14% 64%,rgba(223,174,255,.34),transparent 72%),
+  radial-gradient(ellipse 10% 17% at 14% 64%,rgba(160,76,235,.22),transparent 78%),
+  radial-gradient(ellipse 13% 9% at 66% 34%,rgba(221,178,255,.20),transparent 78%),
+  radial-gradient(ellipse 20% 15% at 66% 34%,rgba(151,77,221,.13),transparent 82%);
  mix-blend-mode:screen;
- filter:blur(11px);
- opacity:1;
+ filter:blur(10px);
+ opacity:.72;
+ animation:forest-energy-breathe 8s ease-in-out infinite;
 }
-/* No extra lightning, cloud, or mist effects in this pass */
-.hero-art::after{display:none}
+/* Only softly illuminate the lightning already present in the artwork */
+.hero-art::after{
+ z-index:1;
+ background:
+  radial-gradient(ellipse 15% 17% at 66% 34%,rgba(210,157,255,.12),transparent 78%),
+  radial-gradient(ellipse 22% 19% at 66% 34%,rgba(132,67,208,.09),transparent 84%);
+ mix-blend-mode:screen;
+ filter:blur(14px);
+ opacity:.55;
+ animation:forest-lightning-glow 7s ease-in-out infinite;
+}
 .hero-vignette{isolation:isolate;overflow:hidden;z-index:-2}
 .hero-vignette::before{
  z-index:0;
@@ -687,10 +697,19 @@ body{background:var(--sc-ink)!important;color:#f5efff}
  0%{background-position:48% 42%}
  100%{background-position:52% 47%}
 }
+@keyframes forest-energy-breathe{
+ 0%,100%{opacity:.66}
+ 50%{opacity:.78}
+}
+@keyframes forest-lightning-glow{
+ 0%,100%{opacity:.48}
+ 50%{opacity:.60}
+}
 @keyframes forest-moonlight-shift{0%{transform:translateX(-3%) rotate(-1deg);opacity:.22}100%{transform:translateX(3%) rotate(1deg);opacity:.62}}
 @media(max-width:760px){
  .hero-art{background-position:68% center!important;background-size:auto 108%!important;animation:forest-mobile-drift 48s ease-in-out infinite alternate}
- .hero-art::before{filter:blur(7px);opacity:1}
+ .hero-art::before{filter:blur(8px);opacity:.72}
+ .hero-art::after{filter:blur(12px);opacity:.55}
  .hero-vignette::after{opacity:.28}
 }
 @keyframes forest-mobile-drift{
