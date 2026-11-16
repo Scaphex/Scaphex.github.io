@@ -657,75 +657,90 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
-/* SCAPHEX: bring the darkness — replace glitter with living shadow, ash and restrained amethyst energy */
+/* SCAPHEX: living darkness — visible smoke currents, unstable amethyst energy and rising cinders */
 .hero-art{isolation:isolate;overflow:hidden}
+.hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
+ content:"";position:absolute;pointer-events:none;
+}
 .hero-art::before{
- content:"";position:absolute;inset:-12%;pointer-events:none;
+ z-index:0;inset:-30%;
  background:
-  radial-gradient(ellipse 24% 42% at 50% 43%,rgba(111,38,158,.18),transparent 76%),
-  radial-gradient(ellipse 52% 62% at 50% 48%,rgba(35,13,52,.52),transparent 78%),
-  radial-gradient(ellipse 76% 30% at 50% 78%,rgba(104,35,145,.13),transparent 78%),
-  conic-gradient(from 210deg at 50% 45%,transparent 0deg,rgba(141,59,191,.08) 48deg,transparent 105deg,rgba(75,30,108,.13) 178deg,transparent 245deg,rgba(168,82,211,.08) 310deg,transparent 360deg);
- filter:blur(13px) saturate(.85);
- opacity:.76;transform:scale(1);
- animation:scaphex-shadow-heartbeat 13s ease-in-out infinite;
+  radial-gradient(ellipse 19% 47% at 23% 55%,rgba(91,28,128,.48),transparent 76%),
+  radial-gradient(ellipse 24% 38% at 76% 43%,rgba(121,42,159,.43),transparent 78%),
+  radial-gradient(ellipse 34% 22% at 52% 77%,rgba(83,24,121,.42),transparent 82%),
+  radial-gradient(ellipse 22% 34% at 49% 26%,rgba(115,43,151,.32),transparent 80%),
+  conic-gradient(from 20deg at 50% 48%,transparent 0 35deg,rgba(145,61,190,.19) 72deg,transparent 118deg,rgba(75,25,110,.25) 180deg,transparent 228deg,rgba(163,76,205,.17) 286deg,transparent 340deg);
+ background-size:135% 145%;
+ filter:blur(28px) saturate(1.45);
+ opacity:.92;mix-blend-mode:screen;
+ transform:scale(1.04) rotate(0deg);
+ animation:scaphex-shadow-surge 10s ease-in-out infinite,scaphex-shadow-turn 26s linear infinite;
 }
 .hero-art::after{
- content:"";position:absolute;inset:-18%;pointer-events:none;
+ z-index:1;inset:-24%;
  background-image:
-  radial-gradient(ellipse 2px 5px at 12% 78%,rgba(194,145,218,.42),transparent 75%),
-  radial-gradient(ellipse 2px 4px at 28% 92%,rgba(112,63,139,.55),transparent 75%),
-  radial-gradient(ellipse 1.5px 4px at 44% 84%,rgba(210,176,226,.35),transparent 75%),
-  radial-gradient(ellipse 2px 5px at 63% 96%,rgba(139,77,166,.52),transparent 75%),
-  radial-gradient(ellipse 1.5px 4px at 81% 82%,rgba(202,160,222,.36),transparent 75%),
-  linear-gradient(112deg,transparent 0 46%,rgba(132,67,163,.10) 49%,transparent 52%),
-  linear-gradient(72deg,transparent 0 61%,rgba(95,43,128,.12) 64%,transparent 67%);
- background-size:137px 191px,181px 223px,227px 173px,251px 239px,193px 211px,100% 100%,100% 100%;
- background-position:18px 0,82px 40px,42px 15px,151px 70px,29px 20px,0 0,0 0;
- opacity:.46;filter:blur(.7px);
- animation:scaphex-ashfall 34s linear infinite,scaphex-ash-breathe 7s ease-in-out infinite;
+  radial-gradient(ellipse 17% 34% at 13% 83%,rgba(95,42,121,.34),transparent 78%),
+  radial-gradient(ellipse 19% 39% at 87% 71%,rgba(116,45,147,.32),transparent 78%),
+  radial-gradient(ellipse 13% 30% at 35% 95%,rgba(73,28,99,.42),transparent 80%),
+  radial-gradient(ellipse 15% 32% at 69% 91%,rgba(112,44,142,.35),transparent 80%),
+  radial-gradient(ellipse 2px 5px at 12% 78%,rgba(229,179,255,.8),transparent 75%),
+  radial-gradient(ellipse 2px 5px at 28% 92%,rgba(161,99,191,.82),transparent 75%),
+  radial-gradient(ellipse 1.5px 4px at 44% 84%,rgba(239,208,255,.72),transparent 75%),
+  radial-gradient(ellipse 2px 5px at 63% 96%,rgba(177,103,211,.82),transparent 75%),
+  radial-gradient(ellipse 1.5px 4px at 81% 82%,rgba(225,181,247,.72),transparent 75%);
+ background-size:100% 100%,100% 100%,100% 100%,100% 100%,137px 191px,181px 223px,227px 173px,251px 239px,193px 211px;
+ background-position:0 0,0 0,0 0,0 0,18px 0,82px 40px,42px 15px,151px 70px,29px 20px;
+ opacity:.72;filter:blur(2px);
+ animation:scaphex-smoke-curl 14s ease-in-out infinite alternate,scaphex-cinders-rise 8s linear infinite;
 }
 .hero-vignette{isolation:isolate;overflow:hidden}
 .hero-vignette::before{
- content:"";position:absolute;inset:-22%;pointer-events:none;
+ z-index:0;inset:-35%;
  background:
-  radial-gradient(ellipse 27% 52% at 17% 72%,rgba(20,10,28,.0),rgba(4,3,8,.56) 74%,transparent 100%),
-  radial-gradient(ellipse 24% 48% at 82% 58%,rgba(9,5,15,.0),rgba(4,3,8,.62) 76%,transparent 100%),
-  radial-gradient(ellipse 48% 20% at 50% 88%,rgba(108,48,132,.13),transparent 82%);
- filter:blur(20px);opacity:.82;mix-blend-mode:multiply;
- animation:scaphex-dark-mist 29s ease-in-out infinite alternate;
+  radial-gradient(ellipse 23% 48% at 8% 66%,rgba(13,5,20,.08),rgba(77,28,94,.42) 52%,transparent 82%),
+  radial-gradient(ellipse 24% 50% at 93% 54%,rgba(13,5,20,.08),rgba(80,28,99,.40) 54%,transparent 84%),
+  radial-gradient(ellipse 48% 19% at 50% 94%,rgba(102,37,127,.34),transparent 84%),
+  linear-gradient(108deg,transparent 30%,rgba(111,48,139,.14) 46%,rgba(28,10,40,.04) 55%,transparent 68%);
+ filter:blur(25px);opacity:.88;mix-blend-mode:screen;
+ animation:scaphex-mist-cross 11s ease-in-out infinite alternate;
 }
 .hero-vignette::after{
- content:"";position:absolute;inset:-12%;pointer-events:none;
+ z-index:1;inset:-25%;
  background:
-  linear-gradient(108deg,transparent 0 43%,rgba(167,101,196,.055) 49%,transparent 54%),
-  radial-gradient(ellipse 36% 14% at 50% 47%,rgba(143,67,177,.09),transparent 82%);
- mix-blend-mode:screen;opacity:.38;
- animation:scaphex-rift-glow 18s ease-in-out infinite alternate;
+  radial-gradient(ellipse 30% 12% at 50% 48%,rgba(161,75,199,.17),transparent 82%),
+  linear-gradient(104deg,transparent 37%,rgba(173,93,210,.13) 48%,rgba(95,36,121,.10) 52%,transparent 62%);
+ filter:blur(17px);opacity:.66;mix-blend-mode:screen;
+ animation:scaphex-rift-flare 7.5s ease-in-out infinite;
 }
-@keyframes scaphex-shadow-heartbeat{
- 0%,100%{opacity:.54;transform:scale(.97) rotate(-1deg)}
- 48%{opacity:.88;transform:scale(1.045) rotate(1deg)}
- 62%{opacity:.72;transform:scale(1.015) rotate(.2deg)}
+@keyframes scaphex-shadow-surge{
+ 0%,100%{opacity:.58;transform:scale(.94) translate3d(-1%,1%,0)}
+ 42%{opacity:1;transform:scale(1.12) translate3d(2%,-2%,0)}
+ 68%{opacity:.76;transform:scale(1.02) translate3d(-2%,1%,0)}
 }
-@keyframes scaphex-ashfall{
- 0%{background-position:18px 0,82px 40px,42px 15px,151px 70px,29px 20px,0 0,0 0;transform:translate3d(-.4%,2%,0)}
- 100%{background-position:58px -360px,22px -420px,92px -310px,101px -460px,79px -390px,0 0,0 0;transform:translate3d(.4%,-3%,0)}
+@keyframes scaphex-shadow-turn{to{rotate:360deg}}
+@keyframes scaphex-smoke-curl{
+ 0%{transform:translate3d(-3%,3%,0) scale(.94) rotate(-2deg);background-position:0 0,0 0,0 0,0 0,18px 0,82px 40px,42px 15px,151px 70px,29px 20px}
+ 50%{transform:translate3d(2%,-2%,0) scale(1.08) rotate(2deg);background-position:0 0,0 0,0 0,0 0,48px -95px,22px -110px,92px -78px,101px -125px,79px -90px}
+ 100%{transform:translate3d(3%,2%,0) scale(1.02) rotate(-1deg);background-position:0 0,0 0,0 0,0 0,78px -190px,-38px -210px,142px -156px,51px -250px,129px -180px}
 }
-@keyframes scaphex-ash-breathe{0%,100%{opacity:.30}50%{opacity:.52}}
-@keyframes scaphex-dark-mist{
- 0%{transform:translate3d(-2%,1%,0) scale(.98);opacity:.58}
- 100%{transform:translate3d(2%,-2%,0) scale(1.06);opacity:.92}
+@keyframes scaphex-cinders-rise{
+  0%{background-position:0 0,0 0,0 0,0 0,18px 120px,82px 160px,42px 115px,151px 170px,29px 130px}
+  100%{background-position:0 0,0 0,0 0,0 0,58px -240px,22px -280px,92px -205px,101px -290px,79px -260px}
 }
-@keyframes scaphex-rift-glow{
- 0%{transform:translateX(-2%) scale(.98);opacity:.18}
- 100%{transform:translateX(2%) scale(1.04);opacity:.48}
+@keyframes scaphex-mist-cross{
+  0%{transform:translate3d(-4%,2%,0) scale(.94);opacity:.55}
+  100%{transform:translate3d(4%,-3%,0) scale(1.12);opacity:1}
+}
+@keyframes scaphex-rift-flare{
+  0%,100%{transform:translate3d(-4%,1%,0) rotate(-2deg);opacity:.28}
+  45%{transform:translate3d(2%,-1%,0) rotate(1deg);opacity:.82}
+  72%{transform:translate3d(5%,2%,0) rotate(3deg);opacity:.48}
 }
 @media(max-width:760px){
- .hero-art::before{opacity:.68;filter:blur(16px)}
- .hero-art::after{opacity:.32;filter:blur(1px);animation-duration:42s,9s}
- .hero-vignette::before{opacity:.72;filter:blur(24px)}
- .hero-vignette::after{opacity:.25}
+ .hero-art::before{opacity:.82;filter:blur(24px) saturate(1.35);animation-duration:9s,30s}
+ .hero-art::after{opacity:.58;filter:blur(2.5px);animation-duration:12s,8.5s}
+ .hero-vignette::before{opacity:.78;filter:blur(22px);animation-duration:12s}
+ .hero-vignette::after{opacity:.56;animation-duration:8s}
 }
 @media(prefers-reduced-motion:reduce){
  .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{animation:none!important}
