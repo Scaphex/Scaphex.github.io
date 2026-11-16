@@ -201,16 +201,6 @@
             overflow: hidden;
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 215, 0, 0.5);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: float 6s ease-in-out infinite;
-        }
-
         .video-container {
             position: relative;
             overflow: hidden;
@@ -1100,25 +1090,6 @@ body{background:var(--sc-ink)!important;color:#f5efff}
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Create floating particles for hero section
-        function createParticles() {
-            const container = document.getElementById('particles');
-            if (!container || window.innerWidth < 768) return;
-            
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                particle.style.animationDelay = Math.random() * 5 + 's';
-                particle.style.opacity = Math.random() * 0.3 + 0.1;
-                container.appendChild(particle);
-            }
-        }
-
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1251,7 +1222,6 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
             fetchChannelData();
         });
 
