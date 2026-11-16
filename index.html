@@ -642,42 +642,41 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 
 
-/* SCAPHEX cinematic forest — atmospheric motion, original artwork preserved */
+/* SCAPHEX cinematic forest photo — original artwork with restrained energy glow */
 .hero-art{
  isolation:isolate;overflow:hidden;background-color:#080710!important;
  background-image:url('/assets/scaphex-forest-hero.webp.PNG')!important;
  background-repeat:no-repeat!important;
  background-size:cover!important;
  background-position:50% 44%!important;
- animation:forest-photo-drift 58s ease-in-out infinite alternate;
+ animation:forest-photo-drift 48s ease-in-out infinite alternate;
 }
 .hero-art::before,.hero-art::after,.hero-vignette::before,.hero-vignette::after{
  content:"";position:absolute;inset:-12%;pointer-events:none;
 }
-/* Moving cloud light and low-contrast fog; no added particles or artificial bolts */
+/* Soft purple energy around the existing S on the hanging banner — no new particles */
 .hero-art::before{
  z-index:0;
  background:
-  radial-gradient(ellipse 34% 17% at 68% 32%,rgba(188,125,255,.15),transparent 82%),
-  radial-gradient(ellipse 27% 13% at 46% 42%,rgba(125,82,184,.13),transparent 82%),
-  radial-gradient(ellipse 40% 12% at 22% 78%,rgba(166,125,198,.17),transparent 82%),
-  radial-gradient(ellipse 42% 14% at 76% 72%,rgba(153,105,190,.15),transparent 84%);
+  radial-gradient(ellipse 5.5% 10% at 14% 64%,rgba(223,174,255,.34),transparent 72%),
+  radial-gradient(ellipse 10% 17% at 14% 64%,rgba(160,76,235,.22),transparent 78%),
+  radial-gradient(ellipse 13% 9% at 66% 34%,rgba(221,178,255,.20),transparent 78%),
+  radial-gradient(ellipse 20% 15% at 66% 34%,rgba(151,77,221,.13),transparent 82%);
  mix-blend-mode:screen;
- filter:blur(22px);
- opacity:.62;
- animation:forest-cloud-light 26s ease-in-out infinite alternate;
+ filter:blur(10px);
+ opacity:.72;
+ animation:forest-energy-breathe 8s ease-in-out infinite;
 }
+/* Only softly illuminate the lightning already present in the artwork */
 .hero-art::after{
  z-index:1;
  background:
-  radial-gradient(ellipse 8% 12% at 14% 64%,rgba(220,174,255,.24),transparent 76%),
-  radial-gradient(ellipse 16% 20% at 14% 64%,rgba(151,72,218,.14),transparent 82%),
-  radial-gradient(ellipse 13% 10% at 66% 34%,rgba(220,177,255,.17),transparent 80%),
-  radial-gradient(ellipse 22% 17% at 66% 34%,rgba(143,82,207,.11),transparent 84%);
+  radial-gradient(ellipse 15% 17% at 66% 34%,rgba(210,157,255,.12),transparent 78%),
+  radial-gradient(ellipse 22% 19% at 66% 34%,rgba(132,67,208,.09),transparent 84%);
  mix-blend-mode:screen;
- filter:blur(13px);
- opacity:.72;
- animation:forest-energy-glow 9s ease-in-out infinite;
+ filter:blur(14px);
+ opacity:.55;
+ animation:forest-lightning-glow 7s ease-in-out infinite;
 }
 .hero-vignette{isolation:isolate;overflow:hidden;z-index:-2}
 .hero-vignette::before{
@@ -688,101 +687,35 @@ body{background:var(--sc-ink)!important;color:#f5efff}
 }
 .hero-vignette::after{
  z-index:1;
- inset:-18% -12%;
  background:
-  radial-gradient(ellipse 48% 13% at 24% 74%,rgba(198,156,224,.15),transparent 82%),
-  radial-gradient(ellipse 52% 15% at 74% 82%,rgba(167,123,205,.13),transparent 84%),
-  linear-gradient(180deg,transparent 58%,rgba(154,112,190,.07) 78%,transparent 96%);
- mix-blend-mode:screen;
- filter:blur(18px);
- opacity:.38;
- animation:forest-fog-drift 34s ease-in-out infinite alternate;
+  linear-gradient(110deg,transparent 0 45%,rgba(193,139,232,.08) 49%,transparent 54%),
+  radial-gradient(ellipse 35% 12% at 73% 24%,rgba(186,112,236,.12),transparent 82%);
+ mix-blend-mode:screen;opacity:.45;
+ animation:forest-moonlight-shift 17s ease-in-out infinite alternate;
 }
 @keyframes forest-photo-drift{
  0%{background-position:48% 42%}
  100%{background-position:52% 47%}
 }
-@keyframes forest-cloud-light{
- 0%{transform:translate3d(-2%,1%,0) scale(1);opacity:.42}
- 100%{transform:translate3d(2%,-1%,0) scale(1.04);opacity:.68}
-}
-@keyframes forest-energy-glow{
+/* Nearly imperceptible breathing: glow intensity only, no movement or flashing */
+@keyframes forest-energy-breathe{
  0%,100%{opacity:.66}
- 50%{opacity:.76}
+ 50%{opacity:.78}
 }
-@keyframes forest-fog-drift{
- 0%{transform:translate3d(-2%,1%,0)}
- 100%{transform:translate3d(2%,-1%,0)}
+@keyframes forest-lightning-glow{
+ 0%,100%{opacity:.48}
+ 50%{opacity:.60}
 }
+@keyframes forest-moonlight-shift{0%{transform:translateX(-3%) rotate(-1deg);opacity:.22}100%{transform:translateX(3%) rotate(1deg);opacity:.62}}
 @media(max-width:760px){
- .hero-art{background-position:68% center!important;background-size:auto 108%!important;animation:forest-mobile-drift 58s ease-in-out infinite alternate}
- .hero-art::before{filter:blur(18px);opacity:.54}
- .hero-art::after{filter:blur(11px);opacity:.68}
- .hero-vignette::after{opacity:.30}
+ .hero-art{background-position:68% center!important;background-size:auto 108%!important;animation:forest-mobile-drift 48s ease-in-out infinite alternate}
+ .hero-art::before{filter:blur(8px);opacity:.72}
+ .hero-art::after{filter:blur(12px);opacity:.55}
+ .hero-vignette::after{opacity:.28}
 }
 @keyframes forest-mobile-drift{
  0%{background-position:65% center;background-size:auto 105%}
  100%{background-position:72% center;background-size:auto 112%}
-}
-/* Portrait composition: fit the complete original landscape artwork across the phone.
-   A softened full-bleed copy fills the remaining space, so cape and castle both stay visible. */
-@media(max-width:760px) and (orientation:portrait){
- .hero-art{
-  background-image:none!important;
-  background-color:#080710!important;
-  animation:none!important;
- }
- .hero-art::before{
-  inset:-5%;
-  background-image:
-   linear-gradient(180deg,rgba(5,3,11,.18),rgba(5,3,11,.36)),
-   url('/assets/scaphex-forest-hero.webp.PNG');
-  background-size:cover;
-  background-position:center,68% center;
-  background-repeat:no-repeat;
-  filter:blur(13px) saturate(1.12);
-  opacity:.82;
-  transform:scale(1.07);
-  animation:forest-portrait-atmosphere 30s ease-in-out infinite alternate;
- }
- .hero-art::after{
-  inset:0;
-  background-image:
-   radial-gradient(ellipse 8% 12% at 14% 55%,rgba(221,174,255,.22),transparent 78%),
-   radial-gradient(ellipse 13% 10% at 69% 36%,rgba(218,174,255,.14),transparent 82%),
-   linear-gradient(180deg,rgba(5,3,11,.03),transparent 35%,rgba(5,3,11,.18)),
-   url('/assets/scaphex-forest-hero.webp.PNG');
-  background-size:auto,auto,auto,100% auto;
-  /* Lift the complete landscape artwork behind the wordmark: cape and castle stay together */
-  background-position:center,center,center,center 35%;
-  background-repeat:no-repeat;
-  filter:none;
-  opacity:.98;
-  animation:forest-portrait-glow 9s ease-in-out infinite;
- }
- .hero-vignette::after{
-  inset:-12% -16%;
-  background:
-   radial-gradient(ellipse 56% 10% at 20% 70%,rgba(198,156,224,.16),transparent 82%),
-   radial-gradient(ellipse 60% 12% at 78% 78%,rgba(167,123,205,.14),transparent 84%);
-  filter:blur(17px);
-  opacity:.42;
-  animation:forest-fog-drift 34s ease-in-out infinite alternate;
- }
- .hero-pillars{
-  font-size:clamp(10px,1.6vw,12px);
-  letter-spacing:.09em;
-  gap:clamp(7px,1.4vw,11px);
-  row-gap:8px;
- }
-}
-@keyframes forest-portrait-atmosphere{
- 0%{transform:scale(1.07) translate3d(-1%,0,0);filter:blur(18px) saturate(1.12) brightness(.78)}
- 100%{transform:scale(1.10) translate3d(1%,-.5%,0);filter:blur(20px) saturate(1.2) brightness(.9)}
-}
-@keyframes forest-portrait-glow{
- 0%,100%{opacity:.94}
- 50%{opacity:1}
 }
 @media(prefers-reduced-motion:reduce){
  .hero-art,.hero-art::before,.hero-art::after,.hero-vignette::after{animation:none!important}
